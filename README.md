@@ -4,4 +4,4 @@ We will make an application that helps the user keep track of their time to work
 
 We have a folder containing all of the weekly progress reports.
 
-[Requirements Google Doc](https://docs.google.com/document/d/1R582gmYngv6BbP5c-UfUz10P5_Q-NITTTkpt5H63j0k/edit?usp=sharing)
+[Google Doc (living document)](https://docs.google.com/document/d/1R582gmYngv6BbP5c-UfUz10P5_Q-NITTTkpt5H63j0k/edit?usp=sharing)
