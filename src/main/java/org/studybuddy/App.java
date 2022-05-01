@@ -9,6 +9,8 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.util.Timer;
+
 /**
  * JavaFX App
  **/
@@ -20,31 +22,23 @@ public class App extends Application implements EventHandler<ActionEvent> {
     @Override
     public void start(Stage stage) {
         window = stage;
+//        org.studybuddy.EventHandler handler = new org.studybuddy.EventHandler(
+//                window, goToAssignments, goToTimer, timer, assignments);
+
 
         // scene 1, timer page
-        Label label1 = new Label("Study Timer");
-        goToAssignments = new Button("Assignments");
-        goToAssignments.setOnAction(this);
-
-        VBox timerLayout = new VBox();
-        timerLayout.getChildren().addAll(goToAssignments, label1);
-
-        timer = new Scene(timerLayout, 640, 800);
-
-
+        timer = TimerScene.timerScene(new ActionEvent(), goToAssignments);
 
         // scene 2, assignments
         Label label2 = new Label("Assignment Tracker");
         goToTimer = new Button("Study Timer");
         goToTimer.setOnAction(this);
-
-        VBox assLayout = new VBox();
-        assLayout.getChildren().addAll(goToTimer, label2);
-
+        VBox assLayout = new VBox(50);
+        assLayout.getChildren().addAll(label2, goToTimer);
         assignments = new Scene(assLayout, 640, 800);
 
-
         window.setScene(timer);
+        window.setTitle("Study Buddy!");
         window.show();
     }
     @Override
