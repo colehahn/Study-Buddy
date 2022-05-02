@@ -13,7 +13,7 @@ import javafx.stage.Stage;
  * JavaFX App
  **/
 public class App extends Application implements EventHandler<ActionEvent> {
-    Stage:: window;
+    Stage window;
     Scene timer, assignments;
     Button goToAssignments;
     Button goToTimer;
