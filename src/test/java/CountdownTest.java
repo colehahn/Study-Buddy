@@ -1,12 +1,12 @@
 import Timer.Countdown;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
-class CountdownTest {
+public class CountdownTest {
     // Example of a Unit Test
     @Test
     public void testSettingCountdownTimer() {
         Countdown.setCountdownStarter(50);
-        Assert.assertEquals(Countdown.countdownStarter, 50);
+        Assertions.assertEquals(Countdown.countdownStarter, 50);
     }
 }
