@@ -7,15 +7,15 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
-public class TimerScene implements EventHandler<ActionEvent> {
+public class AssignmentsScene implements EventHandler<ActionEvent> {
 
     public static Scene getScene() {
-        Label label1 = new Label("Study Timer");
-        Button goToAssignments = new Button("Assignments");
-        goToAssignments.setOnAction(App.goToAssignmentsScene());
-        VBox timerLayout = new VBox(50);
-        timerLayout.getChildren().addAll(label1, goToAssignments);
-        return new Scene(timerLayout, 640, 800);
+        Label label2 = new Label("Assignment Tracker");
+        Button goToTimer = new Button("Study Timer");
+        goToTimer.setOnAction(App.goToTimerScene());
+        VBox assLayout = new VBox(50);
+        assLayout.getChildren().addAll(label2, goToTimer);
+        return new Scene(assLayout, 640, 800);
     }
 
     @Override
