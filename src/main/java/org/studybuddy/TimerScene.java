@@ -74,7 +74,8 @@ public class TimerScene implements EventHandler<ActionEvent> {
         timerLayout.getChildren().addAll(title, timerLabel, startTimer, goToAssignments);
         timerLayout.setAlignment(Pos.CENTER);
         timerLayout.setLayoutY(30);  // Move the VBox down a bit
-        return new Scene(timerLayout, 640, 800);
+        // timerLayout.setStyle("-fx-background-color: BEIGE;"); an example of inline CSS. can also add a .css file
+        return new Scene(timerLayout, 1000, 800);
     }
 
     @Override
