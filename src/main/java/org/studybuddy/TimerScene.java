@@ -31,7 +31,7 @@ public class TimerScene implements EventHandler<ActionEvent> {
 
         // start timer button
         Button startTimer = new Button("Start Timer");
-        startTimer.setOnAction(new EventHandler<ActionEvent>() {
+        startTimer.setOnAction(new EventHandler<>() {
             @Override
             public void handle(ActionEvent actionEvent) {
                 if (timeSeconds[0] < 0) {
@@ -58,6 +58,9 @@ public class TimerScene implements EventHandler<ActionEvent> {
                                         timerLabel.setText(timeSeconds[0].toString());
                                         if (timeSeconds[0] <= 0) {
                                             timeline[0].stop();
+
+                                            // alert or notification signalling the timer is done
+
                                         }
                                     }
                                 }));
@@ -74,7 +77,7 @@ public class TimerScene implements EventHandler<ActionEvent> {
         timerLayout.getChildren().addAll(title, timerLabel, startTimer, goToAssignments);
         timerLayout.setAlignment(Pos.CENTER);
         timerLayout.setLayoutY(30);  // Move the VBox down a bit
-        // timerLayout.setStyle("-fx-background-color: BEIGE;"); an example of inline CSS. can also add a .css file
+        timerLayout.setStyle("-fx-background-color: BEIGE;"); // an example of inline CSS. can also add a .css file
         return new Scene(timerLayout, 1000, 800);
     }
 
