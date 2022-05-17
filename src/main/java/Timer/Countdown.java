@@ -76,10 +76,11 @@ public class Countdown {
                         TimerScene.timerLabel.setText("Timer Over!");
                         scheduler.shutdown();
                     });
+                    countdownStarter = MINUTES * NUM_SECONDS;
                 }
             }
         };
-        scheduler.scheduleAtFixedRate(runnable, 1, 1, SECONDS);
+        scheduler.scheduleAtFixedRate(runnable, 0, 1, SECONDS);
     }
 }
 

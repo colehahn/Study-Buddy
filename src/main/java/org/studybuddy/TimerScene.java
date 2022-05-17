@@ -61,6 +61,7 @@ public class TimerScene implements EventHandler<ActionEvent> {
 //                                            timeline[0].stop();
 //
 //                                            // alert or notification signalling the timer is done
+                                    Countdown.countdownStarter = Countdown.MINUTES * Countdown.NUM_SECONDS;
                                     Countdown.main(null);
 //                                        }
                                 }));
