@@ -32,7 +32,7 @@ public class Countdown {
 
             public void run() {
                 if (countdownStarter < NUM_SECONDS) { // Seconds
-                    if (countdownStarter < 10) {
+                    if (countdownStarter <= 10) {
                         if (TimerScene.timeline[0] != null) {
                             TimerScene.timeline[0].stop();
                         }
