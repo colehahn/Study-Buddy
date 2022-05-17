@@ -22,6 +22,7 @@ public class TimerScene implements EventHandler<ActionEvent> {
     public static final Timeline[] timeline = {null};
     public static Scene getScene() {
         Label title = new Label("Study Timer");
+        title.setStyle("-fx-font-size: 2em;");
 
         // go to assignment button
         Button goToAssignments = new Button("Assignments");
