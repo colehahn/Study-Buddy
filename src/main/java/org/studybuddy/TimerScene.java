@@ -38,6 +38,7 @@ public class TimerScene implements EventHandler<ActionEvent> {
         startTimer.setOnAction(new EventHandler<>() {
             @Override
             public void handle(ActionEvent actionEvent) {
+                // TODO: have timer reset when button is pressed
                 if (timeSeconds[0] < 0) {
                     throw new IllegalArgumentException("Study timer cannot be set to negative value");
                 }
@@ -70,13 +71,23 @@ public class TimerScene implements EventHandler<ActionEvent> {
             }
         });
 
+        // TODO: Pause Resume Button
+        Button pauseResumeButton = new Button("Pause / Resume Timer");
+        pauseResumeButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+
+            }
+        });
+
+
         // timer label
-        timerLabel.setText(timeSeconds[0].toString());
+        timerLabel.setText(timeSeconds[0].toString());  // TODO: connect with backend time value for initial label
         timerLabel.setTextFill(Color.RED);
         timerLabel.setStyle("-fx-font-size: 4em;");
 
         VBox timerLayout = new VBox(50);
-        timerLayout.getChildren().addAll(title, timerLabel, startTimer, goToAssignments);
+        timerLayout.getChildren().addAll(title, timerLabel, startTimer, pauseResumeButton, goToAssignments);
         timerLayout.setAlignment(Pos.CENTER);
         timerLayout.setLayoutY(30);  // Move the VBox down a bit
         timerLayout.setStyle("-fx-background-color: BEIGE;"); // an example of inline CSS. can also add a .css file
