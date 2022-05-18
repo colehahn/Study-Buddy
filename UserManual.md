@@ -10,9 +10,9 @@
 * Finally, all you need to do is unzip the folder and double click on Study-Buddy-Installer.exe to run the application setup wizard
 
 ## How to run the software
-	* Since the application is downloaded on your computer, you can use it just like any other application! A desktop shortcut can be created during installation, and you can find the app in the Start menu
+* Since the application is downloaded on your computer, you can use it just like any other application! A desktop shortcut can be created during installation, and you can find the app in the Start menu
 
-## How to use the software. You can assume that your user is familiar with your particular platform (e.g., use of a Web browser, desktop applications, or mobile applications). For missing functionality, your documentation should simply indicate that this functionality is work in progress.
+## How to use the software
 For Timer functionality:
 * To navigate to the timer, the user simply just has to click the timer button
   *To keep track of time work on each assignment, the user just simply chooses the assignment and amount of time to time.
@@ -23,7 +23,7 @@ For Timer functionality:
 * To add a new assignment, click the Add Assignment button then fill out the information about the assignment such as name, description, estimated time and due date.
 * To see the details about each assignment, left click on the assignment and its details will appear on the right hand side of the application.
 
-## How to report a bug. example for bug reporting guidelines.
+## How to report a bug
 Template of a good bug report:
 [Link to our issue tracker] (https://github.com/colehahn/Study-Buddy/issues/3)
 Title that describes the bug. (Title that should go into the title section of the issue tracker).
@@ -35,5 +35,5 @@ Actual Results (What the bug actually produces).
 Expected Results (What the application should produce).
 Guidelines on how to use the issue tracker: [Issues in GitHub - GeeksforGeeks] (https://www.geeksforgeeks.org/issues-in-github/)
 
-## Known bugs. Known bugs or limitations should be documented in the bug tracker. A user testing the implemented use case(s) should not encounter trivial bugs (e.g., NPEs) or a large number of bugs that are unlisted in your bug tracker.
+## Known bugs
 Known bugs and limitations are documented in Issues tracker: https://github.com/colehahn/Study-Buddy/issues
