@@ -5,7 +5,7 @@
 * Clone the repo.
 
 ## Layout of directory structure
- 	* The overall file structure of our repository is explained in the [top-level README] (README.md). 
+* The overall file structure of our repository is explained in the [top-level README](README.md). 
 * The source code for our project is all in `src/main`
     * `src/main/java` includes all of our backend java classes (`AssignmentClass`, `AssignmentManager`, `Timer`) as well as the classes that set up and display the application’s frontend (`App`, `AssignmentsScene`, `TimerScene`)
     * `src/main/resources` holds any additional files required, like the logo image or saved user data
