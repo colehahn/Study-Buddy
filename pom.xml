@@ -55,7 +55,7 @@
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.3</version>
                 <configuration>
-                    <mainClass>org.studybuddy.App</mainClass>
+                    <mainClass>org.studybuddy.AppRunner</mainClass>
                 </configuration>
             </plugin>
             <plugin>
@@ -68,6 +68,42 @@
                     </argLine>
                     <!--<testFailureIgnore>true</testFailureIgnore>-->
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>io.github.fvarrui</groupId>
+                <artifactId>javapackager</artifactId>
+                <version>1.6.6</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>package</goal>
+                        </goals>
+                        <configuration>
+                            <!-- mandatory -->
+                            <mainClass>org.studybuddy.AppRunner</mainClass>
+                            <!-- optional -->
+                            <bundleJre>true</bundleJre>
+                            <generateInstaller>true</generateInstaller>
+                            <administratorRequired>false</administratorRequired>
+                            <platform>windows</platform>
+                            <additionalResources>
+                                <additionalResource>src/main/resources/</additionalResource>
+                            </additionalResources>
+                            <winConfig>
+                                <!-- general properties -->
+                                <icoFile>src/main/resources/SB-logo.ico</icoFile>
+                                <companyName>Team Study Buddy</companyName>
+                                <fileVersion>1.0.0.0</fileVersion>
+                                <productVersion>1.0.0.0</productVersion>
+                                <productName>Study Buddy</productName>
+                                <internalName>Study Buddy</internalName>
+                                <!-- setup generation properties -->
+                                <createDesktopIconTask>true</createDesktopIconTask>
+                            </winConfig>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
