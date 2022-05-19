@@ -17,9 +17,9 @@ import Timer.Countdown.*;
 
 public class TimerScene implements EventHandler<ActionEvent> {
     public static Label timerLabel;
-
     public static Integer[] timeSeconds = {1};
-    public static final Timeline[] timeline = {null};
+    public static Timeline[] timeline = {null};
+    public static boolean isPaused = false;
     public static Scene getScene() {
         Label title = new Label("Study Timer");
         title.setStyle("-fx-font-size: 2em;");
@@ -35,7 +35,7 @@ public class TimerScene implements EventHandler<ActionEvent> {
 
         // start timer button
         Button startTimer = new Button("Start Timer");
-        startTimer.setOnAction((ActionEvent event) -> {
+        startTimer.setOnAction(event -> {
             // TODO: have timer reset when button is pressed
             if (timeSeconds[0] < 0) {
                 throw new IllegalArgumentException("Study timer cannot be set to negative value");
@@ -44,14 +44,16 @@ public class TimerScene implements EventHandler<ActionEvent> {
             if (timeline[0] != null) {
                 timeline[0].stop();
             }
+
+            isPaused = false;
+
             // update timerLabel
             timerLabel.setText(timeSeconds[0].toString());
             timeline[0] = new Timeline();
             timeline[0].setCycleCount(Timeline.INDEFINITE);
             // KeyFrame event handler
             timeline[0].getKeyFrames().add(
-                    new KeyFrame(Duration.seconds(1),
-                            (ActionEvent event2) -> {
+                    new KeyFrame(Duration.seconds(1), (event2) -> {
 //                                        timeSeconds[0]--;
 //                                        // update timerLabel
 //                                        timerLabel.setText(timeSeconds[0].toString());
@@ -68,9 +70,7 @@ public class TimerScene implements EventHandler<ActionEvent> {
 
         // TODO: Pause Resume Button
         Button pauseResumeButton = new Button("Pause / Resume Timer");
-        pauseResumeButton.setOnAction((ActionEvent event) -> {
-
-        });
+        pauseResumeButton.setOnAction(e -> isPaused = !isPaused);
 
 
         // timer label

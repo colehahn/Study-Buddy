@@ -3,6 +3,7 @@ package Timer;
 import java.util.concurrent.*;
 import static java.util.concurrent.TimeUnit.SECONDS;
 
+import javafx.animation.Timeline;
 import javafx.application.Platform;
 import org.studybuddy.TimerScene;
 
@@ -31,53 +32,58 @@ public class Countdown {
         final Runnable runnable = new Runnable() {
 
             public void run() {
-                if (countdownStarter < NUM_SECONDS) { // Seconds
-                    if (countdownStarter <= 10) {
-                        if (TimerScene.timeline[0] != null) {
-                            TimerScene.timeline[0].stop();
+                if (TimerScene.isPaused) {
+                    TimerScene.timeline[0].pause();
+                } else {
+                    if (countdownStarter < NUM_SECONDS) { // Seconds
+                        if (countdownStarter <= 10) {
+                            if (TimerScene.timeline[0] != null) {
+                                TimerScene.timeline[0].stop();
+                            }
+                            Platform.runLater(() -> {
+                                TimerScene.timerLabel.setText("0:" + "0" + countdownStarter);
+                            });
+                        } else {
+                            if (TimerScene.timeline[0] != null) {
+                                TimerScene.timeline[0].stop();
+                            }
+                            Platform.runLater(() -> {
+                                TimerScene.timerLabel.setText("0:" + countdownStarter);
+                            });
+                        }
+                    } else { // Minutes
+                        String minutes;
+                        if (countdownStarter/ NUM_SECONDS < 10) {
+                            minutes =  "0" + countdownStarter /60;
+                        } else {
+                            minutes = "" + countdownStarter / 60;
+                        }
+                        String seconds;
+                        if ((countdownStarter % 60) < 10) {
+                            seconds = "0" + countdownStarter % 60;
+                        } else {
+                            seconds = "" + countdownStarter % 60;
                         }
                         Platform.runLater(() -> {
-                            TimerScene.timerLabel.setText("0:" + "0" + countdownStarter);
+                            // code that updates UI
+                            if (TimerScene.timeline[0] != null) {
+                                TimerScene.timeline[0].stop();
+                            }
+                            TimerScene.timerLabel.setText(minutes + ":" + seconds);
                         });
-                    } else {
-                        if (TimerScene.timeline[0] != null) {
-                            TimerScene.timeline[0].stop();
-                        }
+                    }
+
+                    countdownStarter--;
+
+                    if (countdownStarter <= 0) {
                         Platform.runLater(() -> {
-                            TimerScene.timerLabel.setText("0:" + countdownStarter);
+                            TimerScene.timerLabel.setText("Timer Over!");
+                            scheduler.shutdown();
                         });
+                        countdownStarter = MINUTES * NUM_SECONDS;
                     }
-                } else { // Minutes
-                    String minutes;
-                    if (countdownStarter/ NUM_SECONDS < 10) {
-                        minutes =  "0" + countdownStarter /60;
-                    } else {
-                        minutes = "" + countdownStarter / 60;
-                    }
-                    String seconds;
-                    if ((countdownStarter % 60) < 10) {
-                        seconds = "0" + countdownStarter % 60;
-                    } else {
-                        seconds = "" + countdownStarter % 60;
-                    }
-                    Platform.runLater(() -> {
-                        // code that updates UI
-                        if (TimerScene.timeline[0] != null) {
-                            TimerScene.timeline[0].stop();
-                        }
-                        TimerScene.timerLabel.setText(minutes + ":" + seconds);
-                    });
                 }
 
-                countdownStarter--;
-
-                if (countdownStarter <= 0) {
-                    Platform.runLater(() -> {
-                        TimerScene.timerLabel.setText("Timer Over!");
-                        scheduler.shutdown();
-                    });
-                    countdownStarter = MINUTES * NUM_SECONDS;
-                }
             }
         };
         scheduler.scheduleAtFixedRate(runnable, 0, 1, SECONDS);
