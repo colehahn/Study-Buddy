@@ -6,6 +6,7 @@ import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -30,6 +31,7 @@ public class App extends Application {
 
         window.setScene(timer);
         window.setTitle("Study Buddy");
+        window.getIcons().add(new Image("SB logo.png"));
         window.show();
     }
 

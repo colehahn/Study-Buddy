@@ -93,8 +93,9 @@ public class AssignmentsScene implements EventHandler<ActionEvent> {
         Button projectProposal = new Button("403 project proposal");
         Button lab = new Button("371 lab");
         Button assignment = new Button("writing assignment");
+        Button addAssignment = new Button("Add Assignment");
 
-        pane.getChildren().addAll(label, projectProposal, lab, assignment);
+        pane.getChildren().addAll(label, projectProposal, lab, assignment, addAssignment);
         pane.setPrefWidth(320);
         pane.setPrefHeight(560);
 
@@ -120,6 +121,10 @@ public class AssignmentsScene implements EventHandler<ActionEvent> {
         assignment.setPrefHeight(60);
         assignment.setLayoutX(9);
         assignment.setLayoutY(271);
+
+        addAssignment.setFont(new Font("Regular", 25));
+        addAssignment.setLayoutX(36);
+        addAssignment.setLayoutY(452);
 
         return pane;
     }

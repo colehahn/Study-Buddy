@@ -10,8 +10,11 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import javafx.util.Duration;
 import Timer.Countdown.*;
 
@@ -79,11 +82,43 @@ public class TimerScene implements EventHandler<ActionEvent> {
         timerLabel.setStyle("-fx-font-size: 4em;");
 
         VBox timerLayout = new VBox(50);
-        timerLayout.getChildren().addAll(title, timerLabel, startTimer, pauseResumeButton, goToAssignments);
+        timerLayout.getChildren().addAll(title, timerLabel, startTimer, pauseResumeButton);
         timerLayout.setAlignment(Pos.CENTER);
         timerLayout.setLayoutY(30);  // Move the VBox down a bit
-        timerLayout.setStyle("-fx-background-color: BEIGE;"); // an example of inline CSS. can also add a .css file
-        return new Scene(timerLayout, 1000, 800);
+        //timerLayout.setStyle("-fx-background-color: BEIGE;"); // an example of inline CSS. can also add a .css file
+        //timerLayout.getStylesheets().add("/stylesheet.css");
+
+        HBox scene = new HBox(300);
+        scene.getChildren().addAll(leftPane(), timerLayout);
+        return new Scene(scene, 1000, 560);
+    }
+
+    private static Pane leftPane() {
+        Pane pane = new Pane();
+        Button goToTimer = new Button("Timer");
+        Button assignment = new Button("Assignment");
+
+        assignment.setOnAction(App.goToAssignmentsScene());
+        pane.getChildren().addAll(goToTimer);
+        pane.getChildren().addAll(assignment);
+        pane.setPrefWidth(220);
+        pane.setPrefHeight(560);
+
+        goToTimer.setFont(new Font("Regular", 25));
+        goToTimer.setStyle("-fx-background-color:  rgb(217,217,217)");
+        goToTimer.setPrefWidth(200);
+        goToTimer.setPrefHeight(75);
+        goToTimer.setLayoutX(8);
+        goToTimer.setLayoutY(40);
+
+        assignment.setFont(new Font("Regular", 25));
+        assignment.setStyle("-fx-background-color:   rgb(183,183,183)");
+        assignment.setPrefWidth(200);
+        assignment.setPrefHeight(75);
+        assignment.setLayoutX(8);
+        assignment.setLayoutY(136);
+
+        return pane;
     }
 
     @Override
