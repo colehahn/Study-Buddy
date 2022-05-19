@@ -23,7 +23,6 @@ public class App extends Application {
     public void start(Stage stage) {
         window = stage;
 
-
         // scene 1, timer page
         timer = TimerScene.getScene();
 
