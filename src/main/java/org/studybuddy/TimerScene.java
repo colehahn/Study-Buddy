@@ -20,7 +20,7 @@ import Timer.Countdown.*;
 
 public class TimerScene implements EventHandler<ActionEvent> {
     public static Label timerLabel;
-    public static Integer[] timeSeconds = {1};
+    public static Integer[] timeSeconds = {Countdown.MINUTES};
     public static Timeline[] timeline = {null};
     public static boolean isPaused = false;
     public static Scene getScene() {
@@ -51,7 +51,7 @@ public class TimerScene implements EventHandler<ActionEvent> {
             isPaused = false;
 
             // update timerLabel
-            timerLabel.setText(timeSeconds[0].toString());
+            timerLabel.setText(timeSeconds[0].toString() + ":00");
             timeline[0] = new Timeline();
             timeline[0].setCycleCount(Timeline.INDEFINITE);
             // KeyFrame event handler
@@ -71,13 +71,13 @@ public class TimerScene implements EventHandler<ActionEvent> {
             timeline[0].playFromStart();
         });
 
-        // TODO: Pause Resume Button
+        // Pause Resume Button
         Button pauseResumeButton = new Button("Pause / Resume Timer");
         pauseResumeButton.setOnAction(e -> isPaused = !isPaused);
 
 
         // timer label
-        timerLabel.setText(timeSeconds[0].toString());  // TODO: connect with backend time value for initial label
+        timerLabel.setText(timeSeconds[0].toString() + ":00");  // TODO: connect with backend time value for initial label
         timerLabel.setTextFill(Color.RED);
         timerLabel.setStyle("-fx-font-size: 4em;");
 

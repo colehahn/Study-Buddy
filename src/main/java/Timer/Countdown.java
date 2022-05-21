@@ -9,7 +9,7 @@ import org.studybuddy.TimerScene;
 
 // The timer is part of the Model.
 public class Countdown {
-    public static int MINUTES = 1;
+    public static int MINUTES = 2;
     public static int NUM_SECONDS = 60;
     public static int countdownStarter = MINUTES * NUM_SECONDS;
 
