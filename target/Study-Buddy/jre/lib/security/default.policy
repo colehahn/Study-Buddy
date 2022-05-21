@@ -107,7 +107,6 @@ grant codeBase "jrt:/jdk.accessibility" {
 
 grant codeBase "jrt:/jdk.charsets" {
     permission java.util.PropertyPermission "os.name", "read";
-    permission java.util.PropertyPermission "sun.nio.cs.map", "read";
     permission java.lang.RuntimePermission "charsetProvider";
     permission java.lang.RuntimePermission
                    "accessClassInPackage.jdk.internal.misc";
@@ -206,6 +205,7 @@ grant codeBase "jrt:/jdk.zipfs" {
     permission java.lang.RuntimePermission "accessUserInformation";
     permission java.util.PropertyPermission "os.name", "read";
     permission java.util.PropertyPermission "user.dir", "read";
+    permission java.util.PropertyPermission "user.name", "read";
 };
 
 // permissions needed by applications using java.desktop module
