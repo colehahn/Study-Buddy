@@ -17,6 +17,17 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
+    - uses: EndBug/add-and-commit@v9
+      with:
+        add: 'target/Study-Buddy --force'
+        # The local path to the directory where your repository is located. You should use actions/checkout first to set it up.
+        # Default: '.'
+        cwd: ${GITHUB_WORKSPACE}
+        # The message for the commit.
+        # Default: 'Commit from GitHub Actions (name of the workflow)'
+        message: 'automatically updated executable'
+        push: true
+
     - name: Set up JDK 16
       uses: actions/setup-java@v3
       with:
@@ -33,14 +44,5 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
-    - uses: EndBug/add-and-commit@v9
-      with:
-        add: 'target/Study-Buddy --force'
-        # The local path to the directory where your repository is located. You should use actions/checkout first to set it up.
-        # Default: '.'
-        cwd: ${GITHUB_WORKSPACE}
-        # The message for the commit.
-        # Default: 'Commit from GitHub Actions (name of the workflow)'
-        message: 'automatically updated executable'
-        push: true
+
 
