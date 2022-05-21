@@ -32,6 +32,9 @@ public class Countdown {
         final Runnable runnable = new Runnable() {
 
             public void run() {
+                if (MINUTES < 1) {
+                    throw new IllegalArgumentException("Minutes must be at least 1");
+                }
                 if (TimerScene.isPaused) {
                     TimerScene.timeline[0].pause();
                 } else {
@@ -54,7 +57,7 @@ public class Countdown {
                     } else { // Minutes
                         String minutes;
                         if (countdownStarter/ NUM_SECONDS < 10) {
-                            minutes =  "0" + countdownStarter /60;
+                            minutes =  "" + countdownStarter /60;
                         } else {
                             minutes = "" + countdownStarter / 60;
                         }
