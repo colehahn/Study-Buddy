@@ -26,7 +26,7 @@ jobs:
 
     - name: Configure setup wizard tools
       shell: bash
-      run: echo "%wix%bin" >> $GITHUB_PATH
+      run: echo "%wix%\bin" >> $GITHUB_PATH; echo "%wix%\bin"
 
     - name: Build with Maven
       run: mvn -B package --file pom.xml
