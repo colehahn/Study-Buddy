@@ -26,7 +26,7 @@ jobs:
 
     - name: Configure setup wizard tools
       shell: pwsh
-      run: echo "C:\directory\to\add\to\path" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+      run: echo "%wix%bin" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
 
     - name: Build with Maven
       run: mvn -B package --file pom.xml
