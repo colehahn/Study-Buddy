@@ -26,7 +26,7 @@ jobs:
 
     - name: Configure setup wizard tools
       shell: pwsh
-      run: echo %wix%
+      run: choco install -y innosetup wixtoolset
 
     - name: Build with Maven
       run: mvn -B package --file pom.xml
