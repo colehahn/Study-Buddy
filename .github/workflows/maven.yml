@@ -26,7 +26,7 @@ jobs:
 
     - name: Configure setup wizard tools
       shell: pwsh
-      run: $wixpath=%wix%; $bin='bin'; $totalpath=$wixpath + $bin; Add-Content $env:GITHUB_PATH $totalpath; echo $totalpath
+      run: echo %wix%
 
     - name: Build with Maven
       run: mvn -B package --file pom.xml
