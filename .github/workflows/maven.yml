@@ -25,8 +25,8 @@ jobs:
         cache: maven
 
     - name: Configure setup wizard tools
-      shell: bash
-      run: VAR1=%wix%; echo "${VAR1}bin" >> $GITHUB_PATH; echo "${VAR1}bin"
+      shell: pwsh
+      run: $wixpath=%wix%; $bin='bin'; $totalpath=$wixpath + $bin; Add-Content $env:GITHUB_PATH $totalpath; echo $totalpath
 
     - name: Build with Maven
       run: mvn -B package --file pom.xml
