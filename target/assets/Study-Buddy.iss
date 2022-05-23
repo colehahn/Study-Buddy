@@ -5,7 +5,7 @@
 #define MyAppExeName "Study-Buddy.exe"
 #define MyAppFolder "Study-Buddy"
 #define MyAppLicense ""
-#define MyAppIcon "Z:\cse403\Study-Buddy\src\main\resources\SB-logo.ico"
+#define MyAppIcon "D:\a\Study-Buddy\Study-Buddy\src\main\resources\SB-logo.ico"
 
 [Setup]
 AppId={{{#MyAppName}}}
@@ -40,7 +40,7 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 [Registry]
 
 [Files]
-Source: "Z:\cse403\Study-Buddy\target\Study-Buddy\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 
 [Icons]
 Name: "{autoprograms}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; IconFilename: "{app}\SB-logo.ico"

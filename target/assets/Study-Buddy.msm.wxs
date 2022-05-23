@@ -1,354 +1,354 @@
 <?xml version="1.0" encoding="UTF-8"?><Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
     <Module Codepage="1252" Id="Study_Buddy_Module" Language="1033" Version="1.0.0.0">
-        <Package Description="Study-Buddy" Id="dc1271e0-8996-4b38-b4cd-81f51f7bf76b" InstallerVersion="200" Languages="1033" Manufacturer="ACME" Platform="x64" SummaryCodepage="1252"/>
+        <Package Description="Study-Buddy" Id="884587d2-b8df-4728-841b-eede7ae86bdd" InstallerVersion="200" Languages="1033" Manufacturer="ACME" Platform="x64" SummaryCodepage="1252"/>
         <Directory Id="TARGETDIR" Name="SourceDir">
             <Directory Id="_1" Name="Study-Buddy">
                 <Directory Id="_2" Name="jre">
                     <Directory Id="_3" Name="bin">
-                        <Component Guid="17dfa419-2e3b-4a07-9b97-7651c6af806c" Id="_4" Win64="yes">
-                            <File Id="_4f" KeyPath="yes" Name="api-ms-win-core-console-l1-1-0.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-core-console-l1-1-0.dll"/>
+                        <Component Guid="2a0f5b32-e622-47e7-9c30-8531a73638ce" Id="_4" Win64="yes">
+                            <File Id="_4f" KeyPath="yes" Name="api-ms-win-core-console-l1-1-0.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-core-console-l1-1-0.dll"/>
                         </Component>
-                        <Component Guid="5f9bf4a4-f115-4652-9fce-1fe675202881" Id="_5" Win64="yes">
-                            <File Id="_5f" KeyPath="yes" Name="api-ms-win-core-console-l1-2-0.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-core-console-l1-2-0.dll"/>
+                        <Component Guid="e56255c0-1805-4542-8c1c-011f7f3b8ab1" Id="_5" Win64="yes">
+                            <File Id="_5f" KeyPath="yes" Name="api-ms-win-core-datetime-l1-1-0.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-core-datetime-l1-1-0.dll"/>
                         </Component>
-                        <Component Guid="a7761188-f98b-4bed-a8ae-3f200a22bc31" Id="_6" Win64="yes">
-                            <File Id="_6f" KeyPath="yes" Name="api-ms-win-core-datetime-l1-1-0.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-core-datetime-l1-1-0.dll"/>
+                        <Component Guid="7ef28c37-8801-46b6-9c3a-0fb07225b2ab" Id="_6" Win64="yes">
+                            <File Id="_6f" KeyPath="yes" Name="api-ms-win-core-debug-l1-1-0.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-core-debug-l1-1-0.dll"/>
                         </Component>
-                        <Component Guid="53508ba9-5374-4bca-b80a-de40ca8ae46a" Id="_7" Win64="yes">
-                            <File Id="_7f" KeyPath="yes" Name="api-ms-win-core-debug-l1-1-0.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-core-debug-l1-1-0.dll"/>
+                        <Component Guid="317f5863-2c2e-4874-a84f-e46dff639526" Id="_7" Win64="yes">
+                            <File Id="_7f" KeyPath="yes" Name="api-ms-win-core-errorhandling-l1-1-0.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-core-errorhandling-l1-1-0.dll"/>
                         </Component>
-                        <Component Guid="7172f2ae-ab07-447a-ab3a-04ef350cce05" Id="_8" Win64="yes">
-                            <File Id="_8f" KeyPath="yes" Name="api-ms-win-core-errorhandling-l1-1-0.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-core-errorhandling-l1-1-0.dll"/>
+                        <Component Guid="01cad7e7-db8a-4b1b-ae9f-51b8e2691743" Id="_8" Win64="yes">
+                            <File Id="_8f" KeyPath="yes" Name="api-ms-win-core-file-l1-1-0.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-core-file-l1-1-0.dll"/>
                         </Component>
-                        <Component Guid="83f4dd20-0feb-4b6e-9053-0f28d96761ec" Id="_9" Win64="yes">
-                            <File Id="_9f" KeyPath="yes" Name="api-ms-win-core-fibers-l1-1-0.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-core-fibers-l1-1-0.dll"/>
+                        <Component Guid="62759774-d924-4226-baeb-02184ed8a886" Id="_9" Win64="yes">
+                            <File Id="_9f" KeyPath="yes" Name="api-ms-win-core-file-l1-2-0.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-core-file-l1-2-0.dll"/>
                         </Component>
-                        <Component Guid="395f2cd7-ddf5-412c-ae19-bfa11d380f33" Id="_10" Win64="yes">
-                            <File Id="_10f" KeyPath="yes" Name="api-ms-win-core-file-l1-1-0.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-core-file-l1-1-0.dll"/>
+                        <Component Guid="4fb581ea-a79f-4b7d-83af-99ba2fc4a460" Id="_10" Win64="yes">
+                            <File Id="_10f" KeyPath="yes" Name="api-ms-win-core-file-l2-1-0.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-core-file-l2-1-0.dll"/>
                         </Component>
-                        <Component Guid="403dc908-0cde-48d2-9bf6-28f9e7088afb" Id="_11" Win64="yes">
-                            <File Id="_11f" KeyPath="yes" Name="api-ms-win-core-file-l1-2-0.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-core-file-l1-2-0.dll"/>
+                        <Component Guid="13fc45e2-9ec2-4cea-8c31-276d75b98b89" Id="_11" Win64="yes">
+                            <File Id="_11f" KeyPath="yes" Name="api-ms-win-core-handle-l1-1-0.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-core-handle-l1-1-0.dll"/>
                         </Component>
-                        <Component Guid="64985a51-ecf0-4dfa-bd45-124f3a9effdc" Id="_12" Win64="yes">
-                            <File Id="_12f" KeyPath="yes" Name="api-ms-win-core-file-l2-1-0.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-core-file-l2-1-0.dll"/>
+                        <Component Guid="8df93a51-4491-425b-966e-b9be293b3f43" Id="_12" Win64="yes">
+                            <File Id="_12f" KeyPath="yes" Name="api-ms-win-core-heap-l1-1-0.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-core-heap-l1-1-0.dll"/>
                         </Component>
-                        <Component Guid="b6d9fe90-017d-47b4-b93f-7916f799175d" Id="_13" Win64="yes">
-                            <File Id="_13f" KeyPath="yes" Name="api-ms-win-core-handle-l1-1-0.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-core-handle-l1-1-0.dll"/>
+                        <Component Guid="1a92d2fe-0028-442a-b6b1-a71780c248df" Id="_13" Win64="yes">
+                            <File Id="_13f" KeyPath="yes" Name="api-ms-win-core-interlocked-l1-1-0.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-core-interlocked-l1-1-0.dll"/>
                         </Component>
-                        <Component Guid="88764448-d823-4b39-8f53-06bdc3ef48b1" Id="_14" Win64="yes">
-                            <File Id="_14f" KeyPath="yes" Name="api-ms-win-core-heap-l1-1-0.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-core-heap-l1-1-0.dll"/>
+                        <Component Guid="a28b38f3-e5a4-4899-a2f7-a4befdec2e85" Id="_14" Win64="yes">
+                            <File Id="_14f" KeyPath="yes" Name="api-ms-win-core-libraryloader-l1-1-0.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-core-libraryloader-l1-1-0.dll"/>
                         </Component>
-                        <Component Guid="bfb052c3-0c67-458e-98eb-4e9a76044996" Id="_15" Win64="yes">
-                            <File Id="_15f" KeyPath="yes" Name="api-ms-win-core-interlocked-l1-1-0.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-core-interlocked-l1-1-0.dll"/>
+                        <Component Guid="905d1560-b940-461a-91bc-a36738ba97df" Id="_15" Win64="yes">
+                            <File Id="_15f" KeyPath="yes" Name="api-ms-win-core-localization-l1-2-0.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-core-localization-l1-2-0.dll"/>
                         </Component>
-                        <Component Guid="8e99d7be-e1fc-40ff-821f-1d5f7a4df295" Id="_16" Win64="yes">
-                            <File Id="_16f" KeyPath="yes" Name="api-ms-win-core-libraryloader-l1-1-0.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-core-libraryloader-l1-1-0.dll"/>
+                        <Component Guid="8287dde0-b420-4f23-aaac-ebf7913b0495" Id="_16" Win64="yes">
+                            <File Id="_16f" KeyPath="yes" Name="api-ms-win-core-memory-l1-1-0.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-core-memory-l1-1-0.dll"/>
                         </Component>
-                        <Component Guid="739666e4-a2b3-4783-a0c7-950c9e1a1cc4" Id="_17" Win64="yes">
-                            <File Id="_17f" KeyPath="yes" Name="api-ms-win-core-localization-l1-2-0.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-core-localization-l1-2-0.dll"/>
+                        <Component Guid="caf96a20-9160-43e3-8afd-baa73a468f72" Id="_17" Win64="yes">
+                            <File Id="_17f" KeyPath="yes" Name="api-ms-win-core-namedpipe-l1-1-0.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-core-namedpipe-l1-1-0.dll"/>
                         </Component>
-                        <Component Guid="50bb70c6-38b0-48af-b39e-45f3d0ff8868" Id="_18" Win64="yes">
-                            <File Id="_18f" KeyPath="yes" Name="api-ms-win-core-memory-l1-1-0.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-core-memory-l1-1-0.dll"/>
+                        <Component Guid="da1e5590-54c3-4a1e-a2fc-b7dfdf1aa597" Id="_18" Win64="yes">
+                            <File Id="_18f" KeyPath="yes" Name="api-ms-win-core-processenvironment-l1-1-0.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-core-processenvironment-l1-1-0.dll"/>
                         </Component>
-                        <Component Guid="ba7d6aca-4a30-43b2-93da-3765386d7a3e" Id="_19" Win64="yes">
-                            <File Id="_19f" KeyPath="yes" Name="api-ms-win-core-namedpipe-l1-1-0.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-core-namedpipe-l1-1-0.dll"/>
+                        <Component Guid="43121614-24a1-40e6-b282-002774fd1d0a" Id="_19" Win64="yes">
+                            <File Id="_19f" KeyPath="yes" Name="api-ms-win-core-processthreads-l1-1-0.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-core-processthreads-l1-1-0.dll"/>
                         </Component>
-                        <Component Guid="a42add4d-d4e8-4358-bf25-b641ee3d0254" Id="_20" Win64="yes">
-                            <File Id="_20f" KeyPath="yes" Name="api-ms-win-core-processenvironment-l1-1-0.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-core-processenvironment-l1-1-0.dll"/>
+                        <Component Guid="d71bd7ba-a7cf-463b-ae5d-e35959e91e6c" Id="_20" Win64="yes">
+                            <File Id="_20f" KeyPath="yes" Name="api-ms-win-core-processthreads-l1-1-1.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-core-processthreads-l1-1-1.dll"/>
                         </Component>
-                        <Component Guid="0d018724-62e7-4c39-ab77-6e85610be8b4" Id="_21" Win64="yes">
-                            <File Id="_21f" KeyPath="yes" Name="api-ms-win-core-processthreads-l1-1-0.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-core-processthreads-l1-1-0.dll"/>
+                        <Component Guid="87593a05-d264-412a-8b81-a7407ee7cb26" Id="_21" Win64="yes">
+                            <File Id="_21f" KeyPath="yes" Name="api-ms-win-core-profile-l1-1-0.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-core-profile-l1-1-0.dll"/>
                         </Component>
-                        <Component Guid="1b906217-c9df-4745-96ca-e05821a392fd" Id="_22" Win64="yes">
-                            <File Id="_22f" KeyPath="yes" Name="api-ms-win-core-processthreads-l1-1-1.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-core-processthreads-l1-1-1.dll"/>
+                        <Component Guid="4ff40bd2-60be-4346-8e65-854f4161ef54" Id="_22" Win64="yes">
+                            <File Id="_22f" KeyPath="yes" Name="api-ms-win-core-rtlsupport-l1-1-0.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-core-rtlsupport-l1-1-0.dll"/>
                         </Component>
-                        <Component Guid="8363f745-8bea-441b-8bc3-4c329162b4fd" Id="_23" Win64="yes">
-                            <File Id="_23f" KeyPath="yes" Name="api-ms-win-core-profile-l1-1-0.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-core-profile-l1-1-0.dll"/>
+                        <Component Guid="ae08f986-9aa3-4a50-b58b-7fc775ec8373" Id="_23" Win64="yes">
+                            <File Id="_23f" KeyPath="yes" Name="api-ms-win-core-string-l1-1-0.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-core-string-l1-1-0.dll"/>
                         </Component>
-                        <Component Guid="7742d21a-a750-4caf-ac9e-937c4f74f03f" Id="_24" Win64="yes">
-                            <File Id="_24f" KeyPath="yes" Name="api-ms-win-core-rtlsupport-l1-1-0.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-core-rtlsupport-l1-1-0.dll"/>
+                        <Component Guid="49306c5f-41a4-4198-b4ef-7198c302f706" Id="_24" Win64="yes">
+                            <File Id="_24f" KeyPath="yes" Name="api-ms-win-core-synch-l1-1-0.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-core-synch-l1-1-0.dll"/>
                         </Component>
-                        <Component Guid="1e8e725f-682a-4f34-93da-d963c2fb051f" Id="_25" Win64="yes">
-                            <File Id="_25f" KeyPath="yes" Name="api-ms-win-core-string-l1-1-0.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-core-string-l1-1-0.dll"/>
+                        <Component Guid="28f2e419-c113-41d3-9dc3-812ad44420a6" Id="_25" Win64="yes">
+                            <File Id="_25f" KeyPath="yes" Name="api-ms-win-core-synch-l1-2-0.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-core-synch-l1-2-0.dll"/>
                         </Component>
-                        <Component Guid="27f60a85-0573-4369-bec5-d868d8a5973d" Id="_26" Win64="yes">
-                            <File Id="_26f" KeyPath="yes" Name="api-ms-win-core-synch-l1-1-0.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-core-synch-l1-1-0.dll"/>
+                        <Component Guid="3f0a0c27-6d9d-4493-a900-f21811de4b19" Id="_26" Win64="yes">
+                            <File Id="_26f" KeyPath="yes" Name="api-ms-win-core-sysinfo-l1-1-0.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-core-sysinfo-l1-1-0.dll"/>
                         </Component>
-                        <Component Guid="9da04b96-91d6-4293-bf01-23a7f9d84b0d" Id="_27" Win64="yes">
-                            <File Id="_27f" KeyPath="yes" Name="api-ms-win-core-synch-l1-2-0.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-core-synch-l1-2-0.dll"/>
+                        <Component Guid="5335d8b7-6163-4d98-8438-f730c57d493e" Id="_27" Win64="yes">
+                            <File Id="_27f" KeyPath="yes" Name="api-ms-win-core-timezone-l1-1-0.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-core-timezone-l1-1-0.dll"/>
                         </Component>
-                        <Component Guid="a9c529f9-8d8f-4b2c-8cf9-5e9feafdb744" Id="_28" Win64="yes">
-                            <File Id="_28f" KeyPath="yes" Name="api-ms-win-core-sysinfo-l1-1-0.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-core-sysinfo-l1-1-0.dll"/>
+                        <Component Guid="2386bcdf-69fe-42d3-99a0-600ff5baf60f" Id="_28" Win64="yes">
+                            <File Id="_28f" KeyPath="yes" Name="api-ms-win-core-util-l1-1-0.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-core-util-l1-1-0.dll"/>
                         </Component>
-                        <Component Guid="c2500eff-4b0d-445b-81e6-34fdb0ea7d0e" Id="_29" Win64="yes">
-                            <File Id="_29f" KeyPath="yes" Name="api-ms-win-core-timezone-l1-1-0.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-core-timezone-l1-1-0.dll"/>
+                        <Component Guid="52fd8901-bdaa-443a-801c-31d9caf52e16" Id="_29" Win64="yes">
+                            <File Id="_29f" KeyPath="yes" Name="api-ms-win-crt-conio-l1-1-0.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-crt-conio-l1-1-0.dll"/>
                         </Component>
-                        <Component Guid="387ae08e-3221-45fa-978c-2daf28980840" Id="_30" Win64="yes">
-                            <File Id="_30f" KeyPath="yes" Name="api-ms-win-core-util-l1-1-0.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-core-util-l1-1-0.dll"/>
+                        <Component Guid="4b22ccce-137f-4e18-ab3b-f8c5a4642d2f" Id="_30" Win64="yes">
+                            <File Id="_30f" KeyPath="yes" Name="api-ms-win-crt-convert-l1-1-0.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-crt-convert-l1-1-0.dll"/>
                         </Component>
-                        <Component Guid="8a98157f-c749-486a-aaa3-bfd1d902cb50" Id="_31" Win64="yes">
-                            <File Id="_31f" KeyPath="yes" Name="api-ms-win-crt-conio-l1-1-0.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-crt-conio-l1-1-0.dll"/>
+                        <Component Guid="52def047-52b1-41bd-8935-9cae46d00b7c" Id="_31" Win64="yes">
+                            <File Id="_31f" KeyPath="yes" Name="api-ms-win-crt-environment-l1-1-0.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-crt-environment-l1-1-0.dll"/>
                         </Component>
-                        <Component Guid="b62b80d7-cf61-4d5a-8f97-5906153ac527" Id="_32" Win64="yes">
-                            <File Id="_32f" KeyPath="yes" Name="api-ms-win-crt-convert-l1-1-0.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-crt-convert-l1-1-0.dll"/>
+                        <Component Guid="8b18c5a4-90e4-47e5-b762-a11ad62864eb" Id="_32" Win64="yes">
+                            <File Id="_32f" KeyPath="yes" Name="api-ms-win-crt-filesystem-l1-1-0.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-crt-filesystem-l1-1-0.dll"/>
                         </Component>
-                        <Component Guid="19836c31-bc7e-4027-a871-961a7e67d977" Id="_33" Win64="yes">
-                            <File Id="_33f" KeyPath="yes" Name="api-ms-win-crt-environment-l1-1-0.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-crt-environment-l1-1-0.dll"/>
+                        <Component Guid="a3e454df-6c9a-4724-89e0-668dca26f3f6" Id="_33" Win64="yes">
+                            <File Id="_33f" KeyPath="yes" Name="api-ms-win-crt-heap-l1-1-0.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-crt-heap-l1-1-0.dll"/>
                         </Component>
-                        <Component Guid="57675951-36e2-4132-8830-5ce7d7aee70a" Id="_34" Win64="yes">
-                            <File Id="_34f" KeyPath="yes" Name="api-ms-win-crt-filesystem-l1-1-0.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-crt-filesystem-l1-1-0.dll"/>
+                        <Component Guid="3c798461-2871-4f7f-ad7b-0acfd734e19c" Id="_34" Win64="yes">
+                            <File Id="_34f" KeyPath="yes" Name="api-ms-win-crt-locale-l1-1-0.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-crt-locale-l1-1-0.dll"/>
                         </Component>
-                        <Component Guid="c469cc2f-0f33-4d78-9d10-065e26fe076d" Id="_35" Win64="yes">
-                            <File Id="_35f" KeyPath="yes" Name="api-ms-win-crt-heap-l1-1-0.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-crt-heap-l1-1-0.dll"/>
+                        <Component Guid="5766a7be-d940-4c7f-80f1-5db19e3a67e2" Id="_35" Win64="yes">
+                            <File Id="_35f" KeyPath="yes" Name="api-ms-win-crt-math-l1-1-0.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-crt-math-l1-1-0.dll"/>
                         </Component>
-                        <Component Guid="e4cb0d94-0910-4ff8-a3d4-575458728d86" Id="_36" Win64="yes">
-                            <File Id="_36f" KeyPath="yes" Name="api-ms-win-crt-locale-l1-1-0.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-crt-locale-l1-1-0.dll"/>
+                        <Component Guid="eddccc37-657a-497e-8c8c-7d78ca1d3815" Id="_36" Win64="yes">
+                            <File Id="_36f" KeyPath="yes" Name="api-ms-win-crt-multibyte-l1-1-0.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-crt-multibyte-l1-1-0.dll"/>
                         </Component>
-                        <Component Guid="5de0895d-1be9-4792-a809-d3cb528d9091" Id="_37" Win64="yes">
-                            <File Id="_37f" KeyPath="yes" Name="api-ms-win-crt-math-l1-1-0.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-crt-math-l1-1-0.dll"/>
+                        <Component Guid="b1769bdf-2ab3-4c57-9048-848860e2e8f4" Id="_37" Win64="yes">
+                            <File Id="_37f" KeyPath="yes" Name="api-ms-win-crt-private-l1-1-0.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-crt-private-l1-1-0.dll"/>
                         </Component>
-                        <Component Guid="f419ce07-e20d-4f53-a6ad-071907a7a914" Id="_38" Win64="yes">
-                            <File Id="_38f" KeyPath="yes" Name="api-ms-win-crt-multibyte-l1-1-0.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-crt-multibyte-l1-1-0.dll"/>
+                        <Component Guid="78614ba8-5575-4b68-859a-22a75ab59891" Id="_38" Win64="yes">
+                            <File Id="_38f" KeyPath="yes" Name="api-ms-win-crt-process-l1-1-0.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-crt-process-l1-1-0.dll"/>
                         </Component>
-                        <Component Guid="c4f2b99c-641d-43ff-a217-2188e1e3f30d" Id="_39" Win64="yes">
-                            <File Id="_39f" KeyPath="yes" Name="api-ms-win-crt-private-l1-1-0.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-crt-private-l1-1-0.dll"/>
+                        <Component Guid="d076c4f4-2085-4241-bc27-27aad16696b4" Id="_39" Win64="yes">
+                            <File Id="_39f" KeyPath="yes" Name="api-ms-win-crt-runtime-l1-1-0.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-crt-runtime-l1-1-0.dll"/>
                         </Component>
-                        <Component Guid="917499d8-88c2-4ada-b0a5-9078923492ac" Id="_40" Win64="yes">
-                            <File Id="_40f" KeyPath="yes" Name="api-ms-win-crt-process-l1-1-0.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-crt-process-l1-1-0.dll"/>
+                        <Component Guid="57568f93-8ed6-43ca-ac24-c19ed3dcc247" Id="_40" Win64="yes">
+                            <File Id="_40f" KeyPath="yes" Name="api-ms-win-crt-stdio-l1-1-0.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-crt-stdio-l1-1-0.dll"/>
                         </Component>
-                        <Component Guid="4a390204-74ae-43e2-a646-5574f379d428" Id="_41" Win64="yes">
-                            <File Id="_41f" KeyPath="yes" Name="api-ms-win-crt-runtime-l1-1-0.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-crt-runtime-l1-1-0.dll"/>
+                        <Component Guid="23f67245-3537-433e-beed-db5b6861ec0c" Id="_41" Win64="yes">
+                            <File Id="_41f" KeyPath="yes" Name="api-ms-win-crt-string-l1-1-0.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-crt-string-l1-1-0.dll"/>
                         </Component>
-                        <Component Guid="4bf0330e-240a-4f5a-a8e8-5ab62126bfa0" Id="_42" Win64="yes">
-                            <File Id="_42f" KeyPath="yes" Name="api-ms-win-crt-stdio-l1-1-0.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-crt-stdio-l1-1-0.dll"/>
+                        <Component Guid="4016eb09-eb5d-4b48-8013-31eaf81e47df" Id="_42" Win64="yes">
+                            <File Id="_42f" KeyPath="yes" Name="api-ms-win-crt-time-l1-1-0.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-crt-time-l1-1-0.dll"/>
                         </Component>
-                        <Component Guid="7fe30a6a-a318-42a4-ac49-e66b84f7f278" Id="_43" Win64="yes">
-                            <File Id="_43f" KeyPath="yes" Name="api-ms-win-crt-string-l1-1-0.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-crt-string-l1-1-0.dll"/>
+                        <Component Guid="8555dbf8-0f89-4410-a720-c84312c7eaba" Id="_43" Win64="yes">
+                            <File Id="_43f" KeyPath="yes" Name="api-ms-win-crt-utility-l1-1-0.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-crt-utility-l1-1-0.dll"/>
                         </Component>
-                        <Component Guid="cc1f95f9-1b29-4dd7-9d9a-29c4a3b34f90" Id="_44" Win64="yes">
-                            <File Id="_44f" KeyPath="yes" Name="api-ms-win-crt-time-l1-1-0.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-crt-time-l1-1-0.dll"/>
+                        <Component Guid="5d58453d-ca5f-4e33-bb27-556ec5f6459d" Id="_44" Win64="yes">
+                            <File Id="_44f" KeyPath="yes" Name="awt.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\awt.dll"/>
                         </Component>
-                        <Component Guid="91d23487-5ac2-4ff4-8086-b5709a984429" Id="_45" Win64="yes">
-                            <File Id="_45f" KeyPath="yes" Name="api-ms-win-crt-utility-l1-1-0.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\api-ms-win-crt-utility-l1-1-0.dll"/>
+                        <Component Guid="0f91e829-c4db-46d7-b77f-768acc98959d" Id="_45" Win64="yes">
+                            <File Id="_45f" KeyPath="yes" Name="fontmanager.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\fontmanager.dll"/>
                         </Component>
-                        <Component Guid="ddc62a48-3673-4330-b884-588ad0adaeaf" Id="_46" Win64="yes">
-                            <File Id="_46f" KeyPath="yes" Name="awt.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\awt.dll"/>
+                        <Component Guid="6885f6a4-ff66-49dc-944c-4c03686ecf5d" Id="_46" Win64="yes">
+                            <File Id="_46f" KeyPath="yes" Name="freetype.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\freetype.dll"/>
                         </Component>
-                        <Component Guid="329aae4b-16f6-4f5a-8a23-f4c7d7731125" Id="_47" Win64="yes">
-                            <File Id="_47f" KeyPath="yes" Name="fontmanager.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\fontmanager.dll"/>
+                        <Component Guid="b68703c4-4f86-4fb9-9189-adbb17f5229d" Id="_47" Win64="yes">
+                            <File Id="_47f" KeyPath="yes" Name="harfbuzz.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\harfbuzz.dll"/>
                         </Component>
-                        <Component Guid="16f155d6-604a-4c26-9e97-f19d7047e372" Id="_48" Win64="yes">
-                            <File Id="_48f" KeyPath="yes" Name="freetype.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\freetype.dll"/>
+                        <Component Guid="80c183df-2d41-456a-98fd-8676833d46ef" Id="_48" Win64="yes">
+                            <File Id="_48f" KeyPath="yes" Name="java.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\java.dll"/>
                         </Component>
-                        <Component Guid="36fc4bac-84c5-4b39-96e8-d84bec350c4c" Id="_49" Win64="yes">
-                            <File Id="_49f" KeyPath="yes" Name="java.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\java.dll"/>
+                        <Component Guid="e474779a-1801-4000-be98-330b617a03ee" Id="_49" Win64="yes">
+                            <File Id="_49f" KeyPath="yes" Name="java.exe" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\java.exe"/>
                         </Component>
-                        <Component Guid="b4eaabcc-4ec4-4caf-a053-b15a24db37d6" Id="_50" Win64="yes">
-                            <File Id="_50f" KeyPath="yes" Name="java.exe" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\java.exe"/>
+                        <Component Guid="0a71da5f-a6e4-477f-9eae-1703b934faef" Id="_50" Win64="yes">
+                            <File Id="_50f" KeyPath="yes" Name="javajpeg.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\javajpeg.dll"/>
                         </Component>
-                        <Component Guid="13949d0f-4462-4297-9abe-e03e7cdc3d82" Id="_51" Win64="yes">
-                            <File Id="_51f" KeyPath="yes" Name="javajpeg.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\javajpeg.dll"/>
+                        <Component Guid="16fb7831-4a3d-46c8-9c66-e68257004d3d" Id="_51" Win64="yes">
+                            <File Id="_51f" KeyPath="yes" Name="javaw.exe" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\javaw.exe"/>
                         </Component>
-                        <Component Guid="f3b55936-6a21-47fe-a6de-fe295d9a67e4" Id="_52" Win64="yes">
-                            <File Id="_52f" KeyPath="yes" Name="javaw.exe" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\javaw.exe"/>
+                        <Component Guid="a3ff0051-58d1-4ec8-aa60-ef3efbefac50" Id="_52" Win64="yes">
+                            <File Id="_52f" KeyPath="yes" Name="jawt.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\jawt.dll"/>
                         </Component>
-                        <Component Guid="84df1d24-b90a-4f1e-bef6-c2b9cbc84294" Id="_53" Win64="yes">
-                            <File Id="_53f" KeyPath="yes" Name="jawt.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\jawt.dll"/>
+                        <Component Guid="78eb25e3-a957-4a75-a9a7-4e039bb826bd" Id="_53" Win64="yes">
+                            <File Id="_53f" KeyPath="yes" Name="jfr.exe" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\jfr.exe"/>
                         </Component>
-                        <Component Guid="2a7497a3-8ff3-41d9-b53f-973016192ec9" Id="_54" Win64="yes">
-                            <File Id="_54f" KeyPath="yes" Name="jfr.exe" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\jfr.exe"/>
+                        <Component Guid="f083fe72-e595-4195-ad85-66c08a2e7e0b" Id="_54" Win64="yes">
+                            <File Id="_54f" KeyPath="yes" Name="jimage.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\jimage.dll"/>
                         </Component>
-                        <Component Guid="72584e77-04b9-4d58-8a75-e9c0f57a2b73" Id="_55" Win64="yes">
-                            <File Id="_55f" KeyPath="yes" Name="jimage.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\jimage.dll"/>
+                        <Component Guid="13907989-d377-4208-84f4-be4f2c132c7e" Id="_55" Win64="yes">
+                            <File Id="_55f" KeyPath="yes" Name="jli.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\jli.dll"/>
                         </Component>
-                        <Component Guid="361e7054-4947-4272-9b28-3cc164077437" Id="_56" Win64="yes">
-                            <File Id="_56f" KeyPath="yes" Name="jli.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\jli.dll"/>
+                        <Component Guid="105e063b-e6f4-4ac4-9039-7cd978dc54a4" Id="_56" Win64="yes">
+                            <File Id="_56f" KeyPath="yes" Name="jsound.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\jsound.dll"/>
                         </Component>
-                        <Component Guid="0e8c2f07-c86e-4373-88f2-17a6aa8c817f" Id="_57" Win64="yes">
-                            <File Id="_57f" KeyPath="yes" Name="jsound.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\jsound.dll"/>
+                        <Component Guid="601aa6d7-5983-4c78-aff3-28094808b361" Id="_57" Win64="yes">
+                            <File Id="_57f" KeyPath="yes" Name="keytool.exe" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\keytool.exe"/>
                         </Component>
-                        <Component Guid="177425b9-9fc8-4b9f-8f25-869dacbc9d87" Id="_58" Win64="yes">
-                            <File Id="_58f" KeyPath="yes" Name="keytool.exe" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\keytool.exe"/>
+                        <Component Guid="d7526e3f-f084-4a03-b549-5cc8ac3ffd28" Id="_58" Win64="yes">
+                            <File Id="_58f" KeyPath="yes" Name="lcms.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\lcms.dll"/>
                         </Component>
-                        <Component Guid="66abbb1f-b2fb-460a-ad89-ba5913d129b0" Id="_59" Win64="yes">
-                            <File Id="_59f" KeyPath="yes" Name="lcms.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\lcms.dll"/>
+                        <Component Guid="d445f67c-0ed9-46c8-86d5-a7c228ed44b8" Id="_59" Win64="yes">
+                            <File Id="_59f" KeyPath="yes" Name="mlib_image.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\mlib_image.dll"/>
                         </Component>
-                        <Component Guid="24e7f72b-f500-4ab5-8fa0-76519634d91a" Id="_60" Win64="yes">
-                            <File Id="_60f" KeyPath="yes" Name="mlib_image.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\mlib_image.dll"/>
+                        <Component Guid="173e90f4-a883-4626-8276-df32f979acae" Id="_60" Win64="yes">
+                            <File Id="_60f" KeyPath="yes" Name="msvcp140.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\msvcp140.dll"/>
                         </Component>
-                        <Component Guid="c7203142-f93f-47c1-a18e-38508accc37d" Id="_61" Win64="yes">
-                            <File Id="_61f" KeyPath="yes" Name="msvcp140.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\msvcp140.dll"/>
+                        <Component Guid="c1cbbc35-7857-4253-a035-950becb077ed" Id="_61" Win64="yes">
+                            <File Id="_61f" KeyPath="yes" Name="net.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\net.dll"/>
                         </Component>
-                        <Component Guid="a4ece30b-6130-4cfa-a45a-888476e26162" Id="_62" Win64="yes">
-                            <File Id="_62f" KeyPath="yes" Name="net.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\net.dll"/>
+                        <Component Guid="414b4e74-54f9-49df-903d-8bf3041c33a6" Id="_62" Win64="yes">
+                            <File Id="_62f" KeyPath="yes" Name="nio.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\nio.dll"/>
                         </Component>
-                        <Component Guid="e08b646b-bcc8-4ed8-b50e-4226a960dd0b" Id="_63" Win64="yes">
-                            <File Id="_63f" KeyPath="yes" Name="nio.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\nio.dll"/>
+                        <Component Guid="34c4b7b7-c0c2-4c0c-87a5-bde1339b11fd" Id="_63" Win64="yes">
+                            <File Id="_63f" KeyPath="yes" Name="prefs.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\prefs.dll"/>
                         </Component>
-                        <Component Guid="94421ded-995d-4047-9f97-15061aa6d79b" Id="_64" Win64="yes">
-                            <File Id="_64f" KeyPath="yes" Name="prefs.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\prefs.dll"/>
-                        </Component>
-                        <Directory Id="_65" Name="server">
-                            <Component Guid="68ff6357-8f7e-4002-a588-7e22e90d69ba" Id="_66" Win64="yes">
-                                <File Id="_66f" KeyPath="yes" Name="jvm.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\server\jvm.dll"/>
+                        <Directory Id="_64" Name="server">
+                            <Component Guid="8e3873ce-62ab-4a44-bece-e55981780a28" Id="_65" Win64="yes">
+                                <File Id="_65f" KeyPath="yes" Name="jvm.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\server\jvm.dll"/>
                             </Component>
                         </Directory>
-                        <Component Guid="25c08893-475c-4aef-9568-f991e2619485" Id="_67" Win64="yes">
-                            <File Id="_67f" KeyPath="yes" Name="splashscreen.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\splashscreen.dll"/>
+                        <Component Guid="6b764a9b-11ac-46e2-a3d9-f8063bf7aab1" Id="_66" Win64="yes">
+                            <File Id="_66f" KeyPath="yes" Name="splashscreen.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\splashscreen.dll"/>
                         </Component>
-                        <Component Guid="8357b666-625a-4995-8ad8-09178b7e1044" Id="_68" Win64="yes">
-                            <File Id="_68f" KeyPath="yes" Name="ucrtbase.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\ucrtbase.dll"/>
+                        <Component Guid="700645de-9a8a-4596-9956-20d2d02da92a" Id="_67" Win64="yes">
+                            <File Id="_67f" KeyPath="yes" Name="ucrtbase.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\ucrtbase.dll"/>
                         </Component>
-                        <Component Guid="ea571420-2857-437b-909b-273b8942bdbf" Id="_69" Win64="yes">
-                            <File Id="_69f" KeyPath="yes" Name="vcruntime140.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\vcruntime140.dll"/>
+                        <Component Guid="b6a86a53-7f15-47c2-b61e-3993d1ca5a48" Id="_68" Win64="yes">
+                            <File Id="_68f" KeyPath="yes" Name="vcruntime140.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\vcruntime140.dll"/>
                         </Component>
-                        <Component Guid="9eaf53a4-e1da-41da-9e94-8d6ca7fb9f94" Id="_70" Win64="yes">
-                            <File Id="_70f" KeyPath="yes" Name="verify.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\verify.dll"/>
+                        <Component Guid="da6add3b-7a56-44c3-a9b3-6571af97b74d" Id="_69" Win64="yes">
+                            <File Id="_69f" KeyPath="yes" Name="vcruntime140_1.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\vcruntime140_1.dll"/>
                         </Component>
-                        <Component Guid="4f46d5aa-29c6-47d7-9cbb-57e3a4aab5ff" Id="_71" Win64="yes">
-                            <File Id="_71f" KeyPath="yes" Name="zip.dll" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\bin\zip.dll"/>
+                        <Component Guid="ab45ea09-bfdd-4c5d-b59a-3092bb3c34e6" Id="_70" Win64="yes">
+                            <File Id="_70f" KeyPath="yes" Name="verify.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\verify.dll"/>
+                        </Component>
+                        <Component Guid="fae0992f-2fbc-4c50-a809-1b612fa53795" Id="_71" Win64="yes">
+                            <File Id="_71f" KeyPath="yes" Name="zip.dll" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\bin\zip.dll"/>
                         </Component>
                     </Directory>
                     <Directory Id="_72" Name="conf">
-                        <Component Guid="0698ea33-879a-4b64-8a67-eb2c8b8c2ed5" Id="_73" Win64="yes">
-                            <File Id="_73f" KeyPath="yes" Name="logging.properties" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\conf\logging.properties"/>
+                        <Component Guid="d02cedc9-4a8b-435d-883e-00059f8f9c1b" Id="_73" Win64="yes">
+                            <File Id="_73f" KeyPath="yes" Name="logging.properties" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\conf\logging.properties"/>
                         </Component>
-                        <Component Guid="ae3d4b4e-c46e-41b9-b77d-2bb8fb76c3cd" Id="_74" Win64="yes">
-                            <File Id="_74f" KeyPath="yes" Name="net.properties" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\conf\net.properties"/>
+                        <Component Guid="039cd69f-1c77-4eeb-b0c7-aaf29d41b9eb" Id="_74" Win64="yes">
+                            <File Id="_74f" KeyPath="yes" Name="net.properties" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\conf\net.properties"/>
                         </Component>
                         <Directory Id="_75" Name="security">
-                            <Component Guid="dfa689aa-8762-4e85-a904-80f777a1ac9b" Id="_76" Win64="yes">
-                                <File Id="_76f" KeyPath="yes" Name="java.policy" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\conf\security\java.policy"/>
+                            <Component Guid="d5ffa6ef-493b-4b90-a197-c51bd455bb00" Id="_76" Win64="yes">
+                                <File Id="_76f" KeyPath="yes" Name="java.policy" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\conf\security\java.policy"/>
                             </Component>
-                            <Component Guid="eb38aadb-cdc1-442e-9c63-6d6ffa5120d8" Id="_77" Win64="yes">
-                                <File Id="_77f" KeyPath="yes" Name="java.security" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\conf\security\java.security"/>
+                            <Component Guid="deb42124-5a73-46e5-8450-4edbba4b8339" Id="_77" Win64="yes">
+                                <File Id="_77f" KeyPath="yes" Name="java.security" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\conf\security\java.security"/>
                             </Component>
                             <Directory Id="_78" Name="policy">
                                 <Directory Id="_79" Name="limited">
-                                    <Component Guid="f66cadde-70b6-4e4b-bbf4-d666f9d89340" Id="_80" Win64="yes">
-                                        <File Id="_80f" KeyPath="yes" Name="default_local.policy" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\conf\security\policy\limited\default_local.policy"/>
+                                    <Component Guid="75f2f222-a967-46a8-901d-896c070c9281" Id="_80" Win64="yes">
+                                        <File Id="_80f" KeyPath="yes" Name="default_local.policy" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\conf\security\policy\limited\default_local.policy"/>
                                     </Component>
-                                    <Component Guid="e5aecdf8-a62e-4c67-ad75-5b4b377d3caf" Id="_81" Win64="yes">
-                                        <File Id="_81f" KeyPath="yes" Name="default_US_export.policy" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\conf\security\policy\limited\default_US_export.policy"/>
+                                    <Component Guid="73d9a753-e91c-4abd-be4e-c8edb7ab4cbf" Id="_81" Win64="yes">
+                                        <File Id="_81f" KeyPath="yes" Name="default_US_export.policy" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\conf\security\policy\limited\default_US_export.policy"/>
                                     </Component>
-                                    <Component Guid="1fe8d598-ba88-4a96-9960-0ae041f47bc3" Id="_82" Win64="yes">
-                                        <File Id="_82f" KeyPath="yes" Name="exempt_local.policy" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\conf\security\policy\limited\exempt_local.policy"/>
+                                    <Component Guid="5936eeb3-3584-4f7b-813a-436d6914a6e3" Id="_82" Win64="yes">
+                                        <File Id="_82f" KeyPath="yes" Name="exempt_local.policy" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\conf\security\policy\limited\exempt_local.policy"/>
                                     </Component>
                                 </Directory>
-                                <Component Guid="f9705c1b-9cc0-4bd5-be79-3a6986a88fb5" Id="_83" Win64="yes">
-                                    <File Id="_83f" KeyPath="yes" Name="README.txt" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\conf\security\policy\README.txt"/>
+                                <Component Guid="f42cd37a-cbc6-441b-9bb0-68515e10a795" Id="_83" Win64="yes">
+                                    <File Id="_83f" KeyPath="yes" Name="README.txt" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\conf\security\policy\README.txt"/>
                                 </Component>
                                 <Directory Id="_84" Name="unlimited">
-                                    <Component Guid="c6a82d39-aac9-4f57-9bbe-ead3fefd98eb" Id="_85" Win64="yes">
-                                        <File Id="_85f" KeyPath="yes" Name="default_local.policy" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\conf\security\policy\unlimited\default_local.policy"/>
+                                    <Component Guid="f2120453-a59b-4c18-be47-a80eac8b1ca9" Id="_85" Win64="yes">
+                                        <File Id="_85f" KeyPath="yes" Name="default_local.policy" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\conf\security\policy\unlimited\default_local.policy"/>
                                     </Component>
-                                    <Component Guid="e47dd218-e6d2-43e3-afa1-6a585470f870" Id="_86" Win64="yes">
-                                        <File Id="_86f" KeyPath="yes" Name="default_US_export.policy" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\conf\security\policy\unlimited\default_US_export.policy"/>
+                                    <Component Guid="04037257-a69a-47e2-a34e-9be36d5a8025" Id="_86" Win64="yes">
+                                        <File Id="_86f" KeyPath="yes" Name="default_US_export.policy" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\conf\security\policy\unlimited\default_US_export.policy"/>
                                     </Component>
                                 </Directory>
                             </Directory>
                         </Directory>
-                        <Component Guid="34d60553-578a-4b80-8fd3-c7569c3b7d70" Id="_87" Win64="yes">
-                            <File Id="_87f" KeyPath="yes" Name="sound.properties" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\conf\sound.properties"/>
+                        <Component Guid="77063966-7580-41a8-8b3c-4713cda5fa0c" Id="_87" Win64="yes">
+                            <File Id="_87f" KeyPath="yes" Name="sound.properties" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\conf\sound.properties"/>
                         </Component>
                     </Directory>
                     <Directory Id="_88" Name="lib">
-                        <Component Guid="399248c5-b513-4c99-af24-b4d09d2a6adf" Id="_89" Win64="yes">
-                            <File Id="_89f" KeyPath="yes" Name="classlist" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\lib\classlist"/>
+                        <Component Guid="1fb4cafa-6f21-45b4-a145-7f3b2ec73223" Id="_89" Win64="yes">
+                            <File Id="_89f" KeyPath="yes" Name="classlist" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\lib\classlist"/>
                         </Component>
-                        <Component Guid="68dffcf0-7800-4353-9d98-d549472ac04c" Id="_90" Win64="yes">
-                            <File Id="_90f" KeyPath="yes" Name="fontconfig.bfc" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\lib\fontconfig.bfc"/>
+                        <Component Guid="fa44f5ab-7961-4cc9-9e2d-d73e394fa691" Id="_90" Win64="yes">
+                            <File Id="_90f" KeyPath="yes" Name="fontconfig.bfc" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\lib\fontconfig.bfc"/>
                         </Component>
-                        <Component Guid="f68e561b-ba07-4165-8620-acd0b5d85b65" Id="_91" Win64="yes">
-                            <File Id="_91f" KeyPath="yes" Name="fontconfig.properties.src" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\lib\fontconfig.properties.src"/>
+                        <Component Guid="1fa4a8ed-3761-46cc-8605-d25efcf937ec" Id="_91" Win64="yes">
+                            <File Id="_91f" KeyPath="yes" Name="fontconfig.properties.src" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\lib\fontconfig.properties.src"/>
                         </Component>
-                        <Component Guid="7f1d81f4-80a2-4537-9fae-ce9bc38baedb" Id="_92" Win64="yes">
-                            <File Id="_92f" KeyPath="yes" Name="jawt.lib" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\lib\jawt.lib"/>
+                        <Component Guid="1d657cd3-a8e6-4d88-b4b5-fd290f05e0e3" Id="_92" Win64="yes">
+                            <File Id="_92f" KeyPath="yes" Name="jawt.lib" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\lib\jawt.lib"/>
                         </Component>
                         <Directory Id="_93" Name="jfr">
-                            <Component Guid="53ac73e3-bb38-4d18-8b0f-b838e6325e6f" Id="_94" Win64="yes">
-                                <File Id="_94f" KeyPath="yes" Name="default.jfc" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\lib\jfr\default.jfc"/>
+                            <Component Guid="bc0cd785-921b-4316-b112-bbb325ca90ff" Id="_94" Win64="yes">
+                                <File Id="_94f" KeyPath="yes" Name="default.jfc" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\lib\jfr\default.jfc"/>
                             </Component>
-                            <Component Guid="8202fed1-59e4-428c-aecd-fffb2b098b7f" Id="_95" Win64="yes">
-                                <File Id="_95f" KeyPath="yes" Name="profile.jfc" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\lib\jfr\profile.jfc"/>
+                            <Component Guid="9207d6dc-2c2c-408c-888d-73590503f351" Id="_95" Win64="yes">
+                                <File Id="_95f" KeyPath="yes" Name="profile.jfc" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\lib\jfr\profile.jfc"/>
                             </Component>
                         </Directory>
-                        <Component Guid="66b73b00-217e-468f-b9ae-ffc7109f6a8c" Id="_96" Win64="yes">
-                            <File Id="_96f" KeyPath="yes" Name="jrt-fs.jar" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\lib\jrt-fs.jar"/>
+                        <Component Guid="a4f4a7cf-8926-4bba-99ec-eacc5e471982" Id="_96" Win64="yes">
+                            <File Id="_96f" KeyPath="yes" Name="jrt-fs.jar" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\lib\jrt-fs.jar"/>
                         </Component>
-                        <Component Guid="fa765a65-8377-4f29-9a25-0a3b4f095429" Id="_97" Win64="yes">
-                            <File Id="_97f" KeyPath="yes" Name="jvm.cfg" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\lib\jvm.cfg"/>
+                        <Component Guid="3db661e7-2179-4d79-86c9-d978e6cfd74d" Id="_97" Win64="yes">
+                            <File Id="_97f" KeyPath="yes" Name="jvm.cfg" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\lib\jvm.cfg"/>
                         </Component>
-                        <Component Guid="171c7f82-d631-4ace-a8c4-b3f29e4c258b" Id="_98" Win64="yes">
-                            <File Id="_98f" KeyPath="yes" Name="jvm.lib" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\lib\jvm.lib"/>
+                        <Component Guid="a8248200-4c5d-46d1-a0d4-54fdb2ac7e4d" Id="_98" Win64="yes">
+                            <File Id="_98f" KeyPath="yes" Name="jvm.lib" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\lib\jvm.lib"/>
                         </Component>
-                        <Component Guid="0aa9ef75-1a71-4d75-8ff7-46e315749471" Id="_99" Win64="yes">
-                            <File Id="_99f" KeyPath="yes" Name="modules" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\lib\modules"/>
+                        <Component Guid="ba56427a-0383-4da1-9167-582870184515" Id="_99" Win64="yes">
+                            <File Id="_99f" KeyPath="yes" Name="modules" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\lib\modules"/>
                         </Component>
-                        <Component Guid="5b4a73aa-c62d-4414-a6fa-4990fd8ef52f" Id="_100" Win64="yes">
-                            <File Id="_100f" KeyPath="yes" Name="psfont.properties.ja" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\lib\psfont.properties.ja"/>
+                        <Component Guid="38244696-a3b2-45bb-a07a-1834d70ee74d" Id="_100" Win64="yes">
+                            <File Id="_100f" KeyPath="yes" Name="psfont.properties.ja" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\lib\psfont.properties.ja"/>
                         </Component>
-                        <Component Guid="3aac426f-5818-42a0-9aef-26391cf3683b" Id="_101" Win64="yes">
-                            <File Id="_101f" KeyPath="yes" Name="psfontj2d.properties" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\lib\psfontj2d.properties"/>
+                        <Component Guid="9f116fda-f96a-4e56-9d84-0b4f98105e36" Id="_101" Win64="yes">
+                            <File Id="_101f" KeyPath="yes" Name="psfontj2d.properties" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\lib\psfontj2d.properties"/>
                         </Component>
                         <Directory Id="_102" Name="security">
-                            <Component Guid="0c8d4cdc-6a42-42f1-b44d-9d6bb99e4f24" Id="_103" Win64="yes">
-                                <File Id="_103f" KeyPath="yes" Name="blacklisted.certs" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\lib\security\blacklisted.certs"/>
+                            <Component Guid="55519421-6f36-4d7e-92e5-b5a4126e5ecf" Id="_103" Win64="yes">
+                                <File Id="_103f" KeyPath="yes" Name="blacklisted.certs" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\lib\security\blacklisted.certs"/>
                             </Component>
-                            <Component Guid="abc60ca3-20e8-46b1-b8e8-1a87f9d3ca96" Id="_104" Win64="yes">
-                                <File Id="_104f" KeyPath="yes" Name="cacerts" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\lib\security\cacerts"/>
+                            <Component Guid="6d4c0d11-d3b3-4a63-8da7-097a9b395658" Id="_104" Win64="yes">
+                                <File Id="_104f" KeyPath="yes" Name="cacerts" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\lib\security\cacerts"/>
                             </Component>
-                            <Component Guid="b9951879-5b89-4916-9cd2-e49e7900de84" Id="_105" Win64="yes">
-                                <File Id="_105f" KeyPath="yes" Name="default.policy" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\lib\security\default.policy"/>
+                            <Component Guid="ea9c3550-db16-4626-903c-0d6404390c63" Id="_105" Win64="yes">
+                                <File Id="_105f" KeyPath="yes" Name="default.policy" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\lib\security\default.policy"/>
                             </Component>
-                            <Component Guid="825999ba-1b00-4d16-83e4-9548e9722b88" Id="_106" Win64="yes">
-                                <File Id="_106f" KeyPath="yes" Name="public_suffix_list.dat" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\lib\security\public_suffix_list.dat"/>
+                            <Component Guid="47ac36fa-3d2c-47f8-80ae-e3599b73d679" Id="_106" Win64="yes">
+                                <File Id="_106f" KeyPath="yes" Name="public_suffix_list.dat" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\lib\security\public_suffix_list.dat"/>
                             </Component>
                         </Directory>
-                        <Component Guid="1ba44a7b-164a-44d9-9f3a-5c2c725c2fdb" Id="_107" Win64="yes">
-                            <File Id="_107f" KeyPath="yes" Name="tzdb.dat" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\lib\tzdb.dat"/>
+                        <Component Guid="3ef6b150-e087-44ad-b39a-c088071bb2ac" Id="_107" Win64="yes">
+                            <File Id="_107f" KeyPath="yes" Name="tzdb.dat" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\lib\tzdb.dat"/>
                         </Component>
-                        <Component Guid="7631a9dd-d2b7-4b23-858b-490f156189ea" Id="_108" Win64="yes">
-                            <File Id="_108f" KeyPath="yes" Name="tzmappings" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\lib\tzmappings"/>
+                        <Component Guid="5ffe8d0a-3f37-40e4-a1f8-3518046b8a93" Id="_108" Win64="yes">
+                            <File Id="_108f" KeyPath="yes" Name="tzmappings" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\lib\tzmappings"/>
                         </Component>
                     </Directory>
-                    <Component Guid="e259e813-fc8d-47d2-992f-aaa60d6ed83c" Id="_109" Win64="yes">
-                        <File Id="_109f" KeyPath="yes" Name="release" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\jre\release"/>
+                    <Component Guid="156c09bd-592e-4b73-8512-f615a7a98cc4" Id="_109" Win64="yes">
+                        <File Id="_109f" KeyPath="yes" Name="release" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\jre\release"/>
                     </Component>
                 </Directory>
                 <Directory Id="_110" Name="libs">
-                    <Component Guid="1b664941-959f-4b05-9c43-35b0454c2edc" Id="_111" Win64="yes">
-                        <File Id="_111f" KeyPath="yes" Name="javafx-base-18.0.1-win.jar" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\libs\javafx-base-18.0.1-win.jar"/>
+                    <Component Guid="519bc51a-dec9-43eb-9055-64e7795d0196" Id="_111" Win64="yes">
+                        <File Id="_111f" KeyPath="yes" Name="javafx-base-18.0.1-win.jar" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\libs\javafx-base-18.0.1-win.jar"/>
                     </Component>
-                    <Component Guid="07e169f3-1d12-456a-a4ba-3faf9824f784" Id="_112" Win64="yes">
-                        <File Id="_112f" KeyPath="yes" Name="javafx-base-18.0.1.jar" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\libs\javafx-base-18.0.1.jar"/>
+                    <Component Guid="a2e03648-b338-42ee-8a98-75e38e38667f" Id="_112" Win64="yes">
+                        <File Id="_112f" KeyPath="yes" Name="javafx-base-18.0.1.jar" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\libs\javafx-base-18.0.1.jar"/>
                     </Component>
-                    <Component Guid="421d05d8-378c-4610-80a4-1ba3a7c63fd7" Id="_113" Win64="yes">
-                        <File Id="_113f" KeyPath="yes" Name="javafx-controls-18.0.1-win.jar" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\libs\javafx-controls-18.0.1-win.jar"/>
+                    <Component Guid="d103c76e-eec2-45f8-a54e-4c0631d1364e" Id="_113" Win64="yes">
+                        <File Id="_113f" KeyPath="yes" Name="javafx-controls-18.0.1-win.jar" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\libs\javafx-controls-18.0.1-win.jar"/>
                     </Component>
-                    <Component Guid="b25b52fe-3fa1-4f6c-bc9d-be2141969304" Id="_114" Win64="yes">
-                        <File Id="_114f" KeyPath="yes" Name="javafx-controls-18.0.1.jar" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\libs\javafx-controls-18.0.1.jar"/>
+                    <Component Guid="8cf443e5-b6cf-42ca-8932-0f074747a1f8" Id="_114" Win64="yes">
+                        <File Id="_114f" KeyPath="yes" Name="javafx-controls-18.0.1.jar" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\libs\javafx-controls-18.0.1.jar"/>
                     </Component>
-                    <Component Guid="be086cc7-cb31-4848-8eb8-a9e856fa1547" Id="_115" Win64="yes">
-                        <File Id="_115f" KeyPath="yes" Name="javafx-graphics-18.0.1-win.jar" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\libs\javafx-graphics-18.0.1-win.jar"/>
+                    <Component Guid="a64543e1-7762-40da-8fc4-4973a75ec08b" Id="_115" Win64="yes">
+                        <File Id="_115f" KeyPath="yes" Name="javafx-graphics-18.0.1-win.jar" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\libs\javafx-graphics-18.0.1-win.jar"/>
                     </Component>
-                    <Component Guid="49ba3bdd-9d55-4deb-bb15-050a8a1ba52e" Id="_116" Win64="yes">
-                        <File Id="_116f" KeyPath="yes" Name="javafx-graphics-18.0.1.jar" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\libs\javafx-graphics-18.0.1.jar"/>
+                    <Component Guid="c86102bb-5f32-4695-8387-efc0620e85db" Id="_116" Win64="yes">
+                        <File Id="_116f" KeyPath="yes" Name="javafx-graphics-18.0.1.jar" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\libs\javafx-graphics-18.0.1.jar"/>
                     </Component>
                 </Directory>
                 <Directory Id="_117" Name="resources">
-                    <Component Guid="5c8f0f32-aa8b-4833-a2e1-6d4fb4f2b916" Id="_118" Win64="yes">
-                        <File Id="_118f" KeyPath="yes" Name="SB logo.png" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\resources\SB logo.png"/>
+                    <Component Guid="2f27c09d-d996-45ac-8317-0c156274fae3" Id="_118" Win64="yes">
+                        <File Id="_118f" KeyPath="yes" Name="SB logo.png" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\resources\SB logo.png"/>
                     </Component>
-                    <Component Guid="3fdf1f48-55f9-4be5-8e41-c0a840a399b9" Id="_119" Win64="yes">
-                        <File Id="_119f" KeyPath="yes" Name="SB-logo.ico" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\resources\SB-logo.ico"/>
+                    <Component Guid="b1932708-fad4-410c-9486-b78345b62c90" Id="_119" Win64="yes">
+                        <File Id="_119f" KeyPath="yes" Name="SB-logo.ico" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\resources\SB-logo.ico"/>
                     </Component>
                 </Directory>
-                <Component Guid="c95d2f05-77bf-4ed4-92c6-267165fd9e57" Id="_120" Win64="yes">
-                    <File Id="_120f" KeyPath="yes" Name="SB-logo.ico" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\SB-logo.ico"/>
+                <Component Guid="c60d9d58-12c2-44b3-bd85-37c0a8542563" Id="_120" Win64="yes">
+                    <File Id="_120f" KeyPath="yes" Name="SB-logo.ico" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\SB-logo.ico"/>
                 </Component>
-                <Component Guid="da77ede6-4636-40a8-9bd1-9dd026bc150a" Id="_121" Win64="yes">
-                    <File Id="exeFile" KeyPath="yes" Name="Study-Buddy.exe" Source="Z:\cse403\Study-Buddy\target\Study-Buddy\Study-Buddy.exe">
+                <Component Guid="c5054001-e4ab-4c67-9d5b-fae29882b183" Id="_121" Win64="yes">
+                    <File Id="exeFile" KeyPath="yes" Name="Study-Buddy.exe" Source="D:\a\Study-Buddy\Study-Buddy\target\Study-Buddy\Study-Buddy.exe">
                         <Shortcut Description="Study-Buddy" Directory="ProgramMenuFolder" Id="ApplicationStartMenuShortcut" Name="Study-Buddy"/>
                     </File>
                     <RemoveFolder Id="ApplicationProgramsFolder" On="uninstall"/>
@@ -356,7 +356,7 @@
                 </Component>
             </Directory>
             <Directory Id="ProgramMenuFolder"/>
-            <Component Guid="da8ad8b0-2ba8-4be8-bd74-be45f1c2fdb4" Id="RegistryEntries"/>
+            <Component Guid="35632cac-7e72-4c45-ad64-283b06f0c6d8" Id="RegistryEntries"/>
         </Directory>
     </Module>
 </Wix>
