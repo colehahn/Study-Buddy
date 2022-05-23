@@ -43,7 +43,7 @@ jobs:
               git config --local user.name "github-actions[bot]";
               mkdir -p releases;
               mv target/*.msi releases;
-              git add target/*.msi;
+              git add releases/*.msi;
               git commit -am "auto-update executables";
 
     - name: Push changes
