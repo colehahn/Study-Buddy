@@ -12,7 +12,7 @@
       * `src/test/java` holds all of the tests for our java classes
 
 ## How to build the software.
-*  To build the software, clone our repository from https://github.com/colehahn/Study-Buddy. Run ‘maven compile’.
+*  To build the software, clone our repository from https://github.com/colehahn/Study-Buddy. Run `mvn compile`.
 
 ## How to test the software
 * Go to where the maven tests are located, and then click on run all tests (`mvn test`)
@@ -23,7 +23,6 @@
 
 ## How to build a release of the software.
 * to build a release, you should first increment the `fileVersion` and `productVersion` tags at the bottom of `pom.xml` <work in progress: we will make these constants in the file so that they are easily accessible at the top of the file>
-* After updating the version number, run `mvn package`. This will create a Windows executable file, along with a few other files, in `Study-Buddy\target\Study-Buddy\` <only on auto_deploy branch for now, you will need to be on a windows machine>
-* <work in progress: to then indicate that this is a published release, you simply need to copy the contents of this directory into the `download` directory, which is where users will get it from>
+* Next, all you need to do is commit to the `main` branch. Whenever code is committed to `main`, Github Actions automatically does all the work to add a new downloadable file to the `releases` directory
 
 
