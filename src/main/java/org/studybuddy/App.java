@@ -9,7 +9,9 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.fxml.FXMLLoader;
 
+import java.util.Objects;
 import java.util.Timer;
 
 /**
@@ -20,15 +22,18 @@ public class App extends Application {
     static Scene timer, assignments;
 
     @Override
-    public void start(Stage stage) {
+    public void start(Stage stage) throws Exception {
         window = stage;
-
 
         // scene 1, timer page
         timer = TimerScene.getScene();
 
         // scene 2, assignments
-        assignments = AssignmentsScene.getScene();
+        try {
+            assignments = FXMLLoader.load(ClassLoader.getSystemClassLoader().getResource("Assignments UI.fxml"));
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
 
         window.setScene(timer);
         window.setTitle("Study Buddy");
@@ -45,8 +50,8 @@ public class App extends Application {
         return ((e -> window.setScene(assignments)));
     }
 
-    public static EventHandler<ActionEvent> goToTimerScene() {
-        return ((e -> window.setScene(timer)));
+    public static void goToTimerScene() {
+        window.setScene(timer);
     }
 
 }

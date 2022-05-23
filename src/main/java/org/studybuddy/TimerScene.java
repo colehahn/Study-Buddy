@@ -16,64 +16,73 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.util.Duration;
+import Timer.Countdown.*;
 
 public class TimerScene implements EventHandler<ActionEvent> {
-
+    public static Label timerLabel;
+    public static Integer[] timeSeconds = {1};
+    public static Timeline[] timeline = {null};
+    public static boolean isPaused = false;
     public static Scene getScene() {
         Label title = new Label("Study Timer");
+        title.setStyle("-fx-font-size: 2em;");
+
+        // go to assignment button
+        Button goToAssignments = new Button("Assignments");
+        goToAssignments.setOnAction(App.goToAssignmentsScene());
 
 
         // timer variables
-        Label timerLabel = new Label();
-        final Integer[] timeSeconds = {120};
-        final Timeline[] timeline = {null};
+        timerLabel = new Label();
+        //final Timeline[] timeline = {null};
 
         // start timer button
         Button startTimer = new Button("Start Timer");
-        startTimer.setOnAction(new EventHandler<>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                if (timeSeconds[0] < 0) {
-                    throw new IllegalArgumentException("Study timer cannot be set to negative value");
-                }
-                if (timeline[0] != null) {
-                    timeline[0].stop();
-                }
-
-
-
-                // update timerLabel
-                timerLabel.setText(timeSeconds[0].toString());
-                timeline[0] = new Timeline();
-                timeline[0].setCycleCount(Timeline.INDEFINITE);
-                timeline[0].getKeyFrames().add(
-                        new KeyFrame(Duration.seconds(1),
-                                new EventHandler() {
-                                    // KeyFrame event handler
-                                    @Override
-                                    public void handle(Event event) {
-                                        timeSeconds[0]--;
-                                        // update timerLabel
-                                        timerLabel.setText(timeSeconds[0].toString());
-                                        if (timeSeconds[0] <= 0) {
-                                            timeline[0].stop();
-
-                                            // alert or notification signalling the timer is done
-
-                                        }
-                                    }
-                                }));
-                timeline[0].playFromStart();
+        startTimer.setOnAction(event -> {
+            // TODO: have timer reset when button is pressed
+            if (timeSeconds[0] < 0) {
+                throw new IllegalArgumentException("Study timer cannot be set to negative value");
             }
+            // stop previous running timers
+            if (timeline[0] != null) {
+                timeline[0].stop();
+            }
+
+            isPaused = false;
+
+            // update timerLabel
+            timerLabel.setText(timeSeconds[0].toString());
+            timeline[0] = new Timeline();
+            timeline[0].setCycleCount(Timeline.INDEFINITE);
+            // KeyFrame event handler
+            timeline[0].getKeyFrames().add(
+                    new KeyFrame(Duration.seconds(1), (event2) -> {
+//                                        timeSeconds[0]--;
+//                                        // update timerLabel
+//                                        timerLabel.setText(timeSeconds[0].toString());
+//                                        if (timeSeconds[0] <= 0) {
+//                                            timeline[0].stop();
+//
+//                                            // alert or notification signalling the timer is done
+                                Countdown.countdownStarter = Countdown.MINUTES * Countdown.NUM_SECONDS;
+                                Countdown.main(null);
+//                                        }
+                            }));
+            timeline[0].playFromStart();
         });
 
+        // TODO: Pause Resume Button
+        Button pauseResumeButton = new Button("Pause / Resume Timer");
+        pauseResumeButton.setOnAction(e -> isPaused = !isPaused);
+
+
         // timer label
-        timerLabel.setText(timeSeconds[0].toString());
+        timerLabel.setText(timeSeconds[0].toString());  // TODO: connect with backend time value for initial label
         timerLabel.setTextFill(Color.RED);
         timerLabel.setStyle("-fx-font-size: 4em;");
 
         VBox timerLayout = new VBox(50);
-        timerLayout.getChildren().addAll(title, timerLabel, startTimer);
+        timerLayout.getChildren().addAll(title, timerLabel, startTimer, pauseResumeButton);
         timerLayout.setAlignment(Pos.CENTER);
         timerLayout.setLayoutY(30);  // Move the VBox down a bit
         //timerLayout.setStyle("-fx-background-color: BEIGE;"); // an example of inline CSS. can also add a .css file
@@ -117,3 +126,4 @@ public class TimerScene implements EventHandler<ActionEvent> {
         // can handle timer-specific events here, or just use lambdas
     }
 }
+
