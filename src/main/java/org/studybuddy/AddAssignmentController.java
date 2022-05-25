@@ -1,13 +1,16 @@
 package org.studybuddy;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
-public class Controller {
+public class AddAssignmentController {
 
     private AssignmentManager assignments;
 
@@ -99,25 +102,38 @@ public class Controller {
             return;
         }
         assignments.addAssignment(name, description, estimateToFinish, due);
-        if (assignment1.getText() == "") {
+        if (assignment1.getText().equals("")) {
             assignment1.setText(name);
-        } else if (assignment2.getText() == "") {
+        } else if (assignment2.getText().equals("")) {
             assignment2.setText(name);
-        } else if (assignment3.getText() == "") {
+        } else if (assignment3.getText().equals("")) {
             assignment3.setText(name);
-        } else if (assignment4.getText() == "") {
+        } else if (assignment4.getText().equals("")) {
             assignment4.setText(name);
-        } else if (assignment5.getText() == "") {
+        } else if (assignment5.getText().equals("")) {
             assignment5.setText(name);
-        } else if (assignment6.getText() == "") {
+        } else if (assignment6.getText().equals("")) {
             assignment6.setText(name);
-        } else if (assignment7.getText() == "") {
+        } else if (assignment7.getText().equals("")) {
             assignment7.setText(name);
-        } else if (assignment8.getText() == "") {
+        } else if (assignment8.getText().equals("")) {
             assignment8.setText(name);
-        } else if (assignment9.getText() == "") {
+        } else if (assignment9.getText().equals("")) {
             assignment9.setText(name);
         }
 
+    }
+
+    public void assignment1UI() {
+
+    }
+
+    public void addAssignmentUI() {
+
+    }
+
+    @FXML
+    public void handleExit() {
+        //when the user leaves the app, we want to save their assignments
     }
 }

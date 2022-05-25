@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Scene?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Scene fx:id="scene" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.studybuddy.AddAssignmentController">
+    <AnchorPane prefHeight="564.0" prefWidth="1000.0">
+      <children>
+         <BorderPane fx:id="borderPane" prefHeight="560.0" prefWidth="1000.0" style="-fx-background-color: rgb(238, 238, 238);">
+            <left>
+               <Pane fx:id="leftPane" prefHeight="560.0" prefWidth="220.0" BorderPane.alignment="CENTER">
+                  <children>
+                     <Button fx:id="timerButton" layoutX="8.0" layoutY="40.0" mnemonicParsing="false" onAction="#goToTimer" prefHeight="75.0" prefWidth="200.0" style="-fx-background-color: rgb(183,183,183);" text="Timer">
+                        <font>
+                           <Font size="25.0" />
+                        </font>
+                     </Button>
+                     <Button fx:id="assignmentsPageButton" layoutX="8.0" layoutY="136.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="200.0" style="-fx-background-color: rgb(217,217,217);" text="Assignments">
+                        <font>
+                           <Font size="25.0" />
+                        </font>
+                     </Button>
+                  </children>
+               </Pane>
+            </left>
+            <center>
+               <VBox fx:id="middlePane" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+                  <children>
+                     <Label text="Assignments">
+                        <font>
+                           <Font size="25.0" />
+                        </font>
+                     </Label>
+                     <Button fx:id="assignment1" mnemonicParsing="false" onAction="#assignment1UI" prefHeight="50.0" prefWidth="297.0" style="-fx-background-color: rgb(166, 196, 230);" />
+                     <Button fx:id="assignment2" mnemonicParsing="false" prefHeight="50.0" prefWidth="297.0" style="-fx-background-color: rgb(166, 196, 230);" />
+                     <Button fx:id="assignment3" mnemonicParsing="false" prefHeight="50.0" prefWidth="297.0" style="-fx-background-color: rgb(166, 196, 230);" />
+                     <Button fx:id="assignment4" mnemonicParsing="false" prefHeight="50.0" prefWidth="297.0" style="-fx-background-color: rgb(166, 196, 230);" />
+                     <Button fx:id="assignment5" mnemonicParsing="false" prefHeight="50.0" prefWidth="297.0" style="-fx-background-color: rgb(166, 196, 230);" />
+                     <Button fx:id="assignment6" mnemonicParsing="false" prefHeight="50.0" prefWidth="297.0" style="-fx-background-color: rgb(166, 196, 230);" />
+                     <Button fx:id="assignment7" mnemonicParsing="false" prefHeight="50.0" prefWidth="297.0" style="-fx-background-color: rgb(166, 196, 230);" />
+                     <Button fx:id="assignment8" mnemonicParsing="false" prefHeight="50.0" prefWidth="297.0" style="-fx-background-color: rgb(166, 196, 230);" />
+                     <Button fx:id="assignment9" mnemonicParsing="false" prefHeight="50.0" prefWidth="297.0" style="-fx-background-color: rgb(166, 196, 230);" />
+                     <Button fx:id="addAssignmentUIButton" mnemonicParsing="false" onAction="#addAssignmentUI" prefHeight="50.0" prefWidth="297.0" style="-fx-background-color: rgb(123, 167, 216);" text="Add Assignment" />
+                  </children>
+               </VBox>
+            </center>
+            <right>
+               <VBox fx:id="rightPane" alignment="CENTER" fillWidth="false" prefHeight="560.0" prefWidth="483.0" BorderPane.alignment="CENTER">
+                  <children>
+                     <Label text="New Assignment" />
+                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+                     <TextArea fx:id="assignmentName" prefHeight="113.0" prefWidth="437.0" />
+                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Due" />
+                     <TextArea fx:id="dueDate" prefHeight="138.0" prefWidth="436.0" />
+                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Time" />
+                     <TextArea fx:id="predictedTime" prefHeight="119.0" prefWidth="436.0" />
+                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Description" />
+                     <TextArea fx:id="assignmentDescription" prefHeight="125.0" prefWidth="436.0" />
+                     <Button fx:id="addAssignmentButton" mnemonicParsing="false" onAction="#addAssignment" text="Add" />
+                  </children>
+               </VBox>
+            </right>
+         </BorderPane>
+      </children></AnchorPane>
+</Scene>

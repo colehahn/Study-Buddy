@@ -30,7 +30,7 @@ public class App extends Application {
 
         // scene 2, assignments
         try {
-            assignments = FXMLLoader.load(ClassLoader.getSystemClassLoader().getResource("Assignments UI (1).fxml"));
+            assignments = FXMLLoader.load(ClassLoader.getSystemClassLoader().getResource("Add Assignments UI.fxml"));
         } catch(Exception e) {
             e.printStackTrace();
         }
