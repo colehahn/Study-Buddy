@@ -39,4 +39,8 @@ public class AssignmentManager {
         assignmentMap.remove(name);
     }
 
+    public boolean containsAssignment(String name) {
+        return assignmentMap.containsKey(name);
+    }
+
 }

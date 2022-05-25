@@ -75,18 +75,49 @@ public class Controller {
     public Button addAssignmentButton;
 
     public void initialize() {
-
+        this.assignments = new AssignmentManager();
     }
 
     public void goToTimer() {
          App.goToTimerScene();
     }
 
-    public void addAssignmentUI() {
+    public void addAssignment() throws Exception {
+        //validate name, due, time, description
+        //create new assignment
+        //add to assignments
+        //check assignment buttons and find next available slot
+        //update slot with name of assignment
 
-    }
+        String name = assignmentName.getText();
+        String due = dueDate.getText();
+        String estimateToFinish = predictedTime.getText();
+        String description = assignmentDescription.getText();
 
-    public void addAssignment() {
+        if (assignments.containsAssignment(name)) {
+            System.out.println("Assignment with name " + name + " already exists");
+            return;
+        }
+        assignments.addAssignment(name, description, estimateToFinish, due);
+        if (assignment1.getText() == "") {
+            assignment1.setText(name);
+        } else if (assignment2.getText() == "") {
+            assignment2.setText(name);
+        } else if (assignment3.getText() == "") {
+            assignment3.setText(name);
+        } else if (assignment4.getText() == "") {
+            assignment4.setText(name);
+        } else if (assignment5.getText() == "") {
+            assignment5.setText(name);
+        } else if (assignment6.getText() == "") {
+            assignment6.setText(name);
+        } else if (assignment7.getText() == "") {
+            assignment7.setText(name);
+        } else if (assignment8.getText() == "") {
+            assignment8.setText(name);
+        } else if (assignment9.getText() == "") {
+            assignment9.setText(name);
+        }
 
     }
 }
