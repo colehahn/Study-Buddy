@@ -23,11 +23,11 @@ public class AssignmentManager {
      * adds a new assignment into the map.
      * @param name name of the assignment.
      * @param description description of the assignment.
-     * @param estimateInMinute estimate time to finish this assignment.
-     * @param duedate due date of this assignment.
+     * @param estimateToFinish estimate time to finish this assignment in format "hh:mm:ss"
+     * @param duedate due date of this assignment in format "MM/dd/YYYY"
      */
-    public void addAssignment(String name, String description, Time estimateInMinute, Date duedate) {
-        AssignmentClass assignment = new AssignmentClass(name, description, estimateInMinute, duedate);
+    public void addAssignment(String name, String description, String estimateToFinish, String duedate) throws Exception {
+        AssignmentClass assignment = new AssignmentClass(name, description, estimateToFinish, duedate);
         assignmentMap.put(name, assignment);
     }
 

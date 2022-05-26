@@ -1,16 +1,17 @@
 # User Manual
 
 ## A high-level description
-* Study Buddy is an application that helps you keep track of your time on homework assignments and other tasks. It features a study timer, inspired by the pomodoro studying technique, as well as an assignment tracker to keep track of all the different assignments you have.
+* Study Buddy is a Windows application that helps you keep track of your time on homework assignments and other tasks. It features a study timer, inspired by the pomodoro studying technique, as well as an assignment tracker to keep track of all the different assignments you have.
 
 ## How to install the software
-* <the following is all a work in progress, we just don’t have a download folder yet>
-* Study Buddy is available for download at https://github.com/colehahn/Study-Buddy/tree/main/download
-* Select the appropriate zip folder and download to your computer
-* Finally, all you need to do is unzip the folder and double click on Study-Buddy-Installer.exe to run the application setup wizard
+* Download the latest version of Study Buddy from [here](https://github.com/colehahn/Study-Buddy/tree/main/releases)
+  * You may get several warnings about not trusting the file, but select the option to download anyways
+* Open the downloaded `.msi` file
+  * You may get a prompt to search for an application in the Windows store. Your response to this quesiton does not matter, the app will be downloaded normally either way
+* The installer will automatically run, and Study Buddy will be installed on your computer! 
 
 ## How to run the software
-* Since the application is downloaded on your computer, you can use it just like any other application! A desktop shortcut can be created during installation, and you can find the app in the Start menu
+* Since the application is downloaded on your computer, you can use it just like any other application! You can search for "Study-Buddy" in the start menu
 
 ## How to use the software
 For Timer functionality:
