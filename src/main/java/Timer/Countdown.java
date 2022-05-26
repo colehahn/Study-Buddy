@@ -90,7 +90,7 @@ public class Countdown {
 
                     if (countdownStarter <= 0) {
                         Platform.runLater(() -> {
-                            TimerScene.timerLabel.setText("Timer Over!");
+                            TimerScene.timerLabel.setText("Done!");
                             scheduler.shutdown();
                             try {
                                 playBeep();
