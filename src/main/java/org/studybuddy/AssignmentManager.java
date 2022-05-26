@@ -4,11 +4,12 @@ import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Iterator;
 
 /**
  * A utility class capable of adding/ removing an assignment in our app.
  */
-public class AssignmentManager {
+public class AssignmentManager implements Iterable<AssignmentClass> {
 
     /**
      * we use HashMap to store the assignment's name with its AssignmentClass
@@ -39,4 +40,12 @@ public class AssignmentManager {
         assignmentMap.remove(name);
     }
 
+    public boolean containsAssignment(String name) {
+        return assignmentMap.containsKey(name);
+    }
+
+    @Override
+    public Iterator<AssignmentClass> iterator() {
+        return assignmentMap.values().iterator();
+    }
 }
