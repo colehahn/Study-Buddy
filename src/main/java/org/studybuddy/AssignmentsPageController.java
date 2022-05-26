@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
@@ -28,10 +29,13 @@ public class AssignmentsPageController {
 
     @FXML
     public void initialize() {
-        assignments = new AssignmentManager();
+        assignments = new AssignmentManager();  // TODO: load saved ones from disk
         try {
+            for (AssignmentClass assignment : assignments) {
+                addAssignment(assignment.getName(), assignment.getDescription(), assignment.getEstimateToFinish(), assignment.getDuedate().toString());
+            }
             borderPane.setLeft(FXMLLoader.load(getClass().getClassLoader().getResource("Menu Bar.fxml")));
-        } catch (IOException e) {
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
@@ -41,12 +45,28 @@ public class AssignmentsPageController {
         Button newButton = new Button(name);
         newButton.setOnAction(actionEvent -> {
             try {
-                borderPane.setRight(FXMLLoader.load(getClass().getClassLoader().getResource("Show Assignment UI.fxml")));
+                FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("Show Assignment UI.fxml"));
+                borderPane.setRight(loader.load());
+                ShowAssignmentController controller = loader.getController();
+                controller.displayAssignment(name, desc, time, due);
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
         assignmentsList.getChildren().add(newButton);
+        borderPane.getRight().setVisible(false);
+    }
+    @FXML
+    public void removeAssignment(String assignmentTitle) {
+        assignments.deleteAssignment(assignmentTitle);
+        borderPane.getRight().setVisible(false);
+        for (Node n : assignmentsList.getChildren()) {
+            if (((Button) n).getText().equals(assignmentTitle)) {
+                assignmentsList.getChildren().remove(n);
+                return;
+            }
+        }
     }
 
     @FXML
@@ -59,4 +79,5 @@ public class AssignmentsPageController {
     public void handleExit() {
         //when the user leaves the app, we want to save their assignments
     }
+
 }

@@ -20,6 +20,9 @@ public class ShowAssignmentController {
     public Label assignmentTitle;
 
     @FXML
+    public Text completionText;
+
+    @FXML
     public Text dueDate;
 
     @FXML
@@ -29,8 +32,22 @@ public class ShowAssignmentController {
     public Text timeRemaining;
 
     @FXML
-    public void displayAssignment() {
+    public Text description;
 
+    @FXML
+    public void displayAssignment(String name, String desc, String time, String due) {
+        assignmentTitle.setText(name);
+        completionText.setText("estimated ??% completed");
+        dueDate.setText(due);
+        timeSpent.setText("0:00");
+        timeRemaining.setText(time);
+        description.setText(desc);
+    }
+
+    @FXML
+    public void markDone() {
+        AssignmentsPageController controller = App.assignmentsSceneLoader.getController();
+        controller.removeAssignment(assignmentTitle.getText());
     }
 
 
