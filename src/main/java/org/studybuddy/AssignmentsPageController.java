@@ -36,8 +36,17 @@ public class AssignmentsPageController {
         }
     }
 
-    public void addAssignmentButton() {
-        assignmentsList.getChildren().add(new Button());
+    public void addAssignment(String name, String desc, String time, String due) throws Exception {
+        assignments.addAssignment(name, desc, time, due);
+        Button newButton = new Button(name);
+        newButton.setOnAction(actionEvent -> {
+            try {
+                borderPane.setRight(FXMLLoader.load(getClass().getClassLoader().getResource("Show Assignment UI.fxml")));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+        assignmentsList.getChildren().add(newButton);
     }
 
     @FXML

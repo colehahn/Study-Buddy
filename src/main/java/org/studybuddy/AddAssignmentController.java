@@ -46,7 +46,7 @@ public class AddAssignmentController {
         //AssignmentsPageController.assignments.addAssignment(name, description, estimateToFinish, due);
 
         AssignmentsPageController controller = App.assignmentsSceneLoader.getController();
-        controller.addAssignmentButton();
+        controller.addAssignment(name, description, estimateToFinish, due);
     }
 
     public void assignment1UI() {

@@ -16,10 +16,7 @@
                   <Font size="25.0" />
                </font>
             </Label>
-            <VBox fx:id="assignmentsList" layoutX="14.0" layoutY="50.0" prefHeight="447.0" prefWidth="266.0" spacing="20.0">
-               <children>
-                  <Button mnemonicParsing="false" onAction="#addAssignmentUI" prefHeight="50.0" prefWidth="297.0" style="-fx-background-color: rgb(123, 167, 216);" text="default assignment" />
-               </children></VBox>
+            <VBox fx:id="assignmentsList" layoutX="14.0" layoutY="50.0" prefHeight="447.0" prefWidth="266.0" spacing="20.0" />
             <Button fx:id="addAssignmentUIButton" layoutY="502.0" mnemonicParsing="false" onAction="#addAssignmentUI" prefHeight="50.0" prefWidth="297.0" style="-fx-background-color: rgb(123, 167, 216);" text="Add Assignment" />
          </children>
       </Pane>
