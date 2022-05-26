@@ -64,7 +64,7 @@ public class AssignmentsScene implements EventHandler<ActionEvent> {
         Button goToTimer = new Button("Timer");
         Button assignment = new Button("Assignment");
 
-        goToTimer.setOnAction(App.goToTimerScene());
+        //goToTimer.setOnAction(App.goToTimerScene());
         pane.getChildren().addAll(goToTimer);
         pane.getChildren().addAll(assignment);
         pane.setPrefWidth(220);
