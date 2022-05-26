@@ -1,3 +1,6 @@
 
 # ignore the stuff that maven builds
 target/
+
+# so that the java version can be different for different people
+.idea/misc.xml
