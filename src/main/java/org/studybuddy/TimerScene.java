@@ -16,6 +16,10 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.util.Duration;
 
+// TODO: give notification when timer is completed
+// TODO: implement break timer
+// TODO: allow user to choose study and break times
+
 public class TimerScene implements EventHandler<ActionEvent> {
     public static Label timerLabel;
     //public static Integer[] timeSeconds = {Countdown.MINUTES};
