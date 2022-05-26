@@ -6,29 +6,43 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class MenuBarController {
+import java.io.IOException;
+
+public class AssignmentsPageController {
+
+    public static AssignmentManager assignments;
 
     @FXML
-    public Button timerButton;
+    public BorderPane borderPane;
 
     @FXML
-    public Button assignmentsPageButton;
+    public Button addAssignmentUIButton;
 
-    public void addAssignmentUI(ActionEvent actionEvent) throws Exception {
-        Scene scene = FXMLLoader.load(ClassLoader.getSystemClassLoader().getResource("Add Assignment UI.fxml"));
-        Stage stage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
+    @FXML
+    public VBox assignmentsList;
+
+    @FXML
+    public void initialize() {
+        assignments = new AssignmentManager();
+        try {
+            borderPane.setLeft(FXMLLoader.load(getClass().getClassLoader().getResource("Menu Bar.fxml")));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
-    public void goToTimer() {
-         App.goToTimerScene();
+    public void addAssignmentButton() {
+        assignmentsList.getChildren().add(new Button());
+    }
+
+    @FXML
+    public void addAssignmentUI(ActionEvent actionEvent) throws Exception {
+        borderPane.setRight(FXMLLoader.load(getClass().getClassLoader().getResource("Add Assignment UI.fxml")));
     }
 
 

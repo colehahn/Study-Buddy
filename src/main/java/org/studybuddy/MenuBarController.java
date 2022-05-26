@@ -20,12 +20,6 @@ public class MenuBarController {
     @FXML
     public Button assignmentsPageButton;
 
-    public void addAssignmentUI(ActionEvent actionEvent) throws Exception {
-        Scene scene = FXMLLoader.load(ClassLoader.getSystemClassLoader().getResource("Add Assignment UI.fxml"));
-        Stage stage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
-    }
 
     public void goToTimer() {
          App.goToTimerScene();

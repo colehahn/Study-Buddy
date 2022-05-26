@@ -3,6 +3,7 @@ package org.studybuddy;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -20,6 +21,7 @@ import java.util.Timer;
 public class App extends Application {
     static Stage window;
     static Scene timer, assignments;
+    static FXMLLoader assignmentsSceneLoader;
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -30,7 +32,8 @@ public class App extends Application {
 
         // scene 2, assignments
         try {
-            assignments = FXMLLoader.load(ClassLoader.getSystemClassLoader().getResource("Add Assignments UI.fxml"));
+            assignmentsSceneLoader = new FXMLLoader(getClass().getClassLoader().getResource("Assignments UI.fxml"));
+            assignments = new Scene(assignmentsSceneLoader.load());
         } catch(Exception e) {
             e.printStackTrace();
         }

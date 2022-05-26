@@ -12,56 +12,6 @@ import javafx.scene.layout.VBox;
 
 public class AddAssignmentController {
 
-    private AssignmentManager assignments;
-
-    @FXML
-    public BorderPane borderPane;
-
-    @FXML
-    public Pane leftPane;
-
-    @FXML
-    public VBox middlePane;
-
-    @FXML
-    public VBox rightPane;
-
-    @FXML
-    public Button timerButton;
-
-    @FXML
-    public Button assignmentsPageButton;
-
-    @FXML
-    public Button assignment1;
-
-    @FXML
-    public Button assignment2;
-
-    @FXML
-    public Button assignment3;
-
-    @FXML
-    public Button assignment4;
-
-    @FXML
-    public Button assignment5;
-
-    @FXML
-    public Button assignment6;
-
-    @FXML
-    public Button assignment7;
-
-    @FXML
-    public Button assignment8;
-
-    @FXML
-    public Button assignment9;
-
-    @FXML
-    public Button addAssignmentUIButton;
-
     @FXML
     public TextArea assignmentName;
 
@@ -77,16 +27,12 @@ public class AddAssignmentController {
     @FXML
     public Button addAssignmentButton;
 
-    public void initialize() {
-        this.assignments = new AssignmentManager();
-    }
-
     public void goToTimer() {
          App.goToTimerScene();
     }
 
     public void addAssignment() throws Exception {
-        //validate name, due, time, description
+        // TODO: validate name, due, time, description
         //create new assignment
         //add to assignments
         //check assignment buttons and find next available slot
@@ -97,31 +43,10 @@ public class AddAssignmentController {
         String estimateToFinish = predictedTime.getText();
         String description = assignmentDescription.getText();
 
-        if (assignments.containsAssignment(name)) {
-            System.out.println("Assignment with name " + name + " already exists");
-            return;
-        }
-        assignments.addAssignment(name, description, estimateToFinish, due);
-        if (assignment1.getText().equals("")) {
-            assignment1.setText(name);
-        } else if (assignment2.getText().equals("")) {
-            assignment2.setText(name);
-        } else if (assignment3.getText().equals("")) {
-            assignment3.setText(name);
-        } else if (assignment4.getText().equals("")) {
-            assignment4.setText(name);
-        } else if (assignment5.getText().equals("")) {
-            assignment5.setText(name);
-        } else if (assignment6.getText().equals("")) {
-            assignment6.setText(name);
-        } else if (assignment7.getText().equals("")) {
-            assignment7.setText(name);
-        } else if (assignment8.getText().equals("")) {
-            assignment8.setText(name);
-        } else if (assignment9.getText().equals("")) {
-            assignment9.setText(name);
-        }
+        //AssignmentsPageController.assignments.addAssignment(name, description, estimateToFinish, due);
 
+        AssignmentsPageController controller = App.assignmentsSceneLoader.getController();
+        controller.addAssignmentButton();
     }
 
     public void assignment1UI() {

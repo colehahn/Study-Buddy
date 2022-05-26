@@ -15,8 +15,6 @@ import javafx.stage.Stage;
 
 public class ShowAssignmentController {
 
-    private AssignmentManager assignments;
-
     @FXML
     public BorderPane borderPane;
 
@@ -70,10 +68,10 @@ public class ShowAssignmentController {
 
     @FXML
     public Text timeRemaining;
-
-    public void initialize() {
-        this.assignments = new AssignmentManager();
-    }
+   // @FXML
+   /// public void initialize() {
+   //     this.assignments = new AssignmentManager();
+   // }
 
     public void goToTimer(ActionEvent actionEvent) {
         App.goToTimerScene();
