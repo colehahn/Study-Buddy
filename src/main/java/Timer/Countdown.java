@@ -1,15 +1,29 @@
 package Timer;
 
+import javax.sound.sampled.*;
+
+import java.applet.Applet;
+import java.applet.AudioClip;
+import java.net.URL;
 import java.util.concurrent.*;
 import static java.util.concurrent.TimeUnit.SECONDS;
 
 import javafx.animation.Timeline;
 import javafx.application.Platform;
 import org.studybuddy.TimerScene;
+import java.io.*;
+import java.io.File;
 
+import javax.sound.sampled.AudioFormat;
+import javax.sound.sampled.AudioInputStream;
+
+import javax.sound.sampled.AudioFormat;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.SourceDataLine;
+import javax.sound.sampled.LineUnavailableException;
 // The timer is part of the Model.
 public class Countdown {
-    public static int MINUTES = 2;
+    public static int MINUTES = 1;
     public static int NUM_SECONDS = 60;
     public static int countdownStarter = MINUTES * NUM_SECONDS;
 
@@ -17,6 +31,7 @@ public class Countdown {
     public static void setCountdownStarter(int n) {
         countdownStarter = n;
     }
+
     public static void main(String[] args) {
         // We can set this to the amount of time we want to set the timer
         // Maybe use scanner to get input from the console
@@ -56,8 +71,8 @@ public class Countdown {
                         }
                     } else { // Minutes
                         String minutes;
-                        if (countdownStarter/ NUM_SECONDS < 10) {
-                            minutes =  "" + countdownStarter /60;
+                        if (countdownStarter / NUM_SECONDS < 10) {
+                            minutes = "" + countdownStarter / 60;
                         } else {
                             minutes = "" + countdownStarter / 60;
                         }
@@ -82,16 +97,41 @@ public class Countdown {
                         Platform.runLater(() -> {
                             TimerScene.timerLabel.setText("Timer Over!");
                             scheduler.shutdown();
+                            try {
+                                playBeep();
+                            } catch (UnsupportedAudioFileException e) {
+                                throw new RuntimeException(e);
+                            } catch (IOException e) {
+                                throw new RuntimeException(e);
+                            } catch (LineUnavailableException e) {
+                                throw new RuntimeException(e);
+                            }
+                            countdownStarter = MINUTES * NUM_SECONDS;
                         });
-                        countdownStarter = MINUTES * NUM_SECONDS;
+
                     }
+
                 }
 
             }
+
         };
         scheduler.scheduleAtFixedRate(runnable, 0, 1, SECONDS);
     }
+
+    // Where I got the sound: https://free-loops.com/3328-alarmclock-sound.html (wav file).
+    // Referenced code: https://www.codejava.net/coding/how-to-play-back-audio-in-java-with-examples.
+    public static void playBeep() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
+        File audioFile = new File("C:\\Users\\dejen\\Desktop\\Study-Buddy\\dae2b64883b4af76d67d6f320160-orig.wav");
+        AudioInputStream audioStream = AudioSystem.getAudioInputStream(audioFile);
+        AudioFormat format = audioStream.getFormat();
+        DataLine.Info info = new DataLine.Info(Clip.class, format);
+        Clip audioClip = (Clip) AudioSystem.getLine(info);
+        audioClip.open(audioStream);
+        audioClip.start();
+    }
 }
+
 
 
 

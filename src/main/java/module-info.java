@@ -3,6 +3,7 @@ module org.example {
     requires java.sql;
     requires javafx.fxml;
     requires opencsv;
+    requires java.desktop;
     exports org.studybuddy;
     exports Timer;
 }
