@@ -48,16 +48,18 @@ public class AssignmentClass {
         this.name = name;
         this.description = description;
         this.timeSpent = Time.valueOf("00:00:00");
-        this.estimateToFinish = Time.valueOf(estimateToFinish);
+        // The code that I commented out produce runtime errors.
+        // this.estimateToFinish = Time.valueOf(estimateToFinish);
+        //this.estimateToFinish = Time.valueOf("1");
         Calendar targetDate = Calendar.getInstance();
-        SimpleDateFormat targetDateFormat = new SimpleDateFormat("MM/dd/yyyy");
-        try {
-            targetDateFormat.setLenient(false);
-            this.duedate = targetDateFormat.parse(duedate);
-            targetDate.setTime(this.duedate);
-        } catch (ParseException e) {
-            throw new Exception("Invalid date is provided, please check input date");
-        }
+//        SimpleDateFormat targetDateFormat = new SimpleDateFormat("MM/dd/yyyy");
+//        try {
+//            targetDateFormat.setLenient(false);
+//            this.duedate = targetDateFormat.parse(duedate);
+//            targetDate.setTime(this.duedate);
+//        } catch (ParseException e) {
+//            throw new Exception("Invalid date is provided, please check input date");
+//        }
     }
 
     /**

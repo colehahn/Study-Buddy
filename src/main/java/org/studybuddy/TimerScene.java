@@ -25,7 +25,12 @@ public class TimerScene implements EventHandler<ActionEvent> {
     //public static Integer[] timeSeconds = {Countdown.MINUTES};
     public static Timeline[] timeline = {null};
     public static boolean isPaused = false;
-    public static Scene getScene() {
+    public static Scene getScene() throws Exception {
+        // Added this code here to test writing and reading to csv files.
+        AssignmentManager manager = new AssignmentManager();
+        manager.addAssignment("test", "test", "test", "test");
+        manager.readAssignment(new AssignmentClass("test", "test", "test", "test"));
+
         Label title = new Label("Study Timer");
         title.setStyle("-fx-font-size: 2em;");
 
