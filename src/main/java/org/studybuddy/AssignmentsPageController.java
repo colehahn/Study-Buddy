@@ -33,7 +33,7 @@ public class AssignmentsPageController {
         assignments = new AssignmentManager();  // TODO: load saved ones from disk
         try {
             for (AssignmentClass assignment : assignments) {
-                addAssignment(assignment.getName(), assignment.getDescription(), assignment.getEstimateToFinish(), assignment.getDuedate().toString());
+                addAssignment(assignment);
             }
             borderPane.setLeft(FXMLLoader.load(getClass().getClassLoader().getResource("Menu Bar.fxml")));
         } catch (Exception e) {
@@ -41,9 +41,9 @@ public class AssignmentsPageController {
         }
     }
 
-    public void addAssignment(String name, String desc, String time, String due) throws Exception {
-        assignments.addAssignment(name, desc, time, due);
-        Button newButton = new Button(name);
+    public void addAssignment(AssignmentClass assignment) {
+        assignments.addAssignment(assignment);
+        Button newButton = new Button(assignment.getName());
 
         newButton.setFont(new Font("Regular", 25));
         newButton.setStyle("-fx-background-color:    rgb(166, 196, 230)");
@@ -54,10 +54,10 @@ public class AssignmentsPageController {
 
         newButton.setOnAction(actionEvent -> {
             try {
-                FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("Show Assignment UI.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("Assignment Details UI.fxml"));
                 borderPane.setRight(loader.load());
-                ShowAssignmentController controller = loader.getController();
-                controller.displayAssignment(name, desc, time, due);
+                AssignmentDetailsController controller = loader.getController();
+                controller.displayAssignment(assignment);
 
             } catch (IOException e) {
                 e.printStackTrace();
@@ -80,7 +80,7 @@ public class AssignmentsPageController {
 
     @FXML
     public void addAssignmentUI(ActionEvent actionEvent) throws Exception {
-        borderPane.setRight(FXMLLoader.load(getClass().getClassLoader().getResource("Add Assignment UI.fxml")));
+        borderPane.setRight(FXMLLoader.load(getClass().getClassLoader().getResource("Assignment Details UI.fxml")));
     }
 
 
