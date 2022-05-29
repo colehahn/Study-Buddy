@@ -70,12 +70,7 @@ public class Countdown {
                             });
                         }
                     } else { // Minutes
-                        String minutes;
-                        if (countdownStarter / NUM_SECONDS < 10) {
-                            minutes = "" + countdownStarter / 60;
-                        } else {
-                            minutes = "" + countdownStarter / 60;
-                        }
+                        String minutes = "" + countdownStarter / 60;
                         String seconds;
                         if ((countdownStarter % 60) < 10) {
                             seconds = "0" + countdownStarter % 60;
@@ -95,7 +90,7 @@ public class Countdown {
 
                     if (countdownStarter <= 0) {
                         Platform.runLater(() -> {
-                            TimerScene.timerLabel.setText("Timer Over!");
+                            TimerScene.timerLabel.setText("Done!");
                             scheduler.shutdown();
                             try {
                                 playBeep();
@@ -122,7 +117,7 @@ public class Countdown {
     // Where I got the sound: https://free-loops.com/3328-alarmclock-sound.html (wav file).
     // Referenced code: https://www.codejava.net/coding/how-to-play-back-audio-in-java-with-examples.
     public static void playBeep() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
-        File audioFile = new File("C:\\Users\\dejen\\Desktop\\Study-Buddy\\dae2b64883b4af76d67d6f320160-orig.wav");
+        File audioFile = new File("/Users/ahmetucar/School/403/dae2b64883b4af76d67d6f320160-orig.wav");
         AudioInputStream audioStream = AudioSystem.getAudioInputStream(audioFile);
         AudioFormat format = audioStream.getFormat();
         DataLine.Info info = new DataLine.Info(Clip.class, format);
