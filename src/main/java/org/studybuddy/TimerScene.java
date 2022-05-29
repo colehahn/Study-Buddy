@@ -28,8 +28,8 @@ public class TimerScene implements EventHandler<ActionEvent> {
     public static Scene getScene() throws Exception {
         // Added this code here to test writing and reading to csv files.
         AssignmentManager manager = new AssignmentManager();
-        manager.addAssignment("test", "test", "test", "test");
-        manager.readAssignment(new AssignmentClass("test", "test", "test", "test"));
+        manager.addAssignment("test", "test", "1:00", "04/22/22");
+        manager.readAssignment(new AssignmentClass("test", "test", "1:00", "04/22/22"));
 
         Label title = new Label("Study Timer");
         title.setStyle("-fx-font-size: 2em;");
