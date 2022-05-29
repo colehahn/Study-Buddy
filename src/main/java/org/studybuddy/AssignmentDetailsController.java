@@ -7,7 +7,12 @@ import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
 
 public class AssignmentDetailsController {
 
@@ -48,23 +53,19 @@ public class AssignmentDetailsController {
     }
 
     public void addAssignment() {
-        //create new assignment
-        //add to assignments
-        //check assignment buttons and find next available slot
-        //update slot with name of assignment
+        AssignmentsPageController controller = App.assignmentsSceneLoader.getController();
+        controller.addAssignment(makeAssignmentFromDisplay());
+    }
 
+    private AssignmentClass makeAssignmentFromDisplay() {
         String name = assignmentName.getText();
-        String due = dueDate.getValue().format(DateTimeFormatter.ofPattern("MM/dd/uuuu"));
-
+        String due = dueDate.isVisible() ? dueDate.getValue().format(DateTimeFormatter.ofPattern("MM/dd/uuuu"))
+                                         : dueDateText.getText();
         String estimateToFinish = hoursLeft.getText() + ":" + minutesLeft.getText() + ":00";
         String timeSpent = hoursSpent.getText() + ":" + minutesSpent.getText() + ":00";
         String description = assignmentDescription.getText();
 
-        //AssignmentsPageController.assignments.addAssignment(name, description, estimateToFinish, due);
-
-        AssignmentsPageController controller = App.assignmentsSceneLoader.getController();
-        AssignmentClass newAssignment = new AssignmentClass(name, description, estimateToFinish, timeSpent, due);
-        controller.addAssignment(newAssignment);
+        return new AssignmentClass(name, description, estimateToFinish, timeSpent, due);
     }
 
     @FXML
@@ -73,12 +74,15 @@ public class AssignmentDetailsController {
         assignmentName.setText(assigment.getName());
         completionText.setText("estimated ??% completed");
         dueDate.setVisible(false);
-        dueDateText.setText(assigment.getDuedate().toString());
-        String[] hoursMinutesSeconds = assigment.getEstimateToFinish().split(":");
-        hoursSpent.setText("00");
-        minutesSpent.setText("00");
-        hoursLeft.setText(hoursMinutesSeconds[0]);
-        minutesLeft.setText(hoursMinutesSeconds[1]);
+        dueDateText.setVisible(true);
+        DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
+        dueDateText.setText(df.format(assigment.getDuedate()));
+        String[] hoursMinutesSecondsLeft = assigment.getEstimateToFinish().split(":");
+        String[] hoursMinutesSecondsSpent = assigment.getTimeSpent().split(":");
+        hoursSpent.setText(hoursMinutesSecondsSpent[0]);
+        minutesSpent.setText(hoursMinutesSecondsSpent[1]);
+        hoursLeft.setText(hoursMinutesSecondsLeft[0]);
+        minutesLeft.setText(hoursMinutesSecondsLeft[1]);
         assignmentDescription.setText(assigment.getDescription());
 
         // change button to "mark as done"
@@ -92,16 +96,10 @@ public class AssignmentDetailsController {
         }
         assignmentDescription.setEditable(false);
         assignmentDescription.setStyle("text-area-background: rgb(217,217,217)");
-        /*
-        assignmentName.setEditable(false);
-        hoursSpent.setEditable(false);
-        minutesSpent.setEditable(false);
-        hoursLeft.setEditable(false);
-        minutesLeft.setEditable(false);
-        assignmentDescription.setEditable(false);
-*/
-        // add an edit button
+
+        // add edit button
         editButton.setVisible(true);
+        editButton.setOnAction(e -> editAssignment());
     }
 
     @FXML
@@ -111,9 +109,38 @@ public class AssignmentDetailsController {
     }
 
     @FXML
-    public void editAssignment(ActionEvent e) {
+    public void editAssignment() {
+        // save previous assignment
+        AssignmentClass oldAssignment = makeAssignmentFromDisplay();
+
+        // make things editable again
+        for (TextInputControl editable : new TextInputControl[]{assignmentName, hoursSpent, minutesSpent, hoursLeft, minutesLeft}) {
+            editable.setEditable(true);
+            editable.setStyle("-fx-background-color: white");
+        }
+        assignmentDescription.setEditable(true);
+        assignmentDescription.setStyle("text-area-background: white");
+        dueDateText.setVisible(false);
+        dueDate.setVisible(true);
+        dueDate.setValue(oldAssignment.getDuedate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
+
+        // change "mark as done" button to "Save"
+        bottomButton.setText("Save");
+        bottomButton.setOnAction(e -> Save(oldAssignment, makeAssignmentFromDisplay()));
+
+        // change "edit" button to "cancel"
+        editButton.setText("Cancel");
+        editButton.setOnAction(e -> displayAssignment(oldAssignment));
+
+    }
+
+    @FXML
+    public void Save(AssignmentClass oldAssignment, AssignmentClass newAssignment) {
+        // remove old assignment
         AssignmentsPageController controller = App.assignmentsSceneLoader.getController();
-        controller.removeAssignment(assignmentName.getText());
+        controller.removeAssignment(oldAssignment.getName());
+        controller.addAssignment(newAssignment);
+        displayAssignment(newAssignment);
     }
 
     @FXML

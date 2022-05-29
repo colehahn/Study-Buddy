@@ -17,7 +17,7 @@
    <children>
       <Pane prefHeight="90.0" prefWidth="424.0">
          <children>
-            <Button fx:id="editButton" layoutX="384.0" mnemonicParsing="false" onAction="#editAssignment" prefHeight="23.0" prefWidth="40.0" style="-fx-background-color: rgb(183,183,183);" text="Edit" />
+            <Button fx:id="editButton" layoutX="372.0" mnemonicParsing="false" onAction="#editAssignment" prefHeight="25.0" prefWidth="52.0" style="-fx-background-color: rgb(183,183,183);" text="Edit" visible="false" />
             <TextField fx:id="assignmentName" layoutX="24.0" prefHeight="52.0" prefWidth="267.0" promptText="New Assignment">
                <font>
                   <Font size="24.0" />
@@ -39,7 +39,7 @@
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Due:" />
             <DatePicker fx:id="dueDate" editable="false" promptText="MM/DD/YYYY" GridPane.columnIndex="1" />
-            <Text fx:id="dueDateText" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="129.0" GridPane.columnIndex="1" />
+            <Text fx:id="dueDateText" strokeType="OUTSIDE" strokeWidth="0.0" visible="false" wrappingWidth="129.0" GridPane.columnIndex="1" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Time spent so far:" GridPane.rowIndex="1" />
             <HBox alignment="CENTER" prefHeight="33.0" prefWidth="153.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
