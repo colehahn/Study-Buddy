@@ -1,31 +1,51 @@
 package org.studybuddy;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
+import javafx.scene.control.TextField;
+
+import java.time.format.DateTimeFormatter;
 
 public class AddAssignmentController {
 
     @FXML
-    public TextArea assignmentName;
+    public DatePicker dueDate;
 
     @FXML
-    public TextArea dueDate;
-
-    @FXML
-    public TextArea predictedTime;
+    public TextField assignmentName, hours, minutes;
 
     @FXML
     public TextArea assignmentDescription;
 
     @FXML
     public Button addAssignmentButton;
+
+    @FXML
+    public void initialize () {
+        // force the field to be numeric only
+        hours.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue,
+                                String newValue) {
+                if (!newValue.matches("\\d*")) {
+                    hours.setText(newValue.replaceAll("[^\\d]", ""));
+                }
+            }
+        });
+        minutes.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue,
+                                String newValue) {
+                if (!newValue.matches("\\d*")) {
+                    minutes.setText(newValue.replaceAll("[^\\d]", ""));
+                }
+            }
+        });
+    }
 
     public void goToTimer() {
          App.goToTimerScene();
@@ -39,8 +59,9 @@ public class AddAssignmentController {
         //update slot with name of assignment
 
         String name = assignmentName.getText();
-        String due = dueDate.getText();
-        String estimateToFinish = predictedTime.getText();
+        String due = dueDate.getValue().format(DateTimeFormatter.ofPattern("MM/dd/uuuu"));
+
+        String estimateToFinish = hours.getText() + ":" + minutes.getText() + ":00";
         String description = assignmentDescription.getText();
 
         //AssignmentsPageController.assignments.addAssignment(name, description, estimateToFinish, due);

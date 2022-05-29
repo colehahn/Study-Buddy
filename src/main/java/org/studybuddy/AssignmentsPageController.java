@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -43,6 +44,14 @@ public class AssignmentsPageController {
     public void addAssignment(String name, String desc, String time, String due) throws Exception {
         assignments.addAssignment(name, desc, time, due);
         Button newButton = new Button(name);
+
+        newButton.setFont(new Font("Regular", 25));
+        newButton.setStyle("-fx-background-color:    rgb(166, 196, 230)");
+        newButton.setPrefWidth(280);
+        newButton.setPrefHeight(60);
+        newButton.setLayoutX(9);
+        newButton.setLayoutY(202);
+
         newButton.setOnAction(actionEvent -> {
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("Show Assignment UI.fxml"));
