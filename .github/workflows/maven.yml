@@ -44,6 +44,7 @@ jobs:
           mkdir -p releases;
           mv target/*.dmg releases;
           mv target/*.pkg releases;
+          git pull;
           git add releases/*.dmg;
           git add releases/*.pkg;
           git commit -am "auto-update mac executables";
@@ -60,9 +61,6 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - name: Sleep for 30 seconds
-        run: sleep 30s
-        shell: bash
 
       - uses: actions/checkout@v3
         with:
@@ -91,6 +89,7 @@ jobs:
           git config --local user.name "github-actions[bot]";
           mkdir -p releases;
           mv target/*.msi releases;
+          git pull;
           git add releases/*.msi;
           git commit -am "auto-update executables";
 
