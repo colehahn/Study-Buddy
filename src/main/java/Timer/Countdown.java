@@ -2,14 +2,18 @@ package Timer;
 
 import java.util.concurrent.*;
 import static java.util.concurrent.TimeUnit.SECONDS;
+import static org.studybuddy.TimerScene.*;
 
 import javafx.animation.Timeline;
 import javafx.application.Platform;
+import javafx.scene.paint.Color;
 import org.studybuddy.TimerScene;
 
 // The timer is part of the Model.
 public class Countdown {
-    public static int MINUTES = 2;
+    private final static int STUDY_MINUTES = 2;
+    private final static int BREAK_MINUTES = 1;
+    public static int MINUTES = isStudyTime? STUDY_MINUTES : BREAK_MINUTES;
     public static int NUM_SECONDS = 60;
     public static int countdownStarter = MINUTES * NUM_SECONDS;
 
@@ -81,9 +85,23 @@ public class Countdown {
                     if (countdownStarter <= 0) {
                         Platform.runLater(() -> {
                             TimerScene.timerLabel.setText("Timer Over!");
+                            // adjust title label
+                            String s = isStudyTime ? "Study time!" : "Take a break!";
+                            titleLabel.setText(s);
+                            // adjust start button's text
+                            s = isStudyTime ? "Start Studying" : "Begin Break";
+                            startTimer.setText(s);
+
                             scheduler.shutdown();
                         });
+                        // Implement break timer, able to switch
+                        isStudyTime = !isStudyTime;
+                        MINUTES = isStudyTime? STUDY_MINUTES : BREAK_MINUTES;
                         countdownStarter = MINUTES * NUM_SECONDS;
+
+                        // change color
+                        Color timerColor = isStudyTime ? Color.RED : Color.BLUE;
+                        timerLabel.setTextFill(timerColor);
                     }
                 }
 
