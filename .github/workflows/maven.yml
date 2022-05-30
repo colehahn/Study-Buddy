@@ -54,7 +54,7 @@ jobs:
         branch: ${{ github.ref }}
 
   build-mac:
-
+    needs: build-windows
     runs-on: macos-latest
 
     steps:
