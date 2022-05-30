@@ -92,7 +92,6 @@
                             <generateInstaller>true</generateInstaller>
                             <administratorRequired>false</administratorRequired>
                             <platform>windows</platform>
-                            <platform>mac</platform>
                             <additionalResources>
                                 <additionalResource>src/main/resources/</additionalResource>
                             </additionalResources>
@@ -107,13 +106,6 @@
                                 <!-- setup generation properties -->
                                 <createDesktopIconTask>true</createDesktopIconTask>
                             </winConfig>
-                            <macConfig>
-                                <!-- general properties -->
-                                <icnsFile>src/main/resources/SB-logo.ico</icnsFile>
-                                <generateDmg>true</generateDmg>
-                                <generatePkg>true</generatePkg>
-                                <relocateJar>true</relocateJar>
-                            </macConfig>
                         </configuration>
                     </execution>
                 </executions>
