@@ -110,6 +110,38 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>io.github.fvarrui</groupId>
+                <artifactId>javapackager</artifactId>
+                <version>1.6.6</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>package</goal>
+                        </goals>
+                        <configuration>
+                            <!-- mandatory -->
+                            <mainClass>org.studybuddy.AppRunner</mainClass>
+                            <!-- optional -->
+                            <bundleJre>true</bundleJre>
+                            <generateInstaller>true</generateInstaller>
+                            <administratorRequired>false</administratorRequired>
+                            <platform>mac</platform>
+                            <additionalResources>
+                                <additionalResource>src/main/resources/</additionalResource>
+                            </additionalResources>
+                            <macConfig>
+                                <!-- general properties -->
+                                <icnsFile>src/main/resources/SB-logo.ico</icnsFile>
+                                <generateDmg>true</generateDmg>
+                                <generatePkg>true</generatePkg>
+                                <relocateJar>true</relocateJar>
+                            </macConfig>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 </project>
