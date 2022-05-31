@@ -91,7 +91,6 @@ public class Countdown {
                     if (countdownStarter <= 0) {
                         Platform.runLater(() -> {
                             TimerScene.timerLabel.setText("Done!");
-                            scheduler.shutdown();
                             try {
                                 playBeep();
                             } catch (UnsupportedAudioFileException e) {
@@ -103,6 +102,7 @@ public class Countdown {
                             }
                             countdownStarter = MINUTES * NUM_SECONDS;
                         });
+                        scheduler.shutdown();
 
                     }
 
