@@ -1,14 +1,15 @@
 package org.studybuddy;
 
+//import lombok.EqualsAndHashCode;
+
 import java.sql.Time;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Iterator;
+import java.util.*;
 
 /**
  * A utility class capable of adding/ removing an assignment in our app.
  */
+//@Data
+//@EqualsAndHashCode
 public class AssignmentManager implements Iterable<AssignmentClass> {
 
     /**
@@ -50,6 +51,22 @@ public class AssignmentManager implements Iterable<AssignmentClass> {
 
     @Override
     public Iterator<AssignmentClass> iterator() {
-        return assignmentMap.values().iterator();
+        ArrayList<AssignmentClass> array =  new ArrayList<>(assignmentMap.values());
+        Collections.sort(array, new SortByDate());
+        Iterator<AssignmentClass> iter =  array.iterator();
+        return iter;
+    }
+
+
+}
+
+
+class SortByDate implements Comparator<AssignmentClass> {
+    public int compare(AssignmentClass a, AssignmentClass b) {
+        if (a.getDuedate().before(b.getDuedate())) {
+            return 1;
+        } else {
+            return -1;
+        }
     }
 }
