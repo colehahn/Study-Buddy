@@ -54,7 +54,7 @@ public class AssignmentDetailsController {
 
     public void addAssignment() {
         AssignmentsPageController controller = App.assignmentsSceneLoader.getController();
-        controller.addAssignment(makeAssignmentFromDisplay());
+        controller.addAssignmentAndRefresh(makeAssignmentFromDisplay());
     }
 
     private AssignmentClass makeAssignmentFromDisplay() {

@@ -64,9 +64,9 @@ public class AssignmentManager implements Iterable<AssignmentClass> {
 class SortByDate implements Comparator<AssignmentClass> {
     public int compare(AssignmentClass a, AssignmentClass b) {
         if (a.getDuedate().before(b.getDuedate())) {
-            return 1;
-        } else {
             return -1;
+        } else {
+            return 1;
         }
     }
 }

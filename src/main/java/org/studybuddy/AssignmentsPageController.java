@@ -41,6 +41,14 @@ public class AssignmentsPageController {
         }
     }
 
+    public void addAssignmentAndRefresh(AssignmentClass toAdd) {
+        assignments.addAssignment(toAdd);
+        assignmentsList.getChildren().clear();
+        for (AssignmentClass assignment : assignments) {
+            addAssignment(assignment);
+        }
+    }
+
     public void addAssignment(AssignmentClass assignment) {
         assignments.addAssignment(assignment);
         Button newButton = new Button(assignment.getName());
