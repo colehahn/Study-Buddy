@@ -3,6 +3,7 @@ package org.studybuddy;
 import Timer.Countdown;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.beans.value.ChangeListener;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -84,6 +85,13 @@ public class TimerScene implements EventHandler<ActionEvent> {
         SpinnerValueFactory<Integer> valueFactory1 =
                 new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 120, initialValue1);
         spinner1.setValueFactory(valueFactory1);
+
+        // Event when spinner changes value
+        spinner1.valueProperty().addListener((observable, oldValue, newValue) -> {
+            Countdown.STUDY_MINUTES = newValue;
+            Countdown.MINUTES = isStudyTime? Countdown.STUDY_MINUTES : Countdown.BREAK_MINUTES;
+        });
+
             // location adjustments
         FlowPane input1 = new FlowPane();
         input1.setHgap(10);
@@ -101,6 +109,13 @@ public class TimerScene implements EventHandler<ActionEvent> {
         SpinnerValueFactory<Integer> valueFactory2 =
                 new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 30, initialValue2);
         spinner2.setValueFactory(valueFactory2);
+
+        // Event when spinner changes value
+        spinner2.valueProperty().addListener((observable, oldValue, newValue) -> {
+            Countdown.BREAK_MINUTES = newValue;
+            Countdown.MINUTES = isStudyTime? Countdown.STUDY_MINUTES : Countdown.BREAK_MINUTES;
+        });
+
         // location adjustments
         FlowPane input2 = new FlowPane();
         input2.setHgap(5);

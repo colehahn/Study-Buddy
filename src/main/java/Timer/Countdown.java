@@ -11,8 +11,8 @@ import org.studybuddy.TimerScene;
 
 // The timer is part of the Model.
 public class Countdown {
-    private final static int STUDY_MINUTES = 2;
-    private final static int BREAK_MINUTES = 1;
+    public static int STUDY_MINUTES = 2;
+    public static int BREAK_MINUTES = 1;
     public static int MINUTES = isStudyTime? STUDY_MINUTES : BREAK_MINUTES;
     public static int NUM_SECONDS = 60;
     public static int countdownStarter = MINUTES * NUM_SECONDS;
@@ -59,12 +59,7 @@ public class Countdown {
                             });
                         }
                     } else { // Minutes
-                        String minutes;
-                        if (countdownStarter/ NUM_SECONDS < 10) {
-                            minutes =  "" + countdownStarter /60;
-                        } else {
-                            minutes = "" + countdownStarter / 60;
-                        }
+                        String minutes = "" + countdownStarter / 60;
                         String seconds;
                         if ((countdownStarter % 60) < 10) {
                             seconds = "0" + countdownStarter % 60;
