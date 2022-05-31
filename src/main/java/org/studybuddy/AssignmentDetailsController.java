@@ -49,7 +49,7 @@ public class AssignmentDetailsController {
     }
 
     public void goToTimer() {
-         App.goToTimerScene();
+        AssignmentsPageController.goToTimer();
     }
 
     public void addAssignment() {

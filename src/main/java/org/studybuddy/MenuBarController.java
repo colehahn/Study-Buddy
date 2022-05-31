@@ -22,7 +22,7 @@ public class MenuBarController {
 
 
     public void goToTimer() {
-         App.goToTimerScene();
+        AssignmentsPageController.goToTimer();
     }
 
 

@@ -3,12 +3,17 @@ package org.studybuddy;
 import Timer.Countdown;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.beans.value.ChangeListener;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Spinner;
+import javafx.scene.control.SpinnerValueFactory;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -23,14 +28,13 @@ public class TimerScene implements EventHandler<ActionEvent> {
     public static Button startTimer;
     public static boolean isPaused = false;
     public static boolean isStudyTime = true;
-    public static Scene getScene() {
+    public static Scene getScene(AssignmentManager assignments) {
         titleLabel = new Label("Study Timer");
         titleLabel.setStyle("-fx-font-size: 2em;");
 
         // go to assignment button
         Button goToAssignments = new Button("Assignments");
         goToAssignments.setOnAction(App.goToAssignmentsScene());
-
 
         // timer variables
         timerLabel = new Label();
@@ -72,8 +76,59 @@ public class TimerScene implements EventHandler<ActionEvent> {
         timerLabel.setTextFill(Color.RED);
         timerLabel.setStyle("-fx-font-size: 4em;");
 
-        VBox timerLayout = new VBox(50);
-        timerLayout.getChildren().addAll(titleLabel, timerLabel, startTimer, pauseResumeButton);
+
+        // Spinner to adjust study time
+        Label adjust1 = new Label("Study Time: (minutes)");
+        final Spinner<Integer> spinner1 = new Spinner<>();
+        final int initialValue1 = 20;
+            // Value factory.
+        SpinnerValueFactory<Integer> valueFactory1 =
+                new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 120, initialValue1);
+        spinner1.setValueFactory(valueFactory1);
+
+        // Event when spinner changes value
+        spinner1.valueProperty().addListener((observable, oldValue, newValue) -> {
+            Countdown.STUDY_MINUTES = newValue;
+            Countdown.MINUTES = isStudyTime? Countdown.STUDY_MINUTES : Countdown.BREAK_MINUTES;
+        });
+
+            // location adjustments
+        FlowPane input1 = new FlowPane();
+        input1.setHgap(10);
+        //input1.setVgap(10);
+        //input1.setPadding(new Insets(10));
+
+        input1.getChildren().addAll(adjust1, spinner1);
+
+
+        // Spinner to adjust break time
+        Label adjust2 = new Label("Break Time: (minutes)");
+        final Spinner<Integer> spinner2 = new Spinner<>();
+        final int initialValue2 = 5;
+        // Value factory.
+        SpinnerValueFactory<Integer> valueFactory2 =
+                new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 30, initialValue2);
+        spinner2.setValueFactory(valueFactory2);
+
+        // Event when spinner changes value
+        spinner2.valueProperty().addListener((observable, oldValue, newValue) -> {
+            Countdown.BREAK_MINUTES = newValue;
+            Countdown.MINUTES = isStudyTime? Countdown.STUDY_MINUTES : Countdown.BREAK_MINUTES;
+        });
+
+        // location adjustments
+        FlowPane input2 = new FlowPane();
+        input2.setHgap(10);
+        //input2.setVgap(10);
+        //input2.setPadding(new Insets(10));
+
+        input2.getChildren().addAll(adjust2, spinner2);
+
+
+
+        VBox timerLayout = new VBox(40);
+        timerLayout.getChildren().addAll(titleLabel, timerLabel, startTimer,
+                pauseResumeButton, input1, input2);
         timerLayout.setAlignment(Pos.CENTER);
         timerLayout.setLayoutY(30);  // Move the VBox down a bit
 
