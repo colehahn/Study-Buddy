@@ -118,7 +118,7 @@ public class TimerScene implements EventHandler<ActionEvent> {
 
         // location adjustments
         FlowPane input2 = new FlowPane();
-        input2.setHgap(5);
+        input2.setHgap(10);
         //input2.setVgap(10);
         //input2.setPadding(new Insets(10));
 
