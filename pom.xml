@@ -55,7 +55,6 @@
             <artifactId>commons-lang3</artifactId>
             <version>3.9</version>
         </dependency>
-
     </dependencies>
     <build>
         <plugins>
@@ -83,6 +82,7 @@
                     <argLine>
                         --add-exports javafx.graphics/com.sun.javafx.application=ALL-UNNAMED
                     </argLine>
+                    <!--<testFailureIgnore>true</testFailureIgnore>-->
                     <!--<testFailureIgnore>true</testFailureIgnore>-->
                 </configuration>
             </plugin>
