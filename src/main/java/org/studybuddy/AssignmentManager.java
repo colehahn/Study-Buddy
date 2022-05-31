@@ -11,17 +11,22 @@ import com.opencsv.*;
 // text=How%20to%20write%20data%20to%20.csv%20file%20in,the%20writeAll%20%28%29%20method.%20...
 // %206%20Example.%20
 
+import java.sql.Time;
+import java.util.*;
+
 /**
  * A utility class capable of adding/ removing an assignment in our app.
  */
-public class AssignmentManager {
+//@Data
+//@EqualsAndHashCode
+public class AssignmentManager implements Iterable<AssignmentClass> {
 
     /**
      * we use HashMap to store the assignment's name with its AssignmentClass
      */
     private HashMap<String, AssignmentClass> assignmentMap;
 
-    public AssignmentManager() throws Exception {
+    public AssignmentManager() {
         // Read every assignment from csv file
         assignmentMap = new HashMap<>();
         // Read in all assignments from csv,
@@ -37,7 +42,7 @@ public class AssignmentManager {
      * @param estimateToFinish estimate time to finish this assignment in format "hh:mm:ss"
      * @param duedate          due date of this assignment in format "MM/dd/YYYY"
      */
-    public void addAssignment(String name, String description, String estimateToFinish, String duedate) throws Exception {
+    public void addAssignment(String name, String description, String estimateToFinish, String duedate) {
         AssignmentClass assignment = new AssignmentClass(name, description, estimateToFinish, duedate);
         CSVWriter writer = new CSVWriter(new FileWriter("output.csv"));
         String data[] = {assignment.getName(), assignment.getDescription(), assignment.getEstimateToFinish(),
@@ -69,6 +74,10 @@ public class AssignmentManager {
         }
     }
 
+    public void addAssignment(AssignmentClass assignment) {
+        assignmentMap.put(assignment.getName(), assignment);
+    }
+
     /**
      * removes an assignment out of our app.
      * @param name name of the assignment needs to remove.
@@ -77,6 +86,17 @@ public class AssignmentManager {
         assignmentMap.remove(name);
     }
 
+    public boolean containsAssignment(String name) {
+        return assignmentMap.containsKey(name);
+    }
+
+    @Override
+    public Iterator<AssignmentClass> iterator() {
+        ArrayList<AssignmentClass> array =  new ArrayList<>(assignmentMap.values());
+        Collections.sort(array, new SortByDate());
+        Iterator<AssignmentClass> iter =  array.iterator();
+        return iter;
+    }
     /**
      * Read a specific assignment from the csv file
      * @param assignmentClass
@@ -100,4 +120,18 @@ public class AssignmentManager {
         }
     }
 
+}
+
+
+}
+
+
+class SortByDate implements Comparator<AssignmentClass> {
+    public int compare(AssignmentClass a, AssignmentClass b) {
+        if (a.getDuedate().before(b.getDuedate())) {
+            return -1;
+        } else {
+            return 1;
+        }
+    }
 }

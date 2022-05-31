@@ -7,9 +7,11 @@ import java.applet.AudioClip;
 import java.net.URL;
 import java.util.concurrent.*;
 import static java.util.concurrent.TimeUnit.SECONDS;
+import static org.studybuddy.TimerScene.*;
 
 import javafx.animation.Timeline;
 import javafx.application.Platform;
+import javafx.scene.paint.Color;
 import org.studybuddy.TimerScene;
 import java.io.*;
 import java.io.File;
@@ -23,7 +25,9 @@ import javax.sound.sampled.SourceDataLine;
 import javax.sound.sampled.LineUnavailableException;
 // The timer is part of the Model.
 public class Countdown {
-    public static int MINUTES = 1;
+    private final static int STUDY_MINUTES = 2;
+    private final static int BREAK_MINUTES = 1;
+    public static int MINUTES = isStudyTime? STUDY_MINUTES : BREAK_MINUTES;
     public static int NUM_SECONDS = 60;
     public static int countdownStarter = MINUTES * NUM_SECONDS;
 
@@ -70,7 +74,12 @@ public class Countdown {
                             });
                         }
                     } else { // Minutes
-                        String minutes = "" + countdownStarter / 60;
+                        String minutes;
+                        if (countdownStarter/ NUM_SECONDS < 10) {
+                            minutes =  "" + countdownStarter /60;
+                        } else {
+                            minutes = "" + countdownStarter / 60;
+                        }
                         String seconds;
                         if ((countdownStarter % 60) < 10) {
                             seconds = "0" + countdownStarter % 60;
@@ -90,7 +99,6 @@ public class Countdown {
 
                     if (countdownStarter <= 0) {
                         Platform.runLater(() -> {
-                            TimerScene.timerLabel.setText("Done!");
                             try {
                                 playBeep();
                             } catch (UnsupportedAudioFileException e) {
@@ -100,10 +108,24 @@ public class Countdown {
                             } catch (LineUnavailableException e) {
                                 throw new RuntimeException(e);
                             }
-                            countdownStarter = MINUTES * NUM_SECONDS;
-                        });
-                        scheduler.shutdown();
+                            TimerScene.timerLabel.setText("Timer Over!");
+                            // adjust title label
+                            String s = isStudyTime ? "Study time!" : "Take a break!";
+                            titleLabel.setText(s);
+                            // adjust start button's text
+                            s = isStudyTime ? "Start Studying" : "Begin Break";
+                            startTimer.setText(s);
 
+                            scheduler.shutdown();
+                        });
+                        // Implement break timer, able to switch
+                        isStudyTime = !isStudyTime;
+                        MINUTES = isStudyTime? STUDY_MINUTES : BREAK_MINUTES;
+                        countdownStarter = MINUTES * NUM_SECONDS;
+
+                            // change color
+                        Color timerColor = isStudyTime ? Color.RED : Color.BLUE;
+                        timerLabel.setTextFill(timerColor);
                     }
 
                 }

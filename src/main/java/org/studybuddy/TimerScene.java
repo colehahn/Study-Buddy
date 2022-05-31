@@ -16,21 +16,16 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.util.Duration;
 
-// TODO: implement break timer
-// TODO: allow user to choose study and break times
-
 public class TimerScene implements EventHandler<ActionEvent> {
     public static Label timerLabel;
+    public static Label titleLabel;
     public static Timeline[] timeline = {null};
+    public static Button startTimer;
     public static boolean isPaused = false;
-    public static Scene getScene() throws Exception {
-        // Added this code here to test writing and reading to csv files.
-        AssignmentManager manager = new AssignmentManager();
-        manager.addAssignment("test", "test", "00:00:00", "04/22/22");
-        manager.readAssignment(new AssignmentClass("test", "test", "00:00:00", "04/22/22"));
-
-        Label title = new Label("Study Timer");
-        title.setStyle("-fx-font-size: 2em;");
+    public static boolean isStudyTime = true;
+    public static Scene getScene() {
+        titleLabel = new Label("Study Timer");
+        titleLabel.setStyle("-fx-font-size: 2em;");
 
         // go to assignment button
         Button goToAssignments = new Button("Assignments");
@@ -39,10 +34,9 @@ public class TimerScene implements EventHandler<ActionEvent> {
 
         // timer variables
         timerLabel = new Label();
-        //final Timeline[] timeline = {null};
 
         // start timer button
-        Button startTimer = new Button("Start Timer");
+        startTimer = new Button("Start Studying");
         startTimer.setOnAction(event -> {
             if (Countdown.MINUTES <= 0) {
                 throw new IllegalArgumentException("Study timer cannot be set to negative value");
@@ -79,7 +73,7 @@ public class TimerScene implements EventHandler<ActionEvent> {
         timerLabel.setStyle("-fx-font-size: 4em;");
 
         VBox timerLayout = new VBox(50);
-        timerLayout.getChildren().addAll(title, timerLabel, startTimer, pauseResumeButton);
+        timerLayout.getChildren().addAll(titleLabel, timerLabel, startTimer, pauseResumeButton);
         timerLayout.setAlignment(Pos.CENTER);
         timerLayout.setLayoutY(30);  // Move the VBox down a bit
 
