@@ -99,7 +99,7 @@ public class Countdown {
                         MINUTES = isStudyTime? STUDY_MINUTES : BREAK_MINUTES;
                         countdownStarter = MINUTES * NUM_SECONDS;
 
-                        // change color
+                            // change color
                         Color timerColor = isStudyTime ? Color.RED : Color.BLUE;
                         timerLabel.setTextFill(timerColor);
                     }
