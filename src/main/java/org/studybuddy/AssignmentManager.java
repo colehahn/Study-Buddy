@@ -26,6 +26,8 @@ public class AssignmentManager {
     public AssignmentManager() throws Exception {
         // Read every assignment from csv file
         assignmentMap = new HashMap<>();
+        // Read in all assignments from csv,
+        // and then populate the map.
         readAssignments();
     }
 
@@ -59,6 +61,9 @@ public class AssignmentManager {
         String line[];
         // Getting the iterator object for this reader
         Iterator it = reader.iterator();
+        // Getting the iterator object for this reader
+        // read in each line from the csv file, construct an assignment,
+        // and add it to the map.
         while (it.hasNext()) {
             line = (String[]) it.next();
             System.out.println(Arrays.toString(line));
@@ -86,6 +91,8 @@ public class AssignmentManager {
         StringBuffer buffer = new StringBuffer();
         String line[];
         // Getting the iterator object for this reader
+        // and print out the assignment with the same
+        // name as the passed in assignment.
         Iterator it = reader.iterator();
         while (it.hasNext()) {
             line = (String[]) it.next();

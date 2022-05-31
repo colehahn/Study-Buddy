@@ -117,7 +117,7 @@ public class Countdown {
     // Where I got the sound: https://free-loops.com/3328-alarmclock-sound.html (wav file).
     // Referenced code: https://www.codejava.net/coding/how-to-play-back-audio-in-java-with-examples.
     public static void playBeep() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
-        File audioFile = new File("/Users/ahmetucar/School/403/dae2b64883b4af76d67d6f320160-orig.wav");
+        File audioFile = new File("dae2b64883b4af76d67d6f320160-orig.wav");
         AudioInputStream audioStream = AudioSystem.getAudioInputStream(audioFile);
         AudioFormat format = audioStream.getFormat();
         DataLine.Info info = new DataLine.Info(Clip.class, format);
