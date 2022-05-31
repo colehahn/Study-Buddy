@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
@@ -9,14 +10,18 @@
 
 <BorderPane fx:id="borderPane" prefHeight="560.0" prefWidth="1000.0" style="-fx-background-color: rgb(238, 238, 238);" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.studybuddy.AssignmentsPageController">
    <center>
-      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <Pane prefHeight="200.0" prefWidth="200.0" stylesheets="@stylesheet.css" BorderPane.alignment="CENTER">
          <children>
             <Label layoutX="78.0" layoutY="14.0" text="Assignments">
                <font>
                   <Font size="25.0" />
                </font>
             </Label>
-            <VBox fx:id="assignmentsList" layoutX="14.0" layoutY="50.0" prefHeight="447.0" prefWidth="266.0" spacing="20.0" />
+            <ScrollPane fitToWidth="true" focusTraversable="false" hbarPolicy="NEVER" layoutX="9.0" layoutY="50.0" prefHeight="445.0" prefWidth="289.0">
+               <content>
+                  <VBox fx:id="assignmentsList" prefHeight="441.0" prefWidth="278.0" spacing="20.0" />
+               </content>
+            </ScrollPane>
             <Button fx:id="addAssignmentUIButton" layoutY="502.0" mnemonicParsing="false" onAction="#addAssignmentUI" prefHeight="50.0" prefWidth="297.0" style="-fx-background-color: rgb(123, 167, 216);" text="Add Assignment" />
          </children>
       </Pane>
