@@ -1,5 +1,8 @@
 package Timer;
 
+import javax.sound.sampled.*;
+
+import java.net.URL;
 import java.util.concurrent.*;
 import static java.util.concurrent.TimeUnit.SECONDS;
 import static org.studybuddy.TimerScene.*;
@@ -8,6 +11,14 @@ import javafx.animation.Timeline;
 import javafx.application.Platform;
 import javafx.scene.paint.Color;
 import org.studybuddy.TimerScene;
+import java.io.*;
+import java.io.File;
+
+import javax.sound.sampled.AudioFormat;
+import javax.sound.sampled.AudioInputStream;
+
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.LineUnavailableException;
 
 // The timer is part of the Model.
 public class Countdown {
@@ -88,6 +99,13 @@ public class Countdown {
                             startTimer.setText(s);
 
                             scheduler.shutdown();
+
+                            // play sound
+                            try {
+                                playBeep();
+                            } catch (UnsupportedAudioFileException | LineUnavailableException | IOException e) {
+                                throw new RuntimeException(e);
+                            }
                         });
                         // Implement break timer, able to switch
                         isStudyTime = !isStudyTime;
@@ -103,6 +121,18 @@ public class Countdown {
             }
         };
         scheduler.scheduleAtFixedRate(runnable, 0, 1, SECONDS);
+    }
+
+    // Where I got the sound: https://free-loops.com/3328-alarmclock-sound.html (wav file).
+    // Referenced code: https://www.codejava.net/coding/how-to-play-back-audio-in-java-with-examples.
+    public static void playBeep() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
+        URL url = ClassLoader.getSystemResource("ringing.wav");
+        AudioInputStream audioStream = AudioSystem.getAudioInputStream(url);
+        AudioFormat format = audioStream.getFormat();
+        DataLine.Info info = new DataLine.Info(Clip.class, format);
+        Clip audioClip = (Clip) AudioSystem.getLine(info);
+        audioClip.open(audioStream);
+        audioClip.start();
     }
 }
 
