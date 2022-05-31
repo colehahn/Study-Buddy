@@ -1,4 +1,4 @@
-import Timer.Countdown;
+import org.studybuddy.Countdown;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

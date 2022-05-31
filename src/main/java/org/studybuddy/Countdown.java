@@ -1,4 +1,4 @@
-package Timer;
+package org.studybuddy;
 
 import javax.sound.sampled.*;
 

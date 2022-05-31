@@ -4,5 +4,4 @@ module org.example {
     requires javafx.fxml;
     requires java.desktop;
     exports org.studybuddy;
-    exports Timer;
 }
