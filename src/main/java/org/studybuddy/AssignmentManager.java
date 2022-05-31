@@ -1,9 +1,7 @@
 package org.studybuddy;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.io.*;
 import java.util.*;
-import java.io.FileWriter;
 
 import com.opencsv.*;
 
@@ -55,7 +53,7 @@ public class AssignmentManager {
      */
     public void readAssignments() throws Exception {
         // Instantiating the CSVReader class
-        CSVReader reader = new CSVReader(new FileReader("output.csv"));
+        CSVReader reader = new CSVReader(new InputStreamReader(getClass().getClassLoader().getResourceAsStream("output.csv")));
         // Reading the contents of the csv file
         StringBuffer buffer = new StringBuffer();
         String line[];
@@ -67,7 +65,7 @@ public class AssignmentManager {
         while (it.hasNext()) {
             line = (String[]) it.next();
             System.out.println(Arrays.toString(line));
-            assignmentMap.put(line[0], new AssignmentClass(line[0], line[1], line[2], line[3]));
+            assignmentMap.put(line[0], new AssignmentClass(line[0], line[1], line[2], line[4]));
         }
     }
 
