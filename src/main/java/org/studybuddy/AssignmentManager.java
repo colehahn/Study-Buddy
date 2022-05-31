@@ -6,7 +6,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-import com.opencsv.*;
+import org.apache.commons.csv.*;
 
 // Code that reads assignment data to a csv:
 // https://www.geeksforgeeks.org/reading-csv-file-java-using-opencsv/
@@ -34,7 +34,11 @@ public class AssignmentManager implements Iterable<AssignmentClass> {
         assignmentMap = new HashMap<>();
         // Read in all assignments from csv,
         // and then populate the map.
-        readAssignments();
+        try {
+            readAssignments();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     /**
@@ -53,9 +57,10 @@ public class AssignmentManager implements Iterable<AssignmentClass> {
      * Read all the assignments from the csv file in.
      * @throws FileNotFoundException
      */
-    public void readAssignments() {
+    public void readAssignments() throws IOException {
         // Instantiating the CSVReader class
-        CSVReader reader = new CSVReader(new InputStreamReader(getClass().getClassLoader().getResourceAsStream("output.csv")));
+        CSVParser reader = new CSVParser(new InputStreamReader(getClass().getClassLoader().getResourceAsStream("output.csv")),
+                CSVFormat.newFormat(','));
         // Reading the contents of the csv file
         StringBuffer buffer = new StringBuffer();
         String line[];
@@ -72,19 +77,19 @@ public class AssignmentManager implements Iterable<AssignmentClass> {
     }
 
     public void addAssignment(AssignmentClass assignment) {
-        CSVWriter writer = null;
+        CSVPrinter writer = null;
         try {
             // TODO: THIS RELATIVE PATH PROBABLY WONT WORK ONCE WE INSTALL
             // TODO: IDK WHY IT IS WRITING SO MANY COPIES OF EACH ASSIGNMENT TO THE FILE
             String path = URLDecoder.decode(getClass().getProtectionDomain().getCodeSource().getLocation().getPath(), "UTF-8");
             path = path.substring(0, path.lastIndexOf("/")) + "/resources.output.csv";
             System.out.println(path);
-            writer = new CSVWriter(new FileWriter(path, true));
+            writer = new CSVPrinter(new FileWriter(path, true), CSVFormat.newFormat(','));
             DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
             String dueDateString = df.format(assignment.getDuedate());
             String data[] = {assignment.getName(), assignment.getDescription(), assignment.getEstimateToFinish(),
                     assignment.getEstimateToFinish(), dueDateString};
-            writer.writeNext(data);
+            writer.print(data);
             writer.flush();
             writer.close();
         } catch (IOException e) {
@@ -120,7 +125,7 @@ public class AssignmentManager implements Iterable<AssignmentClass> {
      */
     public void readAssignment(AssignmentClass assignmentClass) throws Exception {
         // Instantiating the CSVReader class
-        CSVReader reader = new CSVReader(new FileReader("output.csv"));
+        CSVParser reader = new CSVParser(new FileReader("output.csv"), CSVFormat.newFormat(','));
         // Reading the contents of the csv file
         StringBuffer buffer = new StringBuffer();
         String line[];
