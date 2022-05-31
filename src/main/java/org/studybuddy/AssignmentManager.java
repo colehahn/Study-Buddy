@@ -44,11 +44,16 @@ public class AssignmentManager implements Iterable<AssignmentClass> {
      */
     public void addAssignment(String name, String description, String estimateToFinish, String duedate) {
         AssignmentClass assignment = new AssignmentClass(name, description, estimateToFinish, duedate);
-        CSVWriter writer = new CSVWriter(new FileWriter("output.csv"));
-        String data[] = {assignment.getName(), assignment.getDescription(), assignment.getEstimateToFinish(),
-                            assignment.getEstimateToFinish(), assignment.getDuedate().toString()};
-        writer.writeNext(data);
-        writer.flush();
+        CSVWriter writer = null;
+        try {
+            writer = new CSVWriter(new FileWriter("output.csv"));
+            String data[] = {assignment.getName(), assignment.getDescription(), assignment.getEstimateToFinish(),
+                                assignment.getEstimateToFinish(), assignment.getDuedate().toString()};
+            writer.writeNext(data);
+            writer.flush();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         assignmentMap.put(name, assignment);
     }
 
@@ -56,7 +61,7 @@ public class AssignmentManager implements Iterable<AssignmentClass> {
      * Read all the assignments from the csv file in.
      * @throws FileNotFoundException
      */
-    public void readAssignments() throws Exception {
+    public void readAssignments() {
         // Instantiating the CSVReader class
         CSVReader reader = new CSVReader(new InputStreamReader(getClass().getClassLoader().getResourceAsStream("output.csv")));
         // Reading the contents of the csv file
@@ -119,9 +124,6 @@ public class AssignmentManager implements Iterable<AssignmentClass> {
             }
         }
     }
-
-}
-
 
 }
 

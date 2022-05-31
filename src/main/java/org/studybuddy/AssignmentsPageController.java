@@ -72,7 +72,9 @@ public class AssignmentsPageController {
             }
         });
         assignmentsList.getChildren().add(newButton);
-        borderPane.getRight().setVisible(false);
+        if (borderPane.getRight() != null) {
+            borderPane.getRight().setVisible(false);
+        }
     }
     @FXML
     public void removeAssignment(String assignmentTitle) {
