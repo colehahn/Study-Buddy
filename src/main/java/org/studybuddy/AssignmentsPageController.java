@@ -89,4 +89,8 @@ public class AssignmentsPageController {
         //when the user leaves the app, we want to save their assignments
     }
 
+    public static void goToTimer() {
+        App.goToTimerScene(assignments);
+    }
+
 }

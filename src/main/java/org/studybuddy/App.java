@@ -28,7 +28,7 @@ public class App extends Application {
         window = stage;
 
         // scene 1, timer page
-        timer = TimerScene.getScene();
+        timer = TimerScene.getScene(new AssignmentManager());
 
         // scene 2, assignments
         try {
@@ -53,7 +53,9 @@ public class App extends Application {
         return ((e -> window.setScene(assignments)));
     }
 
-    public static void goToTimerScene() {
+    public static void goToTimerScene(AssignmentManager assignments) {
+        timer = TimerScene.getScene(assignments);
+        window.setUserData(assignments);
         window.setScene(timer);
     }
 

@@ -28,7 +28,7 @@ public class TimerScene implements EventHandler<ActionEvent> {
     public static Button startTimer;
     public static boolean isPaused = false;
     public static boolean isStudyTime = true;
-    public static Scene getScene() {
+    public static Scene getScene(AssignmentManager assignments) {
         titleLabel = new Label("Study Timer");
         titleLabel.setStyle("-fx-font-size: 2em;");
 
