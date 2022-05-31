@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
@@ -36,6 +37,10 @@ public class AssignmentsPageController {
                 addAssignment(assignment);
             }
             borderPane.setLeft(FXMLLoader.load(getClass().getClassLoader().getResource("Menu Bar.fxml")));
+            Pane right = new Pane();
+            right.setPrefHeight(560);
+            right.setPrefWidth(480);
+            borderPane.setRight(right);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
