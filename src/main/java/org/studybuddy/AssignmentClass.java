@@ -44,10 +44,14 @@ public class AssignmentClass {
      * @param estimateToFinish estimate time to finish this assignment.
      * @param duedate assignment due date
      */
-    public AssignmentClass (String name, String description, String estimateToFinish, String duedate) throws Exception {
+    public AssignmentClass (String name, String description, String estimateToFinish, String duedate) {
+        this(name, description, estimateToFinish, "00:00:00", duedate);
+    }
+
+    public AssignmentClass (String name, String description, String estimateToFinish, String timeSpent, String duedate) {
         this.name = name;
         this.description = description;
-        this.timeSpent = Time.valueOf("00:00:00");
+        this.timeSpent = Time.valueOf(timeSpent);
         this.estimateToFinish = Time.valueOf(estimateToFinish);
         Calendar targetDate = Calendar.getInstance();
         SimpleDateFormat targetDateFormat = new SimpleDateFormat("MM/dd/yyyy");
@@ -56,7 +60,7 @@ public class AssignmentClass {
             this.duedate = targetDateFormat.parse(duedate);
             targetDate.setTime(this.duedate);
         } catch (ParseException e) {
-            throw new Exception("Invalid date is provided, please check input date");
+            throw new RuntimeException("Invalid date is provided, please check input date");
         }
     }
 

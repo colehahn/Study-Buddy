@@ -1,14 +1,15 @@
 package org.studybuddy;
 
+//import lombok.EqualsAndHashCode;
+
 import java.sql.Time;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Iterator;
+import java.util.*;
 
 /**
  * A utility class capable of adding/ removing an assignment in our app.
  */
+//@Data
+//@EqualsAndHashCode
 public class AssignmentManager implements Iterable<AssignmentClass> {
 
     /**
@@ -27,9 +28,13 @@ public class AssignmentManager implements Iterable<AssignmentClass> {
      * @param estimateToFinish estimate time to finish this assignment in format "hh:mm:ss"
      * @param duedate due date of this assignment in format "MM/dd/YYYY"
      */
-    public void addAssignment(String name, String description, String estimateToFinish, String duedate) throws Exception {
+    public void addAssignment(String name, String description, String estimateToFinish, String duedate) {
         AssignmentClass assignment = new AssignmentClass(name, description, estimateToFinish, duedate);
         assignmentMap.put(name, assignment);
+    }
+
+    public void addAssignment(AssignmentClass assignment) {
+        assignmentMap.put(assignment.getName(), assignment);
     }
 
     /**
@@ -46,6 +51,22 @@ public class AssignmentManager implements Iterable<AssignmentClass> {
 
     @Override
     public Iterator<AssignmentClass> iterator() {
-        return assignmentMap.values().iterator();
+        ArrayList<AssignmentClass> array =  new ArrayList<>(assignmentMap.values());
+        Collections.sort(array, new SortByDate());
+        Iterator<AssignmentClass> iter =  array.iterator();
+        return iter;
+    }
+
+
+}
+
+
+class SortByDate implements Comparator<AssignmentClass> {
+    public int compare(AssignmentClass a, AssignmentClass b) {
+        if (a.getDuedate().before(b.getDuedate())) {
+            return -1;
+        } else {
+            return 1;
+        }
     }
 }
