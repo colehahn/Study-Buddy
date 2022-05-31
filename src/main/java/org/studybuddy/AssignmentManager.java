@@ -1,6 +1,9 @@
 package org.studybuddy;
 
 import java.io.*;
+import java.net.URLDecoder;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 import com.opencsv.*;
@@ -42,19 +45,8 @@ public class AssignmentManager implements Iterable<AssignmentClass> {
      * @param estimateToFinish estimate time to finish this assignment in format "hh:mm:ss"
      * @param duedate          due date of this assignment in format "MM/dd/YYYY"
      */
-    public void addAssignment(String name, String description, String estimateToFinish, String duedate) {
-        AssignmentClass assignment = new AssignmentClass(name, description, estimateToFinish, duedate);
-        CSVWriter writer = null;
-        try {
-            writer = new CSVWriter(new FileWriter("output.csv"));
-            String data[] = {assignment.getName(), assignment.getDescription(), assignment.getEstimateToFinish(),
-                                assignment.getEstimateToFinish(), assignment.getDuedate().toString()};
-            writer.writeNext(data);
-            writer.flush();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        assignmentMap.put(name, assignment);
+    public void addAssignment(String name, String description, String estimateToFinish, String timeSpent, String duedate) {
+        addAssignment(new AssignmentClass(name, description, estimateToFinish, timeSpent, duedate));
     }
 
     /**
@@ -74,12 +66,31 @@ public class AssignmentManager implements Iterable<AssignmentClass> {
         // and add it to the map.
         while (it.hasNext()) {
             line = (String[]) it.next();
-            System.out.println(Arrays.toString(line));
+            //System.out.println(Arrays.toString(line));
             assignmentMap.put(line[0], new AssignmentClass(line[0], line[1], line[2], line[4]));
         }
     }
 
     public void addAssignment(AssignmentClass assignment) {
+        CSVWriter writer = null;
+        try {
+            // TODO: THIS RELATIVE PATH PROBABLY WONT WORK ONCE WE INSTALL
+            // TODO: IDK WHY IT IS WRITING SO MANY COPIES OF EACH ASSIGNMENT TO THE FILE
+            String path = URLDecoder.decode(getClass().getProtectionDomain().getCodeSource().getLocation().getPath(), "UTF-8");
+            path = path.substring(0, path.lastIndexOf("/")) + "/resources.output.csv";
+            System.out.println(path);
+            writer = new CSVWriter(new FileWriter(path, true));
+            DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
+            String dueDateString = df.format(assignment.getDuedate());
+            String data[] = {assignment.getName(), assignment.getDescription(), assignment.getEstimateToFinish(),
+                    assignment.getEstimateToFinish(), dueDateString};
+            writer.writeNext(data);
+            writer.flush();
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
         assignmentMap.put(assignment.getName(), assignment);
     }
 
