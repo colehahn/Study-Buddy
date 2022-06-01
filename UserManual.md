@@ -38,7 +38,7 @@ For Assignment functionality:
 
 
 ## How to report a bug
-[sample bug report](https://github.com/colehahn/Study-Buddy/issues/3)
+[sample bug report](https://github.com/colehahn/Study-Buddy/issues/3) \
 Template of a good bug report:
 * Title that describes the bug. (Title that should go into the title section of the issue tracker).
 * The stuff that should go into the comments section of the issue tracker:
