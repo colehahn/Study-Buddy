@@ -25,7 +25,7 @@ For Assignment functionality:
 * To navigate to the assignment progress tracker page the user has to click the assignments button.
 * To add a new assignment, click the Add Assignment button then fill out the information about the assignment such as name, description, estimated time and due date.
 * To see the details about each assignment, left click on the assignment and its details will appear on the right hand side of the application.
-* User can add an assignment with its’ deadline, time remaining and time spent so far, by clikcing the Add Assignment button & then inputting information in the testboxes that show up.
+* User can add an assignment with its deadline, time remaining and time spent so far, by clicking the Add Assignment button & then inputting information in the textboxes that show up.
 * Can mark an assignment as done by clicking on the assignment on the assignments column and then clicking on the mark as done button.
 
 ## Important Screenshots of functionalities
@@ -38,16 +38,16 @@ For Assignment functionality:
 
 
 ## How to report a bug
+[sample bug report](https://github.com/colehahn/Study-Buddy/issues/3)
 Template of a good bug report:
-[Link to our issue tracker] (https://github.com/colehahn/Study-Buddy/issues/3)
-Title that describes the bug. (Title that should go into the title section of the issue tracker).
-The stuff that should go into the comments section of the issue tracker:
-Where in the app the bug occurs.
-Concise description of the bug.
-Steps on how to reproduce the bug.
-Actual Results (What the bug actually produces).
-Expected Results (What the application should produce).
-Guidelines on how to use the issue tracker: [Issues in GitHub - GeeksforGeeks] (https://www.geeksforgeeks.org/issues-in-github/)
+* Title that describes the bug. (Title that should go into the title section of the issue tracker).
+* The stuff that should go into the comments section of the issue tracker:
+  * Where in the app the bug occurs.
+  * Concise description of the bug.
+  * Steps on how to reproduce the bug.
+  * Actual Results (What the bug actually produces).
+  * Expected Results (What the application should produce).
+Guidelines on how to use the issue tracker: [Issues in GitHub - GeeksforGeeks](https://www.geeksforgeeks.org/issues-in-github/)
 
 ## Known bugs
 Known bugs and limitations are documented in Issues tracker: https://github.com/colehahn/Study-Buddy/issues
