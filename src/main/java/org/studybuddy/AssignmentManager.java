@@ -95,7 +95,7 @@ public class AssignmentManager implements Iterable<AssignmentClass> {
     }
 
     /**
-     * removes an assignment out of our app.
+     * Removes an assignment out of our app.
      * @param name name of the assignment needs to remove.
      */
     public void deleteAssignment(String name) {

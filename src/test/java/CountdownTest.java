@@ -9,4 +9,16 @@ public class CountdownTest {
         Countdown.setCountdownStarter(50);
         Assertions.assertEquals(Countdown.countdownStarter, 50);
     }
+
+//
+//    @Test
+//    public void testingInvalidCountdown() {
+//        Countdown.setCountdownStarter(-1);
+//        Assertions.assertEquals(Countdown.countdownStarter, -1);
+//        try {
+//            Countdown.main(null);
+//        } catch (IllegalArgumentException e) {
+//            Assertions.assertTrue(true);
+//        }
+//    }
 }

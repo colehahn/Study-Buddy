@@ -18,29 +18,30 @@ import javax.sound.sampled.AudioInputStream;
 
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.LineUnavailableException;
-// The timer is part of the Model.
+
+// Where I got the code for the timer:
+// https://www.delftstack.com/howto/java/countdown-timer-
 public class Countdown {
+
     private final static int STUDY_MINUTES = 2;
     private final static int BREAK_MINUTES = 1;
     public static int MINUTES = isStudyTime? STUDY_MINUTES : BREAK_MINUTES;
     public static int NUM_SECONDS = 60;
     public static int countdownStarter = MINUTES * NUM_SECONDS;
 
-    // Update this so that it sets the MINUTES and NUM_SECONDS
+    /**
+     * Sets the timer to n minutes.
+     * @param n specifies the amount of minutes to set the timer.
+     */
     public static void setCountdownStarter(int n) {
         countdownStarter = n;
     }
-
+    /**
+     * Runs the timer for a given amount of minutes and seconds
+     * @param args
+     */
     public static void main(String[] args) {
-        // We can set this to the amount of time we want to set the timer
-        // Maybe use scanner to get input from the console
-        // or pass down value passed in from user (the controller) to the
-        // model? (Which this is part of the model)
-        // Try to understand this code and make comments for it.
-        // https://www.delftstack.com/howto/java/countdown-timer-java/#:~:text=To%20create%20the%20countdown%20timer%2C%20we%20create%20a,
-        // and%20the%20period%20in%20milliseconds%20between%20each%20execution.?
-        // msclkid=02d52a70c9b711eca5ee03f124ccfddc.
-        // Can we use code from other sites and just reference them.
+
         final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
 
         final Runnable runnable = new Runnable() {
@@ -129,6 +130,12 @@ public class Countdown {
 
     // Where I got the sound: https://free-loops.com/3328-alarmclock-sound.html (wav file).
     // Referenced code: https://www.codejava.net/coding/how-to-play-back-audio-in-java-with-examples.
+    /**
+     * Plays the notification sound when the timer is done.
+     * @throws UnsupportedAudioFileException is thrown when the audio file is not supported.
+     * @throws IOException is thrown when something wring happens when opening the file.
+     * @throws LineUnavailableException
+     */
     public static void playBeep() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
         URL url = ClassLoader.getSystemResource("ringing.wav");
         AudioInputStream audioStream = AudioSystem.getAudioInputStream(url);
