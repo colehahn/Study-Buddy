@@ -25,8 +25,15 @@ For Assignment functionality:
 * To navigate to the assignment progress tracker page the user has to click the assignments button.
 * To add a new assignment, click the Add Assignment button then fill out the information about the assignment such as name, description, estimated time and due date.
 * To see the details about each assignment, left click on the assignment and its details will appear on the right hand side of the application.
-* User can add an assignment with its’ deadline, time remaining and time spent so far
-* Can mark an assignment as done by clicking on the assignment on the assignments column and then clicking on the mark as done button
+* User can add an assignment with its’ deadline, time remaining and time spent so far, by clikcing the Add Assignment button & then inputting information in the testboxes that show up.
+* Can mark an assignment as done by clicking on the assignment on the assignments column and then clicking on the mark as done button.
+
+#Important Screenshots of functionalities
+  * ![timer](https://user-images.githubusercontent.com/59138970/171343736-c74572be-e73c-46a2-a657-26d306126d95.png)
+  * ![Add_Assignment](https://user-images.githubusercontent.com/59138970/171344586-1c163bda-8725-48a7-8435-bbab71dc5ca2.png)
+  * ![Mark_As_Done](https://user-images.githubusercontent.com/59138970/171344629-68e1f020-4f78-405a-8d57-e617e667ede5.png)
+
+
 
 ## How to report a bug
 Template of a good bug report:
