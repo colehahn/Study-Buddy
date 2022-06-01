@@ -19,6 +19,9 @@ For Timer functionality:
   *To keep track of time work on each assignment, the user just simply chooses the assignment and amount of time to time.
   *Click the start button to run the timer.
   *Click the pause button to pause the timer.
+  *Users can input the amount of time they want the study timer & break timer to last, by clicking selecting times from the respective drop-down menus.
+  * ![image](https://user-images.githubusercontent.com/59138970/171341646-f86fc928-7620-48e5-9015-5bc5530278f4.png)
+
   For Assignment functionality:
 * To navigate to the assignment progress tracker page the user has to click the assignments button.
 * To add a new assignment, click the Add Assignment button then fill out the information about the assignment such as name, description, estimated time and due date.
