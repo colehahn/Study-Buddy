@@ -1,20 +1,23 @@
 package org.studybuddy;
 
 import javafx.beans.value.ChangeListener;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
-import java.util.Calendar;
 
+/**
+ * Controller Class for the scene laid out by "Assignment Details UI.fxml",
+ * which is a scene that allows the user to enter details about a new assignment,
+ * or display details from some other assignment
+ */
 public class AssignmentDetailsController {
+
+    // References to on-screen UI elements
 
     @FXML
     public DatePicker dueDate;
@@ -31,6 +34,10 @@ public class AssignmentDetailsController {
     @FXML
     public Button bottomButton, editButton;
 
+    /**
+     * This method is called whenever the scene is loaded. It leaves everything default, but forces
+     * numeric fields to be integers only, since parsing poorly-formatted time will give errors at runtime
+     */
     @FXML
     public void initialize () {
         // force the fields to be numeric only
@@ -40,7 +47,13 @@ public class AssignmentDetailsController {
         forceNumeric(minutesSpent);
     }
 
+    /**
+     * Forces the text in the given TextField to be numeric only.
+     * This is used for the time fields where the user types time spent/remaining on an assignment
+     */
     private void forceNumeric (TextField text) {
+        // TODO: in the future, it would probably be smart to make it so that the minutes fields can only be < 60
+        // or deal with converting this to reduced form in makeAssignmentFromDisplay
         text.textProperty().addListener((ChangeListener<String>) (observable, oldValue, newValue) -> {
             if (!newValue.matches("\\d*")) {
                 text.setText(newValue.replaceAll("[^\\d]", ""));
@@ -48,15 +61,26 @@ public class AssignmentDetailsController {
         });
     }
 
-    public void goToTimer() {
+    // TODO: once the timer is capable of keeping track of what assignment is being worked on, we can add
+    // a button that goes to the timer scene and sets the current assignment to this one
+    public void workOnAssignment(AssignmentClass assignment) {
         AssignmentsPageController.goToTimer();
+        //.setCurrentAssignment(assignment);
     }
 
+    /**
+     * Method that is called when the "Add assignment" button is pressed
+     */
     public void addAssignment() {
+        // get pass current assignment information to AssignmentsPageController::addAssignmentAndRefresh
         AssignmentsPageController controller = App.assignmentsSceneLoader.getController();
         controller.addAssignmentAndRefresh(makeAssignmentFromDisplay());
     }
 
+    /**
+     * Returns an assignment created from the contents of the display at that time.
+     * Works whether the user is inputting an assignment or just viewing a saved one
+     */
     private AssignmentClass makeAssignmentFromDisplay() {
         String name = assignmentName.getText();
         String due = dueDate.isVisible() ? dueDate.getValue().format(DateTimeFormatter.ofPattern("MM/dd/uuuu"))
@@ -68,6 +92,11 @@ public class AssignmentDetailsController {
         return new AssignmentClass(name, description, estimateToFinish, timeSpent, due);
     }
 
+    /**
+     * Sets the scene to "display mode", meaning it is showing the details for the given assignment.
+     * Sets the appropriate fields to the values stored in the assignment, makes them not editable,
+     * makes an edit button, and sets the bottom button to "mark as done"
+     */
     @FXML
     public void displayAssignment(AssignmentClass assigment) {
         // display assignment information
@@ -92,6 +121,8 @@ public class AssignmentDetailsController {
         // make things not editable / change color?
         for (TextInputControl editable : new TextInputControl[]{assignmentName, hoursSpent, minutesSpent, hoursLeft, minutesLeft}) {
             editable.setEditable(false);
+            // TODO: style stuff should be moved to stylesheet.css
+            // here maybe you can do something like editable.setStyleClass(uneditable)
             editable.setStyle("-fx-background-color: rgb(217,217,217)");
         }
         assignmentDescription.setEditable(false);
@@ -102,12 +133,21 @@ public class AssignmentDetailsController {
         editButton.setOnAction(e -> editAssignment());
     }
 
+    /**
+     * method called when the "mark as done" button is clicked.
+     * Forwards to AssignmetnsPageController::removeAssignment to remove the assignment from the list
+     */
     @FXML
     public void markDone() {
         AssignmentsPageController controller = App.assignmentsSceneLoader.getController();
         controller.removeAssignment(assignmentName.getText());
     }
 
+    /**
+     * Method called when the "edit" button is pressed.
+     * Makes the fields editable again, changes "mark as done" button to "save" button,
+     * and changes "edit" button to "cancel" button
+     */
     @FXML
     public void editAssignment() {
         // save previous assignment
@@ -116,6 +156,7 @@ public class AssignmentDetailsController {
         // make things editable again
         for (TextInputControl editable : new TextInputControl[]{assignmentName, hoursSpent, minutesSpent, hoursLeft, minutesLeft}) {
             editable.setEditable(true);
+            // TODO: move style to stylesheet.css
             editable.setStyle("-fx-background-color: white");
         }
         assignmentDescription.setEditable(true);
@@ -134,17 +175,17 @@ public class AssignmentDetailsController {
 
     }
 
+    /**
+     * Method called when the "save" button is clicked.
+     * Forwards to AssignmentsPageController to remove the old assignment and add the new one
+     */
     @FXML
     public void Save(AssignmentClass oldAssignment, AssignmentClass newAssignment) {
         // remove old assignment
         AssignmentsPageController controller = App.assignmentsSceneLoader.getController();
         controller.removeAssignment(oldAssignment.getName());
-        controller.addAssignment(newAssignment);
+        controller.addAssignmentAndRefresh(newAssignment);
         displayAssignment(newAssignment);
     }
 
-    @FXML
-    public void handleExit() {
-        //when the user leaves the app, we want to save their assignments
-    }
 }

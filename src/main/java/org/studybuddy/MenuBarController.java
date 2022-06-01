@@ -1,33 +1,25 @@
 package org.studybuddy;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
+
+/**
+ * Controller class for the menu bar, which consists of 2 buttons, one for each scene
+ */
 
 public class MenuBarController {
 
+    // references to the on-screen buttons
     @FXML
-    public Button timerButton;
+    public Button timerButton, assignmentsPageButton;
 
-    @FXML
-    public Button assignmentsPageButton;
-
-
+    // methods that are called when the buttons are clicked
+    // this should use App's goToTimerScene()
     public void goToTimer() {
         AssignmentsPageController.goToTimer();
     }
 
+    // TODO: note that there should also be a goToAssignments method, but because the...
+    // timer page does not use fxml, it is not set up to use this controller
 
-    @FXML
-    public void handleExit() {
-        //when the user leaves the app, we want to save their assignments
-    }
 }

@@ -16,7 +16,9 @@ import java.util.Objects;
 import java.util.Timer;
 
 /**
- * JavaFX App
+ * The main JavaFX App entry point
+ * sets up the window and provides references to each Scene (Timer and Assignments)
+ * to allow for swapping and communicating between them
  **/
 public class App extends Application {
     static Stage window;
@@ -48,6 +50,10 @@ public class App extends Application {
     public static void main(String[] args) {
         launch();
     }
+
+    /**
+     * Methods for swapping between scenes:
+     */
 
     public static EventHandler<ActionEvent> goToAssignmentsScene() {
         return ((e -> window.setScene(assignments)));
