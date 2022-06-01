@@ -46,7 +46,9 @@ Template of a good bug report:
   * Concise description of the bug.
   * Steps on how to reproduce the bug.
   * Actual Results (What the bug actually produces).
-  * Expected Results (What the application should produce). \
+  * Expected Results (What the application should produce). 
+
+
 Guidelines on how to use the issue tracker: [Issues in GitHub - GeeksforGeeks](https://www.geeksforgeeks.org/issues-in-github/)
 
 ## Known bugs
