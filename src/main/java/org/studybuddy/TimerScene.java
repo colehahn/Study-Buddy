@@ -21,6 +21,7 @@ import javafx.util.Duration;
 public class TimerScene implements EventHandler<ActionEvent> {
     public static Label timerLabel;
     public static Label titleLabel;
+    public static Label cyclesCompletedLabel;
     public static Timeline[] timeline = {null};
     public static Button startTimer;
     public static boolean isPaused = false;
@@ -82,14 +83,12 @@ public class TimerScene implements EventHandler<ActionEvent> {
         SpinnerValueFactory<Integer> valueFactory1 =
                 new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 120, initialValue1);
         spinner1.setValueFactory(valueFactory1);
-
         // Event when spinner changes value
         spinner1.valueProperty().addListener((observable, oldValue, newValue) -> {
             Countdown.STUDY_MINUTES = newValue;
             Countdown.MINUTES = isStudyTime? Countdown.STUDY_MINUTES : Countdown.BREAK_MINUTES;
         });
-
-            // location adjustments
+        // location adjustments
         FlowPane input1 = new FlowPane();
         input1.setHgap(10);
         input1.getChildren().addAll(adjust1, spinner1);
@@ -103,22 +102,24 @@ public class TimerScene implements EventHandler<ActionEvent> {
         SpinnerValueFactory<Integer> valueFactory2 =
                 new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 30, initialValue2);
         spinner2.setValueFactory(valueFactory2);
-
         // Event when spinner changes value
         spinner2.valueProperty().addListener((observable, oldValue, newValue) -> {
             Countdown.BREAK_MINUTES = newValue;
             Countdown.MINUTES = isStudyTime? Countdown.STUDY_MINUTES : Countdown.BREAK_MINUTES;
         });
-
         // location adjustments
         FlowPane input2 = new FlowPane();
         input2.setHgap(10);
         input2.getChildren().addAll(adjust2, spinner2);
 
+
+        // cycles completed label
+        cyclesCompletedLabel = new Label("Study Cycles Completed: 0");
+
         // add all components together
         VBox timerLayout = new VBox(40);
         timerLayout.getChildren().addAll(titleLabel, timerLabel, startTimer,
-                pauseResumeButton, input1, input2);
+                pauseResumeButton, input1, input2, cyclesCompletedLabel);
         timerLayout.setAlignment(Pos.CENTER);
         timerLayout.setLayoutY(30);  // Move the VBox down a bit
 
