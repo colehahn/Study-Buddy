@@ -29,8 +29,8 @@ For Assignment functionality:
 * Can mark an assignment as done by clicking on the assignment on the assignments column and then clicking on the mark as done button.
 
 #Important Screenshots of functionalities
-  * ![timer](https://user-images.githubusercontent.com/59138970/171343736-c74572be-e73c-46a2-a657-26d306126d95.png)
-  
+  * ![timer](https://user-images.githubusercontent.com/59138970/171345387-b38de475-fc03-4f14-87d8-e6f0c458180c.png)
+ 
   * ![Add_Assignment](https://user-images.githubusercontent.com/59138970/171344586-1c163bda-8725-48a7-8435-bbab71dc5ca2.png)
   
   * ![Mark_As_Done](https://user-images.githubusercontent.com/59138970/171344629-68e1f020-4f78-405a-8d57-e617e667ede5.png)
