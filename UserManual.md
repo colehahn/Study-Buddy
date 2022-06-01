@@ -30,7 +30,9 @@ For Assignment functionality:
 
 #Important Screenshots of functionalities
   * ![timer](https://user-images.githubusercontent.com/59138970/171343736-c74572be-e73c-46a2-a657-26d306126d95.png)
+  
   * ![Add_Assignment](https://user-images.githubusercontent.com/59138970/171344586-1c163bda-8725-48a7-8435-bbab71dc5ca2.png)
+  
   * ![Mark_As_Done](https://user-images.githubusercontent.com/59138970/171344629-68e1f020-4f78-405a-8d57-e617e667ede5.png)
 
 
