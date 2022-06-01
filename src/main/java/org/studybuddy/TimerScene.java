@@ -117,9 +117,11 @@ public class TimerScene implements EventHandler<ActionEvent> {
         cyclesCompletedLabel = new Label("Study Cycles Completed: 0");
 
         // add all components together
+        HBox timerButtons = new HBox(40);
+        timerButtons.getChildren().addAll(startTimer, pauseResumeButton);
+        timerButtons.setAlignment(Pos.CENTER);
         VBox timerLayout = new VBox(40);
-        timerLayout.getChildren().addAll(titleLabel, timerLabel, startTimer,
-                pauseResumeButton, input1, input2, cyclesCompletedLabel);
+        timerLayout.getChildren().addAll(titleLabel, timerLabel, timerButtons, input1, input2, cyclesCompletedLabel);
         timerLayout.setAlignment(Pos.CENTER);
         timerLayout.setLayoutY(30);  // Move the VBox down a bit
 
