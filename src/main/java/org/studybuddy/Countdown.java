@@ -45,7 +45,7 @@ public class Countdown {
         final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
 
         final Runnable runnable = new Runnable() {
-
+            // Update the time in timer and show it on the timer label
             public void run() {
                 if (MINUTES < 1) {
                     throw new IllegalArgumentException("Minutes must be at least 1");
@@ -53,7 +53,7 @@ public class Countdown {
                 if (TimerScene.isPaused) {
                     TimerScene.timeline[0].pause();
                 } else {
-                    if (countdownStarter < NUM_SECONDS) { // Seconds
+                    if (countdownStarter < NUM_SECONDS) { // Less than a minute remaining
                         if (countdownStarter <= 10) {
                             if (TimerScene.timeline[0] != null) {
                                 TimerScene.timeline[0].stop();

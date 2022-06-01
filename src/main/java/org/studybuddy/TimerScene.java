@@ -92,9 +92,6 @@ public class TimerScene implements EventHandler<ActionEvent> {
             // location adjustments
         FlowPane input1 = new FlowPane();
         input1.setHgap(10);
-        //input1.setVgap(10);
-        //input1.setPadding(new Insets(10));
-
         input1.getChildren().addAll(adjust1, spinner1);
 
 
@@ -116,13 +113,9 @@ public class TimerScene implements EventHandler<ActionEvent> {
         // location adjustments
         FlowPane input2 = new FlowPane();
         input2.setHgap(10);
-        //input2.setVgap(10);
-        //input2.setPadding(new Insets(10));
-
         input2.getChildren().addAll(adjust2, spinner2);
 
-
-
+        // add all components together
         VBox timerLayout = new VBox(40);
         timerLayout.getChildren().addAll(titleLabel, timerLabel, startTimer,
                 pauseResumeButton, input1, input2);
@@ -134,6 +127,7 @@ public class TimerScene implements EventHandler<ActionEvent> {
         return new Scene(scene, 1000, 560);
     }
 
+    // Buttons for assignment scene and timer scene
     private static Pane leftPane() {
         Pane pane = new Pane();
         Button goToTimer = new Button("Timer");
