@@ -101,7 +101,6 @@ public class AssignmentDetailsController {
     public void displayAssignment(AssignmentClass assigment) {
         // display assignment information
         assignmentName.setText(assigment.getName());
-        completionText.setText("estimated ??% completed");
         dueDate.setVisible(false);
         dueDateText.setVisible(true);
         DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
@@ -113,6 +112,11 @@ public class AssignmentDetailsController {
         hoursLeft.setText(hoursMinutesSecondsLeft[0]);
         minutesLeft.setText(hoursMinutesSecondsLeft[1]);
         assignmentDescription.setText(assigment.getDescription());
+        double minutesSpentDouble = 60.0 * Double.parseDouble(hoursMinutesSecondsSpent[0]) + Double.parseDouble(hoursMinutesSecondsSpent[1]);
+        double minutesLeftDouble = 60.0 * Double.parseDouble(hoursMinutesSecondsLeft[0]) + Double.parseDouble(hoursMinutesSecondsLeft[1]);
+        long percentComplete = Math.round(100.0 * minutesSpentDouble / (minutesSpentDouble + minutesLeftDouble));
+        completionText.setText("estimated " + percentComplete + "% completed");
+
 
         // change button to "mark as done"
         bottomButton.setText("Mark As Done");
