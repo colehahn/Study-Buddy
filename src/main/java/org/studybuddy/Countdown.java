@@ -30,6 +30,7 @@ public class Countdown {
     public static int MINUTES = isStudyTime? STUDY_MINUTES : BREAK_MINUTES;
     public static int NUM_SECONDS = 60;
     public static int countdownStarter = MINUTES * NUM_SECONDS;
+    public static int cyclesCompleted = 0;
 
 
     /**
@@ -95,6 +96,7 @@ public class Countdown {
 
                     countdownStarter--;
 
+                    // When timer is done
                     if (countdownStarter <= 0) {
                         Platform.runLater(() -> {
                             TimerScene.timerLabel.setText("Timer Over!");
@@ -105,6 +107,9 @@ public class Countdown {
                             s = isStudyTime ? "Start Studying" : "Begin Break";
                             startTimer.setText(s);
 
+                            // update cycles completed label
+                            cyclesCompletedLabel.setText("Study Cycles Completed: " + cyclesCompleted);
+
                             scheduler.shutdown();
 
                             // Play sound
@@ -114,6 +119,11 @@ public class Countdown {
                                 throw new RuntimeException(e);
                             }
                         });
+                        // increment cycles completed
+                        if (isStudyTime) {
+                            cyclesCompleted++;
+                        }
+
                         // Implement break timer, able to switch
                         isStudyTime = !isStudyTime;
                         MINUTES = isStudyTime? STUDY_MINUTES : BREAK_MINUTES;
