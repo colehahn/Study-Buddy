@@ -15,21 +15,18 @@
 
 ## How to use the software
 For Timer functionality:
-* To navigate to the timer, the user simply just has to click the timer button
-  *To keep track of time work on each assignment, the user just simply chooses the assignment and amount of time to time.
-  *Click the start button to run the timer.
-  *Click the pause button to pause the timer.
-  *Users can input the amount of time they want the study timer & break timer to last, by clicking selecting times from the respective drop-down menus.
-  * ![image](https://user-images.githubusercontent.com/59138970/171341913-04f07258-a230-421c-9cf6-373009e71e56.png)
+  * To navigate to the timer, the user simply just has to click the timer button
+  * To keep track of time work on each assignment, the user just simply chooses the assignment and amount of time to time.
+  * Click the start button to run the timer.
+  * Click the pause button to pause the timer.
+  * Users can input the amount of time they want the study timer & break timer to last, by clicking selecting times from the respective drop-down menus.
 
-  For Assignment functionality:
+For Assignment functionality:
 * To navigate to the assignment progress tracker page the user has to click the assignments button.
 * To add a new assignment, click the Add Assignment button then fill out the information about the assignment such as name, description, estimated time and due date.
 * To see the details about each assignment, left click on the assignment and its details will appear on the right hand side of the application.
 * User can add an assignment with its’ deadline, time remaining and time spent so far
-*  ![image](https://user-images.githubusercontent.com/59138970/171342073-91020d4d-22db-44fe-b312-028fe839050a.png)
 * Can mark an assignment as done by clicking on the assignment on the assignments column and then clicking on the mark as done button
-* ![image](https://user-images.githubusercontent.com/59138970/171342198-53200005-16c4-457a-9552-f6d4c9388bb6.png)
 
 ## How to report a bug
 Template of a good bug report:
